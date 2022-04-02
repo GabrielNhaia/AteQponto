@@ -5,4 +5,4 @@ Trabalho de Conclusão de Curso USC - Projeto AteQponto
 > Gabriel Nhaia, 
 > Bryan Felipe, 
 > Jhonatan, 
-> Diego Castilho
+> Diego Castilho Lourenço
