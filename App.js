@@ -13,7 +13,7 @@ export default class App extends Component {
     return(
       <View style={styles.container}>
                
-        
+        <Text>teste commit</Text>
         <Modal style ={styles.modal}
           animationType={'slide'}
           transparent={false}
@@ -49,7 +49,6 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    //position: "relative",
     width: '100%',
     height:'30%',
     position: 'absolute',
@@ -68,5 +67,6 @@ const styles = StyleSheet.create({
   dialogo:{
     bottom:0,
     height:'50%', 
+    width:'50%',
   },
 });
