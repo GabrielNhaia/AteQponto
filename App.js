@@ -26,19 +26,20 @@ export default class App extends Component {
               title: "teste",
             }} />
         </Stack.Navigator>
-      </NavigationContainer>
-      */
+        </NavigationContainer>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName='Tela1'>
+            <Stack.Screen
+              name="Tela1" Component={Tela1}
+            >
+            </Stack.Screen>
+          </Stack.Navigator>
+        </NavigationContainer>
+        
+        */
+      
 
       <View style={styles.container}>
-          <NavigationContainer>
-            <Stack.Navigator initialRouteName='Tela1'>
-              <Stack.Screen
-                name="Tela1" Component={Tela1}
-              >
-              </Stack.Screen>
-            </Stack.Navigator>
-          </NavigationContainer>
-        
 
           <Modal style={styles.modal}
             animationType={'slide'}
