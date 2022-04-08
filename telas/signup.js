@@ -12,28 +12,34 @@ const App = () => {
         backgroundColor="#cbf2d6"
         barStyle="light-content"
       />
-      <Text style={styles.titulo}>AteQponto</Text>
+      <Text style={styles.titulo}>Registrar - se</Text>
+      <TextInput
+          style={styles.input}
+          placeholder="Email"
+        />
         <TextInput
           style={styles.input}
-          placeholder="Usuário"
+          placeholder="Nome completo"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="CPF"
         />
         <TextInput
           style={styles.input}
           placeholder="Senha"
           secureTextEntry
         />
+        <TextInput
+          style={styles.input}
+          placeholder="Confirme sua Senha"
+          secureTextEntry
+        />
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={styles.userBtn}
-          NavigationContainer
         >
-          <Text style={styles.btnTxt}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.userBtn}
-          //onPress={() => (signup)}
-        >
-          <Text style={styles.btnTxt}>Registrar-se</Text>
+          <Text style={styles.btnTxt}>Registre-se</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -68,7 +74,7 @@ const styles = StyleSheet.create({
   userBtn: {
     backgroundColor: '#070a08',
     padding: 15,
-    width: '45%',
+    width: '100%',
   },
   btnTxt:{
     fontSize: 18,
@@ -76,6 +82,7 @@ const styles = StyleSheet.create({
     color: '#fff',
 
   }
+
 });
 
 export default App;
