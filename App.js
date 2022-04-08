@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
+//import { NavigationContainer } from '@react-navigation/native';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Tela1 from './Telas/Tela1';
 import { Component } from 'react';
-//import { render } from 'react-dom';
-import { Button, Modal, StyleSheet, Text, View } from 'react-native';
+import { Button, Modal, StyleSheet, Text, View, } from 'react-native';
 
 export default class App extends Component {
 
@@ -10,37 +11,58 @@ export default class App extends Component {
     this.state = {isVisible:false};
   }
   render ( ) {
+
+    //const Stack = createNativeStackNavigator();
+    
     return(
+      /*
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Tela1'>
+          <Stack.Screen
+            name="Tela1" Component={Tela1}
+            opitions={{
+              title: "teste",
+            }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      */
       <View style={styles.container}>
-               
-        
-        <Modal style ={styles.modal}
-          animationType={'slide'}
-          transparent={false}
-          visible={this.state.isVisible}
-          onRequestClose= {() => {
-            this.setState({isVisible: false})
-          }}
-        >                      
-          <Text>Conteudo do modal</Text>
-          <Button          
-          title="teste"
-          onPress={() => {
-            this.setState({isVisible:false})
-          }}
-          />
-        </Modal>
-        
-        
-        <Text>Aperte o botão para abrir o modal</Text>
-            <Button             
+      
+
+          <Modal style={styles.modal}
+            animationType={'slide'}
+            transparent={false}
+            visible={this.state.isVisible}
+            onRequestClose={() => {
+              this.setState({ isVisible: false });
+            } }
+          >
+            <Text>Conteudo do modal</Text>
+
+            <Button
+              title="tela2"
+              onPress={() => {
+                this.setState({ isVisible: false });
+              } } />
+
+            <Button
               title="teste"
               onPress={() => {
-                this.setState({isVisible:true})
-              }}
-            />
-      
-      </View>
+                this.setState({ isVisible: false });
+              } } />
+          </Modal>
+
+
+          <Text>Aperte o botão para abrir o modal</Text>
+          <Button
+            title="teste"
+            onPress={() => {
+              this.setState({ isVisible: true });
+            } } />
+
+
+
+        </View>
       
     );
   }
