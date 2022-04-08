@@ -1,12 +1,9 @@
 import { Component } from 'react';
 //import { Button, Modal, StyleSheet, Text, View } from 'react-native';
 
-export default class Tela1 extends Component{
-    constructor(props){
-        super(props);
-        this.state = {isVisible:false};
-      }
-
+class Tela1 extends Component
+{
+   
       render ( ) {
         return(
           <View>
@@ -14,5 +11,6 @@ export default class Tela1 extends Component{
           </View>
         );
       }
-
-}
+      
+    }
+    export default Tela1

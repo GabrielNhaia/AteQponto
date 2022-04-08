@@ -1,5 +1,5 @@
-//import { NavigationContainer } from '@react-navigation/native';
-//import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Tela1 from './Telas/Tela1';
 import { Component } from 'react';
 import { Button, Modal, StyleSheet, Text, View, } from 'react-native';
@@ -12,9 +12,11 @@ export default class App extends Component {
   }
   render ( ) {
 
-    //const Stack = createNativeStackNavigator();
+    const Stack = createNativeStackNavigator();
     
     return(
+      
+
       /*
       <NavigationContainer>
         <Stack.Navigator initialRouteName='Tela1'>
@@ -26,8 +28,17 @@ export default class App extends Component {
         </Stack.Navigator>
       </NavigationContainer>
       */
+
       <View style={styles.container}>
-      
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName='Tela1'>
+              <Stack.Screen
+                name="Tela1" Component={Tela1}
+              >
+              </Stack.Screen>
+            </Stack.Navigator>
+          </NavigationContainer>
+        
 
           <Modal style={styles.modal}
             animationType={'slide'}
