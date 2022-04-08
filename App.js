@@ -1,27 +1,69 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
-import React, {component} from 'react';
+import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
-/*import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { signup } from './telas/signup';*/
+import signup from './telas/signup';
+import Inicial from './telas/Inicial';
 
+
+class App extends Component {
+  render() {
+    const Stack = createNativeStackNavigator();
+
+    return (
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName='Inicial'>
+            <Stack.Screen
+              name='Inicial'
+              component={Inicial}
+            />
+            <Stack.Screen
+              name='signup'
+              component={signup}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+     
+    );
+  }
+}
+
+/*
 const App = () => {
-     return (
+
+  const Stack = createNativeStackNavigator();
+  return (
+
     <View style={styles.container}>
+      <NavigationContainer>
+
+        <Stack.Navigator initialRouteName='signup'>
+          <Stack.Screen
+            name='signup'
+            component={signup}
+          />
+          <Stack.Screen
+            name='App'
+            component={App}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+
       <StatusBar
         backgroundColor="#cbf2d6"
         barStyle="light-content"
       />
       <Text style={styles.titulo}>AteQponto</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Usuário"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          secureTextEntry
-        />
+      <TextInput
+        style={styles.input}
+        placeholder="Usuário"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Senha"
+        secureTextEntry
+      />
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={styles.userBtn}
@@ -31,14 +73,14 @@ const App = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.userBtn}
-          //onPress={() => (signup)}
+          onPress={() => this.props.navigation.navigate('signup')}
         >
           <Text style={styles.btnTxt}>Registrar-se</Text>
         </TouchableOpacity>
       </View>
     </View>
-    );
-}
+  );
+} */
 
 const styles = StyleSheet.create({
   container: {
@@ -55,13 +97,13 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '90%',
-    backgroundColor:'#fff',
+    backgroundColor: '#fff',
     padding: 15,
     marginBottom: 10,
   },
-  btnContainer:{
-    flexDirection:'row',
-    justifyContent:'space-between',
+  btnContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     width: '90%',
 
   },
@@ -70,7 +112,7 @@ const styles = StyleSheet.create({
     padding: 15,
     width: '45%',
   },
-  btnTxt:{
+  btnTxt: {
     fontSize: 18,
     textAlign: 'center',
     color: '#fff',
