@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity,  } from 'react-native';
 
 class login extends Component {
 render() {
