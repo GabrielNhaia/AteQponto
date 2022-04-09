@@ -1,9 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { Component } from 'react';
-//import { render } from 'react-dom';
-import { Button, Modal, StyleSheet, Text, View } from 'react-native';
+import { Button, Modal, StyleSheet, Text, View, Image } from 'react-native';
 
-export default class App extends Component {
+class telaCentral extends Component {
 
   constructor(props){
     super(props);
@@ -15,7 +14,7 @@ export default class App extends Component {
       
       <View style={styles.container}>
       <View style={styles.container}>
-      <Image style={styles.image} source={require("./assets/MapaPlaceholder.jpg")} />
+      <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
       </View>
     
 
@@ -98,4 +97,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
+export default telaCentral;

@@ -25,7 +25,7 @@ render() {
         <View style={styles.btnContainer}>
           <TouchableOpacity
             style={styles.userBtn}
-            NavigationContainer
+            onPress={() => this.props.navigation.navigate('telaCentral')}
           >
             <Text style={styles.btnTxt}>Login</Text>
           </TouchableOpacity>

@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import signup from './telas/signup';
 import login from './telas/login';
+import telaCentral from './telas/telaCentral';
 
 
 class App extends Component {
@@ -22,6 +23,10 @@ class App extends Component {
               name='signup'
               component={signup}
             />
+            <Stack.Screen
+              name='telaCentral'
+              component={telaCentral}
+            />            
           </Stack.Navigator>
         </NavigationContainer>
      
