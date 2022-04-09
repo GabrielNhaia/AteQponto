@@ -18,14 +18,26 @@ class App extends Component {
             <Stack.Screen
               name='login'
               component={login}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
             />
             <Stack.Screen
               name='signup'
               component={signup}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
             />
             <Stack.Screen
               name='telaCentral'
               component={telaCentral}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
             />            
           </Stack.Navigator>
         </NavigationContainer>
