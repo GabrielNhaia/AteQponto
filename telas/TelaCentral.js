@@ -54,13 +54,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    //verticalalign: 'middle',
-    //alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    //alignItems: 'top',
     marginBottom: 700,
-    //width: '100%',
-    //height:'1000%',
   },
   modal:{
     width: '50%',
@@ -73,16 +68,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     position: 'absolute',
     bottom:0,
-    //width: '100%',
-    //height:'20%',
     flexDirection:"row",
   },
   Hora:{
     paddingLeft:80,
     paddingRight:80,
-
-    //justifyContent: 'center',
-    //textAlign:'center',
   },
   dialogo:{
     bottom:0,
