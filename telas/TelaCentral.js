@@ -13,9 +13,9 @@ class telaCentral extends Component {
     return(
       
       <View style={styles.container}>
-      <View style={styles.container}>
-      <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
-      </View>
+        <View style={styles.container}>
+          <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
+        </View>
     
 
         
@@ -70,18 +70,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   Opcoes:{
-   // marginTop:'40',
     justifyContent: 'center',
-    position: 'relative',
-
-    //backgroundColor:'white',
-    width: '100%',
-    height:'20%',
-    //padding:100,
-    //border:'1px solid',
+    position: 'absolute',
+    bottom:0,
+    //width: '100%',
+    //height:'20%',
     flexDirection:"row",
-    paddingTop:10,
-
   },
   Hora:{
     paddingLeft:80,
