@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import signup from './telas/signup';
 import login from './telas/login';
+//import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 
 class App extends Component {
@@ -17,10 +18,18 @@ class App extends Component {
             <Stack.Screen
               name='login'
               component={login}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
             />
             <Stack.Screen
               name='signup'
               component={signup}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
             />
           </Stack.Navigator>
         </NavigationContainer>
@@ -28,59 +37,6 @@ class App extends Component {
     );
   }
 }
-
-/*
-const App = () => {
-
-  const Stack = createNativeStackNavigator();
-  return (
-
-    <View style={styles.container}>
-      <NavigationContainer>
-
-        <Stack.Navigator initialRouteName='signup'>
-          <Stack.Screen
-            name='signup'
-            component={signup}
-          />
-          <Stack.Screen
-            name='App'
-            component={App}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-
-      <StatusBar
-        backgroundColor="#cbf2d6"
-        barStyle="light-content"
-      />
-      <Text style={styles.titulo}>AteQponto</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Usuário"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Senha"
-        secureTextEntry
-      />
-      <View style={styles.btnContainer}>
-        <TouchableOpacity
-          style={styles.userBtn}
-          NavigationContainer
-        >
-          <Text style={styles.btnTxt}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.userBtn}
-          onPress={() => this.props.navigation.navigate('signup')}
-        >
-          <Text style={styles.btnTxt}>Registrar-se</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-} */
 
 const styles = StyleSheet.create({
   container: {
