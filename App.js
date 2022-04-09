@@ -34,59 +34,6 @@ class App extends Component {
   }
 }
 
-/*
-const App = () => {
-
-  const Stack = createNativeStackNavigator();
-  return (
-
-    <View style={styles.container}>
-      <NavigationContainer>
-
-        <Stack.Navigator initialRouteName='signup'>
-          <Stack.Screen
-            name='signup'
-            component={signup}
-          />
-          <Stack.Screen
-            name='App'
-            component={App}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-
-      <StatusBar
-        backgroundColor="#cbf2d6"
-        barStyle="light-content"
-      />
-      <Text style={styles.titulo}>AteQponto</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Usuário"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Senha"
-        secureTextEntry
-      />
-      <View style={styles.btnContainer}>
-        <TouchableOpacity
-          style={styles.userBtn}
-          NavigationContainer
-        >
-          <Text style={styles.btnTxt}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.userBtn}
-          onPress={() => this.props.navigation.navigate('signup')}
-        >
-          <Text style={styles.btnTxt}>Registrar-se</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-} */
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
