@@ -4,7 +4,7 @@ import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import signup from './telas/signup';
-import Inicial from './telas/Inicial';
+import login from './telas/login';
 
 
 class App extends Component {
@@ -13,10 +13,10 @@ class App extends Component {
 
     return (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName='Inicial'>
+          <Stack.Navigator initialRouteName='login'>
             <Stack.Screen
-              name='Inicial'
-              component={Inicial}
+              name='login'
+              component={login}
             />
             <Stack.Screen
               name='signup'

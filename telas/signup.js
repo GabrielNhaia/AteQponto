@@ -1,16 +1,8 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
 import React, {Component} from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
-//import { Component } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-/*
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { signup } from './telas/signup';*/
-//import App from '../App';
+import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
 
-class signup2 extends Component{
 
-}
 
 
 const signup = () => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
 
-class Inicial extends Component {
+class login extends Component {
 render() {
     return (
   
@@ -78,4 +78,4 @@ render() {
     }
   });
   
-  export default Inicial;
+  export default login;
