@@ -10,9 +10,21 @@ class telaCentral extends Component {
   }
   render ( ) {
     
-    return(
-      
+    return(    
+    
       <View style={styles.container}>
+        <Modal
+          style={{height: 300, width: 300}}
+          animationType='fade'          
+          visible={this.state.isVisible}
+        >
+          <Button title="Fechar" 
+        onPress={() => {
+          this.setState({isVisible:false})   
+                  }}
+      />
+
+        </Modal>
         <View style={styles.container}>
           <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
         </View>

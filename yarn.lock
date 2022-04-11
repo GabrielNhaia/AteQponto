@@ -3314,6 +3314,8 @@
 "chokidar2@file:./chokidar2":
   "resolved" "file:node_modules/watchpack/chokidar2"
   "version" "2.0.0"
+  dependencies:
+    "chokidar" "^2.1.8"
 
 "chownr@^1.0.1":
   "integrity" "sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg=="
@@ -9817,6 +9819,13 @@
   dependencies:
     "react-freeze" "^1.0.0"
     "warn-once" "^0.1.0"
+
+"react-native-web-log-box@^0.0.5":
+  "integrity" "sha512-CbscKRhCO73l0X8KkV/a5412cWadzXHgl2/cVzTw6xJh02tneeSwK16wyhQXt40fFpH5AAUQUMCCeaJZZWz4IQ=="
+  "resolved" "https://registry.npmjs.org/react-native-web-log-box/-/react-native-web-log-box-0.0.5.tgz"
+  "version" "0.0.5"
+  dependencies:
+    "invariant" "^2.2.4"
 
 "react-native-web@>= 0.11", "react-native-web@0.17.1":
   "integrity" "sha512-lUnn+2O8ynQ6/gJKylSxm7DLi2vHw6AujdDV1+LSa8Epe1bYFJNUcJTEhJf0jNYUFGOujzMtuG8Mkz3HdWTkag=="
