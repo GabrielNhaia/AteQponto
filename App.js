@@ -14,9 +14,9 @@ class App extends Component {
 
     return (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName='login'>
+          <Stack.Navigator initialRouteName='Login'>
             <Stack.Screen
-              name='login'
+              name='Login'
               component={login}
               options={{
                 headerTransparent:true,
@@ -24,7 +24,7 @@ class App extends Component {
               }}
             />
             <Stack.Screen
-              name='signup'
+              name='Signup'
               component={signup}
               options={{
                 headerTransparent:true,
@@ -32,7 +32,7 @@ class App extends Component {
               }}
             />
             <Stack.Screen
-              name='telaCentral'
+              name='TelaCentral'
               component={telaCentral}
               options={{
                 headerTransparent:true,

@@ -2,9 +2,6 @@
 import React, {Component} from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
 
-
-
-
 const signup = () => {
      return (
     <View style={styles.container}>
@@ -12,7 +9,7 @@ const signup = () => {
         backgroundColor="#cbf2d6"
         barStyle="light-content"
       />
-      <Text style={styles.titulo}>Registrar - se</Text>
+      <Text style={styles.titulo}>Registrar-se</Text>
       <TextInput
           style={styles.input}
           placeholder="Email"

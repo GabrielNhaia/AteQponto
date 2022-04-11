@@ -16,9 +16,6 @@ class telaCentral extends Component {
         <View style={styles.container}>
           <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
         </View>
-    
-
-        
         <View style={styles.Opcoes} >
          <Button title="Opções" 
               onPress={() => {
@@ -32,14 +29,11 @@ class telaCentral extends Component {
                 this.setState({isVisible:true})   
                         }}
             />
-          </View>     
-             
-      
+          </View>  
       </View>
        
     );
   }
-
 }
 
 
