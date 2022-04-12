@@ -25,13 +25,13 @@ render() {
         <View style={styles.btnContainer}>
           <TouchableOpacity
             style={styles.userBtn}
-            onPress={() => this.props.navigation.navigate('TelaCentral')}
+            onPress={() => this.props.navigation.navigate('telaCentral')}
           >
             <Text style={styles.btnTxt}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.userBtn}
-            onPress={() => this.props.navigation.navigate('Signup')}
+            onPress={() => this.props.navigation.navigate('signup')}
           >
             <Text style={styles.btnTxt}>Registrar-se</Text>
           </TouchableOpacity>
