@@ -17,6 +17,7 @@
     "expo-cli": "^4.3.0",
     "expo-status-bar": "~1.2.0",
     "indent-string": "^5.0.0",
+    "moment": "^2.29.2",
     "node": "^14.19.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",

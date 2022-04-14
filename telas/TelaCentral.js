@@ -1,20 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import { Component } from 'react';
 import { Button, Modal, StyleSheet, Text, View, Image } from 'react-native';
+import moment from 'moment';
+import { runInThisContext } from 'vm';
 
 class telaCentral extends Component {
 
   constructor(props){
     super(props);
     this.state = {isVisible:false};
+    this.Date = new Date;
+    var date = moment()
+                  .utcOffset('+05:30')
+                  .format(' hh:mm:ss a');
+    setCurrentDate(date);
   }
   render ( ) {
     
-    return(    
-    
+    return( 
+         
+      
       <View style={styles.container}>
+
+        <View style={{height: 300, width: 300} }>
+          
         <Modal
-          style={{height: 300, width: 300}}
           animationType='fade'          
           visible={this.state.isVisible}
         >
@@ -25,6 +35,7 @@ class telaCentral extends Component {
       />
 
         </Modal>
+        </View>
         <View style={styles.container}>
           <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
         </View>
@@ -32,13 +43,19 @@ class telaCentral extends Component {
 
         
         <View style={styles.Opcoes} >
-         <Button title="Opções" 
+         <Button 
+              style={{}}
+              title="Opções" 
               onPress={() => {
                 this.setState({isVisible:true})   
                         }}
             />
-            <Text style={styles.Hora}>HH:MM</Text>
-                 <Button             
+
+          <Text style={styles.Hora}>
+              HH:MM {this.date}
+              </Text>
+          
+          <Button             
               title="Filtro"
               onPress={() => {
                 this.setState({isVisible:true})   
