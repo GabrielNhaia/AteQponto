@@ -2,18 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { Component } from 'react';
 import { Button, Modal, StyleSheet, Text, View, Image } from 'react-native';
 import moment from 'moment';
-import { runInThisContext } from 'vm';
 
 class telaCentral extends Component {
 
   constructor(props){
     super(props);
     this.state = {isVisible:false};
-    this.Date = new Date;
-    var date = moment()
-                  .utcOffset('+05:30')
-                  .format(' hh:mm:ss a');
-    setCurrentDate(date);
+   
   }
   render ( ) {
     
@@ -52,7 +47,7 @@ class telaCentral extends Component {
             />
 
           <Text style={styles.Hora}>
-              HH:MM {this.date}
+              HH:MM 
               </Text>
           
           <Button             
