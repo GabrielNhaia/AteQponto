@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 
 class Login extends Component {
 render() {
@@ -12,7 +12,9 @@ render() {
           backgroundColor="#cbf2d6"
           barStyle="light-content"
         />
-        <Text style={styles.titulo}>AteQponto</Text>
+
+        <Image style={{height:170, width:320, bottom: 25, borderRadius:35}} source={require("../assets/ATEQPONTO_logo.png")} />
+
         <TextInput
           style={styles.input}
           placeholder="Usuário"
@@ -55,6 +57,7 @@ render() {
     },
     input: {
       width: '90%',
+      borderRadius:12,
       backgroundColor: '#fff',
       padding: 15,
       marginBottom: 10,
@@ -67,7 +70,9 @@ render() {
     },
     userBtn: {
       backgroundColor: '#070a08',
+      top:5,
       padding: 15,
+      borderRadius:15,
       width: '45%',
     },
     btnTxt: {
