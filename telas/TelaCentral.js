@@ -22,6 +22,7 @@ class TelaCentral extends Component {
 
         <View style={{ height: 200, width: 200 }}>
           <Modal
+            //Modal de opções
             animationType='slide'
             visible={this.state.ver}
           >
@@ -40,17 +41,18 @@ class TelaCentral extends Component {
           </Modal>
 
           <Modal
+            //Modal de filtro
             animationType='slide'
             visible={this.state.isVisible}
           >
-            <View>
-              <Text>Filtrar perigo:</Text>
+            <View style={styles.colText}>
+              <Text style={{ fontSize: 20 }}>Filtrar perigo:</Text>
             </View>
-            <View>
-              <Text>Filtrar Por:</Text>
+            <View style={styles.colText}>
+              <Text style={{ fontSize: 20 }}>Filtrar Por:</Text>
             </View>
-            <View>
-              <Text>Mostrar pontos?</Text>
+            <View style={styles.colText}>
+              <Text style={{ fontSize: 20 }}>Mostrar pontos?</Text>
             </View>
             <View style={{ bottom: 8, position: "absolute", width: "100%" }}>
               <TouchableOpacity
@@ -127,6 +129,10 @@ const styles = StyleSheet.create({
   image: {
     justifyContent: 'flex-start',
     marginBottom: 700,
+  },
+  colText: {
+    paddingTop: 35,
+    flex: 1,
   },
   modal: {
     width: '50%',
