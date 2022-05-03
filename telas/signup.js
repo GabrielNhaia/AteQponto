@@ -5,11 +5,11 @@ import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 
 
 
 
-const signup = () => {
+const Signup = () => {
      return (
     <View style={styles.container}>
       <StatusBar
-        backgroundColor="#cbf2d6"
+        backgroundColor="#8FBC8F"
         barStyle="light-content"
       />
       <Text style={styles.titulo}>Registrar - se</Text>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#cbf2d6',
+    backgroundColor: '#8FBC8F',
   },
   titulo: {
     fontSize: 30,
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default signup;
+export default Signup;

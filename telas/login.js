@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 
-class login extends Component {
+class Login extends Component {
 render() {
     return (
   
@@ -9,10 +9,12 @@ render() {
       
   
         <StatusBar
-          backgroundColor="#cbf2d6"
+          backgroundColor="#8FBC8F"
           barStyle="light-content"
         />
-        <Text style={styles.titulo}>AteQponto</Text>
+
+        <Image style={{height:170, width:320, bottom: 25, borderRadius:12}} source={require("../assets/ATEQPONTO_logo.png")} />
+
         <TextInput
           style={styles.input}
           placeholder="Usuário"
@@ -25,15 +27,16 @@ render() {
         <View style={styles.btnContainer}>
           <TouchableOpacity
             style={styles.userBtn}
-            onPress={() => this.props.navigation.navigate('telaCentral')}
-          >
-            <Text style={styles.btnTxt}>Login</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => this.props.navigation.navigate('signup')}
+            onPress={() => this.props.navigation.navigate('Signup')}
           >
             <Text style={styles.btnTxt}>Registrar-se</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.userBtn}
+            onPress={() => this.props.navigation.navigate('TelaCentral')}
+          >
+            <Text style={styles.btnTxt}>Login</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -45,7 +48,7 @@ render() {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#cbf2d6',
+      backgroundColor: '#8FBC8F',
     },
     titulo: {
       fontSize: 30,
@@ -55,6 +58,7 @@ render() {
     },
     input: {
       width: '90%',
+      borderRadius:12,
       backgroundColor: '#fff',
       padding: 15,
       marginBottom: 10,
@@ -67,7 +71,9 @@ render() {
     },
     userBtn: {
       backgroundColor: '#070a08',
+      top:5,
       padding: 15,
+      borderRadius:15,
       width: '45%',
     },
     btnTxt: {
@@ -78,4 +84,4 @@ render() {
     }
   });
   
-  export default login;
+  export default Login;

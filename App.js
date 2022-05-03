@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import signup from './telas/signup';
-import login from './telas/login';
-import telaCentral from './telas/telaCentral';
+import Signup from './telas/Signup';
+import Login from './telas/Login';
+import TelaCentral from './telas/TelaCentral';
 
 
 class App extends Component {
@@ -14,26 +14,26 @@ class App extends Component {
 
     return (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName='login'>
+          <Stack.Navigator initialRouteName='Login'>
             <Stack.Screen
-              name='login'
-              component={login}
+              name='Login'
+              component={Login}
               options={{
                 headerTransparent:true,
                 headerShown:false,
               }}
             />
             <Stack.Screen
-              name='signup'
-              component={signup}
+              name='Signup'
+              component={Signup}
               options={{
                 headerTransparent:true,
                 headerShown:false,
               }}
             />
             <Stack.Screen
-              name='telaCentral'
-              component={telaCentral}
+              name='TelaCentral'
+              component={TelaCentral}
               options={{
                 headerTransparent:true,
                 headerShown:false,
