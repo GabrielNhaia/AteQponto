@@ -1,4 +1,3 @@
-
 import { Component, React } from 'react';
 import { Button, Modal, StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
