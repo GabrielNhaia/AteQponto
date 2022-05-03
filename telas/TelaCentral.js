@@ -1,6 +1,6 @@
 
 import { Component, React } from 'react';
-import { Button, Modal, StyleSheet, Text, View, Image } from 'react-native';
+import { Button, Modal, StyleSheet, Text, View,TouchableOpacity, Image } from 'react-native';
 
 
 
@@ -17,9 +17,9 @@ class TelaCentral extends Component {
 
     return (
 
-      
+
       <View style={styles.container}>
-        
+
         <View style={{ height: 200, width: 200 }}>
 
           <Modal
@@ -27,8 +27,6 @@ class TelaCentral extends Component {
             visible={this.state.isVisible}
           >
             <View style={{ height: 100, width: 150, backgroundColor: "#555", borderColor: "#888", borderWidth: 5, margin: 10, bottom: 10, left: 25, position: "absolute" }}>
-              
-
               <Button
                 style={{
                   height: 150,
@@ -39,8 +37,7 @@ class TelaCentral extends Component {
                 onPress={() => {
                   this.setState({ isVisible: false })
                 }}
-                />
-                
+              />
             </View>
           </Modal>
         </View>
@@ -51,24 +48,25 @@ class TelaCentral extends Component {
 
 
         <View style={styles.Opcoes} >
-          <Button
-            style={{}}
-            title="Opções"
+          <TouchableOpacity
+            style={styles.userBtn }
             onPress={() => {
               this.setState({ isVisible: true })
-            }}
-          />
+            }}>
+            <Text style={styles.btnTxt}>Opções</Text>
+          </TouchableOpacity>
 
           <Text style={styles.Hora}>
             HH:MM
           </Text>
 
-          <Button
-            title="Filtro"
+          <TouchableOpacity
+            style={styles.userBtn}
             onPress={() => {
               this.setState({ isVisible: true })
-            }}
-          />
+            }}>
+            <Text style={styles.btnTxt}>Filtro</Text>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -79,7 +77,7 @@ class TelaCentral extends Component {
 
 
 const styles = StyleSheet.create({
-  container: {
+  container: { 
     width: '100%',
     height: '8%',
     position: 'absolute',
@@ -87,6 +85,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  userBtn: {
+    backgroundColor: '#070a08',
+    padding: 15,
+    borderRadius: 15,
+    width: '35%',
   },
   image: {
     justifyContent: 'flex-start',
@@ -99,22 +103,31 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
   },
-  Opcoes: {
+  Opcoes: {    
+    backgroundColor: '#8FBC8F',
+    borderRadius:12,
     justifyContent: 'center',
     position: 'absolute',
     bottom: 9,
     flexDirection: "row",
   },
-  Hora: {
-    paddingLeft: 80,
-    paddingRight: 80,
-    paddingTop:12
+  Hora: {    
+    color: '#fff',
+    paddingLeft: '8%',
+    paddingRight: '8%',
+    paddingTop: 12
   },
   dialogo: {
     bottom: 0,
     height: '50%',
     width: '50%',
   },
+  btnTxt: {
+    fontSize: 14,
+    textAlign: 'center',
+    color: '#fff',
+
+  }
 });
 
 export default TelaCentral;

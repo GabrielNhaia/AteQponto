@@ -9,7 +9,7 @@ const Signup = () => {
      return (
     <View style={styles.container}>
       <StatusBar
-        backgroundColor="#B0C4DE"
+        backgroundColor="#8FBC8F"
         barStyle="light-content"
       />
       <Text style={styles.titulo}>Registrar - se</Text>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#B0C4DE',
+    backgroundColor: '#8FBC8F',
   },
   titulo: {
     fontSize: 30,

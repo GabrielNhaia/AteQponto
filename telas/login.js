@@ -9,7 +9,7 @@ render() {
       
   
         <StatusBar
-          backgroundColor="#B0C4DE"
+          backgroundColor="#8FBC8F"
           barStyle="light-content"
         />
 
@@ -48,7 +48,7 @@ render() {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#B0C4DE',
+      backgroundColor: '#8FBC8F',
     },
     titulo: {
       fontSize: 30,
