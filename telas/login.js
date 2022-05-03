@@ -9,7 +9,7 @@ render() {
       
   
         <StatusBar
-          backgroundColor="#cbf2d6"
+          backgroundColor="#B0C4DE"
           barStyle="light-content"
         />
 
@@ -27,15 +27,16 @@ render() {
         <View style={styles.btnContainer}>
           <TouchableOpacity
             style={styles.userBtn}
-            onPress={() => this.props.navigation.navigate('TelaCentral')}
-          >
-            <Text style={styles.btnTxt}>Login</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.userBtn}
             onPress={() => this.props.navigation.navigate('Signup')}
           >
             <Text style={styles.btnTxt}>Registrar-se</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.userBtn}
+            onPress={() => this.props.navigation.navigate('TelaCentral')}
+          >
+            <Text style={styles.btnTxt}>Login</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -47,7 +48,7 @@ render() {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#cbf2d6',
+      backgroundColor: '#B0C4DE',
     },
     titulo: {
       fontSize: 30,

@@ -1,7 +1,6 @@
 
 import { Component, React } from 'react';
 import { Button, Modal, StyleSheet, Text, View, Image } from 'react-native';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 
 
@@ -18,8 +17,9 @@ class TelaCentral extends Component {
 
     return (
 
-
+      
       <View style={styles.container}>
+        
         <View style={{ height: 200, width: 200 }}>
 
           <Modal
