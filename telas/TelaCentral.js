@@ -25,17 +25,22 @@ class TelaCentral extends Component {
             animationType='slide'
             visible={this.state.ver}
           >
-            <Button
+            <Image style={{ height: 200, width: 100, bottom: 25,top:25, left: "37%", borderRadius: 12 }} source={require("../assets/pinhao.png")} />
+            <View 
+              style={{bottom:0, position:"absolute", width:"100%"}}
+            > 
+              <Button
                 style={{
                   height: 150,
                   bottom: 0,
                   position: "absolute"
                 }}
-                title="Fechar"
+                title="Retornar"
                 onPress={() => {
                   this.setState({ ver: false })
                 }}
               />
+            </View>
           </Modal>
 
           <Modal
@@ -58,7 +63,7 @@ class TelaCentral extends Component {
                   bottom: 0,
                   position: "absolute"
                 }}
-                title="Fechar"
+                title="Retornar"
                 onPress={() => {
                   this.setState({ isVisible: false })
                 }}
