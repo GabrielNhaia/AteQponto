@@ -13,7 +13,7 @@ render() {
           barStyle="light-content"
         />
 
-        <Image style={{height:170, width:320, bottom: 25, borderRadius:35}} source={require("../assets/ATEQPONTO_logo.png")} />
+        <Image style={{height:170, width:320, bottom: 25, borderRadius:12}} source={require("../assets/ATEQPONTO_logo.png")} />
 
         <TextInput
           style={styles.input}
