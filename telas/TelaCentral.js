@@ -1,6 +1,6 @@
 
 import { Component, React } from 'react';
-import { Button, Modal, StyleSheet, Text, View,TouchableOpacity, Image } from 'react-native';
+import { Button, Modal, StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 
 
@@ -8,7 +8,7 @@ class TelaCentral extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { isVisible: false };
+    this.state = { isVisible: false, ver: false };
 
   }
 
@@ -21,11 +21,36 @@ class TelaCentral extends Component {
       <View style={styles.container}>
 
         <View style={{ height: 200, width: 200 }}>
+          <Modal
+            animationType='slide'
+            visible={this.state.ver}
+          >
+            <Button
+                style={{
+                  height: 150,
+                  bottom: 0,
+                  position: "absolute"
+                }}
+                title="Fechar"
+                onPress={() => {
+                  this.setState({ ver: false })
+                }}
+              />
+          </Modal>
 
           <Modal
-            animationType='fade'
+            animationType='slide'
             visible={this.state.isVisible}
           >
+            <View>
+              <Text>Filtrar perigo:</Text>
+            </View>
+            <View>
+              <Text>Filtrar Por:</Text>
+            </View>
+            <View>
+              <Text>Mostrar pontos?</Text>
+            </View>
             <View style={{ height: 100, width: 150, backgroundColor: "#555", borderColor: "#888", borderWidth: 5, margin: 10, bottom: 10, left: 25, position: "absolute" }}>
               <Button
                 style={{
@@ -41,6 +66,8 @@ class TelaCentral extends Component {
             </View>
           </Modal>
         </View>
+
+
         <View style={styles.container}>
           <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
         </View>
@@ -49,9 +76,9 @@ class TelaCentral extends Component {
 
         <View style={styles.Opcoes} >
           <TouchableOpacity
-            style={styles.userBtn }
+            style={styles.userBtn}
             onPress={() => {
-              this.setState({ isVisible: true })
+              this.setState({ ver: true })
             }}>
             <Text style={styles.btnTxt}>Opções</Text>
           </TouchableOpacity>
@@ -77,7 +104,7 @@ class TelaCentral extends Component {
 
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     width: '100%',
     height: '8%',
     position: 'absolute',
@@ -103,15 +130,15 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
   },
-  Opcoes: {    
+  Opcoes: {
     backgroundColor: '#8FBC8F',
-    borderRadius:12,
+    borderRadius: 12,
     justifyContent: 'center',
     position: 'absolute',
     bottom: 9,
     flexDirection: "row",
   },
-  Hora: {    
+  Hora: {
     color: '#fff',
     paddingLeft: '8%',
     paddingRight: '8%',
