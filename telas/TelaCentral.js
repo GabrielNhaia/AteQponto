@@ -5,7 +5,7 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 
 
-class telaCentral extends Component {
+class TelaCentral extends Component {
 
   constructor(props) {
     super(props);
@@ -27,7 +27,7 @@ class telaCentral extends Component {
             visible={this.state.isVisible}
           >
             <View style={{ height: 100, width: 150, backgroundColor: "#555", borderColor: "#888", borderWidth: 5, margin: 10, bottom: 10, left: 25, position: "absolute" }}>
-              <View style={{bottom:0, position:"absolute", width:140, borderRadius:225}}>
+              
 
               <Button
                 style={{
@@ -40,7 +40,7 @@ class telaCentral extends Component {
                   this.setState({ isVisible: false })
                 }}
                 />
-                </View>
+                
             </View>
           </Modal>
         </View>
@@ -117,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default telaCentral;
+export default TelaCentral;

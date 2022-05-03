@@ -5,7 +5,7 @@ import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 
 
 
 
-const signup = () => {
+const Signup = () => {
      return (
     <View style={styles.container}>
       <StatusBar
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default signup;
+export default Signup;

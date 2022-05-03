@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
 
-class login extends Component {
+class Login extends Component {
 render() {
     return (
   
@@ -25,13 +25,13 @@ render() {
         <View style={styles.btnContainer}>
           <TouchableOpacity
             style={styles.userBtn}
-            onPress={() => this.props.navigation.navigate('telaCentral')}
+            onPress={() => this.props.navigation.navigate('TelaCentral')}
           >
             <Text style={styles.btnTxt}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.userBtn}
-            onPress={() => this.props.navigation.navigate('signup')}
+            onPress={() => this.props.navigation.navigate('Signup')}
           >
             <Text style={styles.btnTxt}>Registrar-se</Text>
           </TouchableOpacity>
@@ -78,4 +78,4 @@ render() {
     }
   });
   
-  export default login;
+  export default Login;
