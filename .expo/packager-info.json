@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
+  "expoServerPort": null,
   "packagerPort": 19000,
   "packagerPid": null,
   "expoServerNgrokUrl": "https://ny-izz.anonymous.ateqponto.exp.direct",
   "packagerNgrokUrl": "https://ny-izz.anonymous.ateqponto.exp.direct",
-  "ngrokPid": 19040,
+  "ngrokPid": 3328,
   "webpackServerPort": null
 }
