@@ -25,21 +25,17 @@ class TelaCentral extends Component {
             animationType='slide'
             visible={this.state.ver}
           >
-            <Image style={{ height: 200, width: 100, bottom: 25,top:25, left: "37%", borderRadius: 12 }} source={require("../assets/pinhao.png")} />
-            <View 
-              style={{bottom:0, position:"absolute", width:"100%"}}
-            > 
-              <Button
-                style={{
-                  height: 150,
-                  bottom: 0,
-                  position: "absolute"
-                }}
-                title="Retornar"
+            <Image style={{ height: 200, width: 100, bottom: 25, top: 25, left: "37%", borderRadius: 12 }} source={require("../assets/pinhao.png")} />
+            <View
+              style={{ bottom: 8, position: "absolute", width: "100%" }}
+            >
+              <TouchableOpacity
+                style={styles.retornar}
                 onPress={() => {
                   this.setState({ ver: false })
-                }}
-              />
+                }}>
+                <Text style={styles.btnTxt}>↩Retornar</Text>
+              </TouchableOpacity>
             </View>
           </Modal>
 
@@ -56,19 +52,16 @@ class TelaCentral extends Component {
             <View>
               <Text>Mostrar pontos?</Text>
             </View>
-            <View style={{ height: 100, width: 150, backgroundColor: "#555", borderColor: "#888", borderWidth: 5, margin: 10, bottom: 10, left: 25, position: "absolute" }}>
-              <Button
-                style={{
-                  height: 150,
-                  bottom: 0,
-                  position: "absolute"
-                }}
-                title="Retornar"
+            <View style={{ bottom: 8, position: "absolute", width: "100%" }}>
+              <TouchableOpacity
+                style={styles.retornar}
                 onPress={() => {
                   this.setState({ isVisible: false })
-                }}
-              />
+                }}>
+                <Text style={styles.btnTxt}>↩Retornar</Text>
+              </TouchableOpacity>
             </View>
+
           </Modal>
         </View>
 
@@ -118,6 +111,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  retornar: {
+    backgroundColor: '#070a08',
+    left: 2,
+    padding: 15,
+    borderRadius: 15,
+    width: '99%',
+  },
   userBtn: {
     backgroundColor: '#070a08',
     padding: 15,
@@ -158,7 +158,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     color: '#fff',
-
   }
 });
 
