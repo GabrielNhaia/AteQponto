@@ -19,14 +19,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "application":{
-      "meta-data": {
-        "android":{
-          "name":"com.google.android.geo.AIzaSyAq9KYtnnomDm9hDiIwTLLleDNoLJOcfKc",
-          "value":"AIzaSyAq9KYtnnomDm9hDiIwTLLleDNoLJOcfKc"        
-        }
-      }
-    },
+    
     "android": {
             
       "adaptiveIcon": {

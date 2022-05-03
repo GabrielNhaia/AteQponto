@@ -20,32 +20,28 @@ class telaCentral extends Component {
 
 
       <View style={styles.container}>
-
-        
-
-
-        <View style={{ height: 300, width: 300 }}>
+        <View style={{ height: 200, width: 200 }}>
 
           <Modal
             animationType='fade'
             visible={this.state.isVisible}
           >
+            <View style={{ height: 100, width: 150, backgroundColor: "#555", borderColor: "#888", borderWidth: 5, margin: 10, bottom: 10, left: 25, position: "absolute" }}>
+              <View style={{bottom:0, position:"absolute", width:140, borderRadius:225}}>
 
-            <Button title="Fechar"
-              onPress={() => {
-                this.setState({ isVisible: false })
-              }}
-
-            />
-            <MapView
-              initialRegion={{
-                latitude: 37.78825,
-                longitude: -122.4324,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
-              }}
-            />
-
+              <Button
+                style={{
+                  height: 150,
+                  bottom: 0,
+                  position: "absolute"
+                }}
+                title="Fechar"
+                onPress={() => {
+                  this.setState({ isVisible: false })
+                }}
+                />
+                </View>
+            </View>
           </Modal>
         </View>
         <View style={styles.container}>
@@ -74,8 +70,6 @@ class telaCentral extends Component {
             }}
           />
         </View>
-
-
       </View>
 
     );
@@ -87,7 +81,7 @@ class telaCentral extends Component {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: '30%',
+    height: '8%',
     position: 'absolute',
     bottom: 0,
     backgroundColor: '#fff',
@@ -108,12 +102,13 @@ const styles = StyleSheet.create({
   Opcoes: {
     justifyContent: 'center',
     position: 'absolute',
-    bottom: 0,
+    bottom: 9,
     flexDirection: "row",
   },
   Hora: {
     paddingLeft: 80,
     paddingRight: 80,
+    paddingTop:12
   },
   dialogo: {
     bottom: 0,
