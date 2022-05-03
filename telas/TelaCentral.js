@@ -16,8 +16,6 @@ class TelaCentral extends Component {
   render() {
 
     return (
-
-
       <View style={styles.container}>
 
         <View style={{ height: 200, width: 200 }}>
@@ -63,16 +61,12 @@ class TelaCentral extends Component {
                 <Text style={styles.btnTxt}>↩Retornar</Text>
               </TouchableOpacity>
             </View>
-
           </Modal>
         </View>
-
 
         <View style={styles.container}>
           <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
         </View>
-
-
 
         <View style={styles.Opcoes} >
           <TouchableOpacity
@@ -96,12 +90,10 @@ class TelaCentral extends Component {
           </TouchableOpacity>
         </View>
       </View>
-
     );
   }
 
 }
-
 
 const styles = StyleSheet.create({
   container: {
