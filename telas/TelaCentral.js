@@ -17,6 +17,10 @@ class TelaCentral extends Component {
     return (
       <View style={styles.container}>
 
+        <View style={styles.perfTam}>
+          <Image style={{height:70, width:70, borderRadius:40}} source={require("../assets/perf.png")} />
+        </View>
+
         <View style={{ height: 200, width: 200 }}>
           <Modal
             //Modal de opções
@@ -63,6 +67,8 @@ class TelaCentral extends Component {
           </Modal>
         </View>
 
+
+
         <View style={styles.container}>
           <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
         </View>
@@ -103,6 +109,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  perfTam: {
+    height: 25,
+    width: 25,
+    top: -500,
+    left:"28%",
+    zIndex: 1,
+    borderRadius:30,
   },
   retornar: {
     backgroundColor: '#070a08',
