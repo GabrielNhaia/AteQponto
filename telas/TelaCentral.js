@@ -86,6 +86,8 @@ class TelaCentral extends Component {
         </View>
 
         <View style={styles.Opcoes} >
+          
+          {/* botão para abrir modal de opções */}
           <TouchableOpacity
             style={styles.userBtn}
             onPress={() => {
@@ -97,7 +99,9 @@ class TelaCentral extends Component {
           <Text style={styles.Hora}>
             HH:MM
           </Text>
-
+          
+          
+          {/* botão para abrir modal de filtros */}
           <TouchableOpacity
             style={styles.userBtn}
             onPress={() => {
