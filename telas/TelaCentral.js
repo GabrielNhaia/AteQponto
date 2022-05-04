@@ -1,5 +1,6 @@
 import { Component, React } from 'react';
-import { Button, Modal, StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { Modal, StyleSheet, Text, View, TouchableOpacity, Image, } from 'react-native';
+import CheckBox from 'react-native-check-box'
 
 
 
@@ -7,8 +8,7 @@ class TelaCentral extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { isVisible: false, ver: false };
-
+    this.state = { isVisible: false, ver: false, isSelected: false };
   }
 
 
@@ -18,7 +18,7 @@ class TelaCentral extends Component {
       <View style={styles.container}>
 
         <View style={styles.perfTam}>
-          <Image style={{height:70, width:70, borderRadius:40}} source={require("../assets/perf.png")} />
+          <Image style={{ height: 70, width: 70, borderRadius: 40 }} source={require("../assets/perf.png")} />
         </View>
 
         <View style={{ height: 200, width: 200 }}>
@@ -43,17 +43,29 @@ class TelaCentral extends Component {
 
           <Modal
             //Modal de filtro
+            transparent={true}
             animationType='slide'
             visible={this.state.isVisible}
           >
-            <View style={styles.colText}>
-              <Text style={{ fontSize: 20 }}>Filtrar perigo:</Text>
+
+            <View style={styles.umColText}>
+              <Text style={{ fontSize: 20}}>Filtrar perigo:</Text>
             </View>
             <View style={styles.colText}>
               <Text style={{ fontSize: 20 }}>Filtrar Por:</Text>
             </View>
             <View style={styles.colText}>
               <Text style={{ fontSize: 20 }}>Mostrar pontos?</Text>
+              <CheckBox
+                style={{ padding: 10, fontSize: 25 }}
+                onClick={() => {
+                  this.setState({
+                    isChecked: !this.state.isChecked
+                  })
+                }}
+                isChecked={this.state.isChecked}
+                leftText={this.state.isChecked ? "Sim 👍" : "Não 👎"}
+              />
             </View>
             <View style={{ bottom: 8, position: "absolute", width: "100%" }}>
               <TouchableOpacity
@@ -114,9 +126,9 @@ const styles = StyleSheet.create({
     height: 25,
     width: 25,
     top: -500,
-    left:"28%",
+    left: "28%",
     zIndex: 1,
-    borderRadius:30,
+    borderRadius: 30,
   },
   retornar: {
     backgroundColor: '#070a08',
@@ -135,9 +147,26 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     marginBottom: 700,
   },
-  colText: {
-    paddingTop: 35,
+  umColText:{
+    marginTop:"100%",
     flex: 1,
+    maxHeight: 80,
+    width: "97%",
+    paddingLeft: "2%",
+    margin: 5,
+    marginLeft: 5,
+    borderRadius: 10,
+    backgroundColor: '#8FBC8F',
+  },
+  colText: {
+    flex: 1,
+    maxHeight: 80,
+    width: "97%",
+    paddingLeft: "2%",
+    margin: 5,
+    marginLeft: 5,
+    borderRadius: 10,
+    backgroundColor: '#8FBC8F',
   },
   modal: {
     width: '50%',
