@@ -47,17 +47,17 @@ class TelaCentral extends Component {
             animationType='slide'
             visible={this.state.isVisible}
           >
-
+            
             <View style={styles.umColText}>
-              <Text style={{ fontSize: 20}}>Filtrar perigo:</Text>
+              <Text style={{ fontSize: 20, color:"#fff"}}>Filtrar perigo:</Text>
             </View>
             <View style={styles.colText}>
-              <Text style={{ fontSize: 20 }}>Filtrar Por:</Text>
+              <Text style={{ fontSize: 20, color:"#fff" }}>Filtrar Por:</Text>
             </View>
             <View style={styles.colText}>
-              <Text style={{ fontSize: 20 }}>Mostrar pontos?</Text>
+              <Text style={{ fontSize: 20, color:"#fff" }}>Mostrar pontos?</Text>
               <CheckBox
-                style={{ padding: 10, fontSize: 25 }}
+                style={{ padding: 10 }}
                 onClick={() => {
                   this.setState({
                     isChecked: !this.state.isChecked
