@@ -8,7 +8,7 @@ class TelaCentral extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { isVisible: false, ver: false, isSelected: false };
+    this.state = { isVisible: false, ver: false, isSelected: true };
   }
 
 
@@ -52,7 +52,7 @@ class TelaCentral extends Component {
               <Text style={{ fontSize: 20, color:"#fff"}}>Filtrar perigo:</Text>
             </View>
             <View style={styles.colText}>
-              <Text style={{ fontSize: 20, color:"#fff" }}>Filtrar Por:</Text>
+              <Text style={{ fontSize: 20, color:"#fff" }}>Filtrar Por periodo:</Text>
             </View>
             <View style={styles.colText}>
               <Text style={{ fontSize: 20, color:"#fff" }}>Mostrar pontos?</Text>
