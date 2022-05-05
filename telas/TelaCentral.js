@@ -1,11 +1,13 @@
-import { Component, React } from 'react';
+import { Component, React, useState  } from 'react';
 import { Modal, StyleSheet, Text, View, TouchableOpacity, Image, } from 'react-native';
-import CheckBox from 'react-native-check-box'
+import CheckBox from 'react-native-check-box';
+import { Picker } from '@react-native-picker/picker';
 
 
 
 class TelaCentral extends Component {
-
+  
+  
   constructor(props) {
     super(props);
     this.state = { isVisible: false, ver: false, isSelected: true };
@@ -28,9 +30,11 @@ class TelaCentral extends Component {
             visible={this.state.ver}
           >
             <Image style={{ height: 200, width: 100, bottom: 25, top: 25, left: "37%", borderRadius: 12 }} source={require("../assets/pinhao.png")} />
+
+            
+
             <View
-              style={{ bottom: 8, position: "absolute", width: "100%" }}
-            >
+              style={{ bottom: 8, position: "absolute", width: "100%" }}   >
               <TouchableOpacity
                 style={styles.retornar}
                 onPress={() => {
@@ -47,15 +51,15 @@ class TelaCentral extends Component {
             animationType='slide'
             visible={this.state.isVisible}
           >
-            
+
             <View style={styles.umColText}>
-              <Text style={{ fontSize: 20, color:"#fff"}}>Filtrar perigo:</Text>
+              <Text style={{ fontSize: 20, color: "#fff" }}>Filtrar perigo:</Text>
             </View>
             <View style={styles.colText}>
-              <Text style={{ fontSize: 20, color:"#fff" }}>Filtrar Por periodo:</Text>
+              <Text style={{ fontSize: 20, color: "#fff" }}>Filtrar Por periodo:</Text>
             </View>
             <View style={styles.colText}>
-              <Text style={{ fontSize: 20, color:"#fff" }}>Mostrar pontos?</Text>
+              <Text style={{ fontSize: 20, color: "#fff" }}>Mostrar pontos?</Text>
               <CheckBox
                 style={{ padding: 10 }}
                 onClick={() => {
@@ -86,7 +90,7 @@ class TelaCentral extends Component {
         </View>
 
         <View style={styles.Opcoes} >
-          
+
           {/* botão para abrir modal de opções */}
           <TouchableOpacity
             style={styles.userBtn}
@@ -99,8 +103,8 @@ class TelaCentral extends Component {
           <Text style={styles.Hora}>
             HH:MM
           </Text>
-          
-          
+
+
           {/* botão para abrir modal de filtros */}
           <TouchableOpacity
             style={styles.userBtn}
@@ -151,8 +155,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     marginBottom: 700,
   },
-  umColText:{
-    marginTop:"100%",
+  umColText: {
+    marginTop: "100%",
     flex: 1,
     maxHeight: 80,
     width: "97%",
