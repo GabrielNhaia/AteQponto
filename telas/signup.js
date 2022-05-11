@@ -2,9 +2,6 @@
 import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
 
-
-
-
 const Signup = () => {
   return (
     <View style={styles.container}>
