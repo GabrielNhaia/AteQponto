@@ -1,12 +1,9 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
 
-
-
-
 const Signup = () => {
-     return (
+  return (
     <View style={styles.container}>
       <StatusBar
         backgroundColor="#8FBC8F"
@@ -14,27 +11,27 @@ const Signup = () => {
       />
       <Text style={styles.titulo}>Registrar - se</Text>
       <TextInput
-          style={styles.input}
-          placeholder="Email"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Nome completo"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="CPF"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          secureTextEntry
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Confirme sua Senha"
-          secureTextEntry
-        />
+        style={styles.input}
+        placeholder="Email"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Nome completo"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="CPF"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Senha"
+        secureTextEntry
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Confirme sua Senha"
+        secureTextEntry
+      />
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={styles.userBtn}
@@ -43,7 +40,7 @@ const Signup = () => {
         </TouchableOpacity>
       </View>
     </View>
-    );
+  );
 }
 
 const styles = StyleSheet.create({
@@ -61,26 +58,27 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '90%',
-    backgroundColor:'#fff',
+    borderRadius: 12,
+    backgroundColor: '#fff',
     padding: 15,
     marginBottom: 10,
   },
-  btnContainer:{
-    flexDirection:'row',
-    justifyContent:'space-between',
+  btnContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     width: '90%',
-
   },
   userBtn: {
     backgroundColor: '#070a08',
+    top: 5,
     padding: 15,
+    borderRadius: 15,
     width: '100%',
   },
-  btnTxt:{
+  btnTxt: {
     fontSize: 18,
     textAlign: 'center',
     color: '#fff',
-
   }
 
 });
