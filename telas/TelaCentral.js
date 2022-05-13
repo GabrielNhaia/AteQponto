@@ -5,7 +5,8 @@ import { Picker } from '@react-native-picker/picker';
 
 export default function TelaCentral() {
 
-  const [selectedLanguage, setSelectedLanguage] = useState();
+  const [horas, sethoras] = useState();
+  const [minutos, setminutos] = useState();
   const [isVisible, setisVisible] = useState(false);
   const [ver, setver] = useState(false);
   const [isChecked, setisChecked] = useState(true);
@@ -24,6 +25,23 @@ export default function TelaCentral() {
           visible={ver}
         >
           <Image style={{ height: 200, width: 100, bottom: 25, top: 25, left: "37%", borderRadius: 12 }} source={require("../assets/pinhao.png")} />
+          
+          <Picker
+            selectedValue={horas}
+            onValueChange={(itemValue, itemIndex) =>
+              sethoras(itemValue)
+            }>
+            <Picker.Item label="1" value="1" />
+            <Picker.Item label="2" value="2" />
+          </Picker>
+          <Picker
+            selectedValue={horas}
+            onValueChange={(itemValue, itemIndex) =>
+              sethoras(itemValue)
+            }>
+            <Picker.Item label="1" value="1" />
+            <Picker.Item label="2" value="2" />
+          </Picker>
 
           <View
             style={{ bottom: 8, position: "absolute", width: "100%" }}   >
