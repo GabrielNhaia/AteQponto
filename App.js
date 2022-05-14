@@ -1,11 +1,12 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
+import { StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Signup from './telas/Signup';
 import Login from './telas/Login';
 import TelaCentral from './telas/TelaCentral';
+import Perfil from './telas/Perfil';
 
 
 class App extends Component {
@@ -38,7 +39,15 @@ class App extends Component {
                 headerTransparent:true,
                 headerShown:false,
               }}
-            />            
+            /> 
+            <Stack.Screen
+              name='Perfil'
+              component={Perfil}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
+            />           
           </Stack.Navigator>
         </NavigationContainer>
      
