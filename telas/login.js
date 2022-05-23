@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 
+
 class Login extends Component {
-
-
   render() {
     return (
 
       <View style={styles.container}>
-
-
         <StatusBar
           backgroundColor="#8FBC8F"
           barStyle="light-content"
