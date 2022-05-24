@@ -3,6 +3,7 @@ import { Modal, StyleSheet, Text, View, TouchableOpacity, Image, } from 'react-n
 import CheckBox from 'react-native-check-box';
 import { Picker } from '@react-native-picker/picker';
 
+
 export default function TelaCentral() {
 
   const [horas, sethoras] = useState("Curi");
@@ -37,19 +38,18 @@ export default function TelaCentral() {
         >
           <Image style={{ height: 200, width: 100, bottom: 25, top: 25, left: "37%", borderRadius: 12 }} source={require("../assets/pinhao.png")} />
 
-          <View style={{ maxWidth: "90%", left: '5%', top: 25 }}>
+          <View style={{ maxWidth: "100%", alignItems: 'center', top: 25}}>
             <TouchableOpacity
-              style={styles.retornar}
+              style={styles.userBtnOption}
               onPress={() => {
-                setver(false)
+                setisVisible(true)
               }}>
-              <Text style={styles.btnTxt}>↩Retornar</Text>
+              <Text style={styles.btnTxt}>Filtros</Text>
             </TouchableOpacity>
-
           </View>
 
           {/*View picker*/}
-          <View style={{ flex: 1, flexDirection: 'row' }} >
+          <View style={{ flex: 1, flexDirection: 'row', maxHeight:60, marginTop:'8%'}} >
             {/*picker da hora*/}
             <Picker
               style={styles.picker}
@@ -206,8 +206,6 @@ export default function TelaCentral() {
         </Modal>
       </View>
 
-
-
       {/* 
       */}
       <View style={{ position: 'absolute', zIndex: -1 }}>
@@ -268,6 +266,13 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 15,
     width: '99%',
+  },
+  userBtnOption: {
+    backgroundColor: '#070a08',
+    padding: 15,
+    borderRadius: 15,
+    width: '95%',
+    alignItems: 'center',
   },
   userBtn: {
     backgroundColor: '#070a08',
