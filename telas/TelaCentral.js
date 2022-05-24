@@ -15,21 +15,23 @@ export default function TelaCentral() {
   return (
     <View style={styles.container}>
 
-      {/* Botão de perfil */}
-      <View style={{left:"35%", top:"-25%"}} >
+      {/* Botão de perfil*/}
+      <View style={{ left: "35%", top: "-25%" }} >
         <TouchableOpacity
-          style={{ height:70, width: 70}}
+          style={{ height: 70, width: 70 }}
           onPress={() => {
             setver(true)
           }}>
-          <Image style={{ maxWidth:70, maxHeight:70, borderRadius: 40,  }} source={require("../assets/perf.png")} />
+          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 40, }} source={require("../assets/perf.png")} />
         </TouchableOpacity>
       </View>
 
 
+      {/* Modais */}
       <View style={{ height: 200, width: 200 }}>
+
+        {/* Modal de opções*/}
         <Modal
-          //Modal de opções
           animationType='slide'
           visible={ver}
         >
@@ -107,7 +109,8 @@ export default function TelaCentral() {
             </TouchableOpacity>
           </View>
         </Modal>
-
+        
+        {/* Modal de filtro*/}
         <Modal
           //Modal de filtro
           transparent={true}
@@ -203,39 +206,39 @@ export default function TelaCentral() {
         </Modal>
       </View>
 
-      
 
-        {/* 
+
+      {/* 
       */}
-        <View style={{position: 'absolute',zIndex:-1}}>
-          <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
-        </View>
-
-        <View style={styles.Opcoes} >
-
-          {/* botão para abrir modal de opções */}
-          <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => {
-              setver(true)
-            }}>
-            <Text style={styles.btnTxt}>Opções</Text>
-          </TouchableOpacity>
-
-          <Text style={styles.Hora} >
-            {horas}:{minutos}
-          </Text>
-
-          {/* botão para abrir modal de filtros */}
-          <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => {
-              setisVisible(true)
-            }}>
-            <Text style={styles.btnTxt}>Filtro</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={{ position: 'absolute', zIndex: -1 }}>
+        <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
       </View>
+
+      <View style={styles.Opcoes} >
+
+        {/* botão para abrir modal de opções */}
+        <TouchableOpacity
+          style={styles.userBtn}
+          onPress={() => {
+            setver(true)
+          }}>
+          <Text style={styles.btnTxt}>Opções</Text>
+        </TouchableOpacity>
+
+        <Text style={styles.Hora} >
+          {horas}:{minutos}
+        </Text>
+
+        {/* botão para abrir modal de filtros */}
+        <TouchableOpacity
+          style={styles.userBtn}
+          onPress={() => {
+            setisVisible(true)
+          }}>
+          <Text style={styles.btnTxt}>Filtro</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
 
@@ -251,7 +254,7 @@ const styles = StyleSheet.create({
   perfTam: {
     height: 25,
     width: 25,
-    zIndex:1,
+    zIndex: 1,
     borderRadius: 30,
   },
   picker: {
@@ -274,7 +277,7 @@ const styles = StyleSheet.create({
   },
   image: {
     justifyContent: 'flex-start',
-    zIndex:-1,
+    zIndex: -1,
   },
   umColText: {
     marginTop: "100%",
