@@ -33,23 +33,53 @@ export default function TelaCentral() {
 
         {/* Modal de opções*/}
         <Modal
-          animationType='slide'
+          animationType='slide'          
+          transparent={false}
           visible={ver}
         >
+          {/*
           <Image style={{ height: 200, width: 100, bottom: 25, top: 25, left: "37%", borderRadius: 12 }} source={require("../assets/pinhao.png")} />
+           */}
 
-          <View style={{ maxWidth: "100%", alignItems: 'center', top: 25}}>
+          <View style={{ maxWidth: "100%",minHeight: '10%', alignItems: 'center', top: 25, marginTop:'70%'}}>
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
                 setisVisible(true)
               }}>
-              <Text style={styles.btnTxt}>Filtros</Text>
+              <Text style={styles.btnTxt}>Filtros🌪</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ maxWidth: "100%",minHeight: '10%', alignItems: 'center', top: 25}}>
+            <TouchableOpacity
+              style={styles.userBtnOption}
+              onPress={() => {
+                setisVisible(true)
+              }}>
+              <Text style={styles.btnTxt}>Notificações❗</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ maxWidth: "100%",minHeight: '10%', alignItems: 'center', top: 25}}>
+            <TouchableOpacity
+              style={styles.userBtnOption}
+              onPress={() => {
+                setisVisible(true)
+              }}>
+              <Text style={styles.btnTxt}>Feedback😀</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ maxWidth: "100%",minHeight: '10%', alignItems: 'center', top: 25}}>
+            <TouchableOpacity
+              style={styles.userBtnOption}
+              onPress={() => {
+                setisVisible(true)
+              }}>
+              <Text style={styles.btnTxt}>Sair🚪</Text>
             </TouchableOpacity>
           </View>
 
           {/*View picker*/}
-          <View style={{ flex: 1, flexDirection: 'row', maxHeight:60, marginTop:'8%'}} >
+          <View style={{ flex: 1, flexDirection: 'row', left:'1%',width:'97%', maxHeight:60, marginTop:'8%', paddingLeft:'10%', backgroundColor:'#8FBC8F', borderRadius:20}} >
             {/*picker da hora*/}
             <Picker
               style={styles.picker}
@@ -256,9 +286,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   picker: {
-    width: "40%",
-    maxWidth: "50%",
-    left: "1%"
+    width: "45%",
+    left: "15%"
   },
   retornar: {
     backgroundColor: '#070a08',
