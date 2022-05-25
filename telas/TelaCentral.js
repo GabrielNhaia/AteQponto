@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import { Modal, StyleSheet, Text, View, TouchableOpacity, Image, } from 'react-native';
 import CheckBox from 'react-native-check-box';
 import { Picker } from '@react-native-picker/picker';
+import MapView from 'react-native-maps';
 
 
 export default function TelaCentral() {
@@ -17,7 +18,7 @@ export default function TelaCentral() {
     <View style={styles.container}>
 
       {/* Botão de perfil*/}
-      <View style={{ left: "35%", top: "-25%" }} >
+      <View style={{ left: "35%", top: "-25%"}} >
         <TouchableOpacity
           style={{ height: 70, width: 70 }}
           onPress={() => {
@@ -33,7 +34,7 @@ export default function TelaCentral() {
 
         {/* Modal de opções*/}
         <Modal
-          animationType='slide'          
+          animationType='slide'
           transparent={false}
           visible={ver}
         >
@@ -41,7 +42,7 @@ export default function TelaCentral() {
           <Image style={{ height: 200, width: 100, bottom: 25, top: 25, left: "37%", borderRadius: 12 }} source={require("../assets/pinhao.png")} />
            */}
 
-          <View style={{ maxWidth: "100%",minHeight: '10%', alignItems: 'center', top: 25, marginTop:'70%'}}>
+          <View style={{ maxWidth: "100%", minHeight: '10%', alignItems: 'center', top: 25, marginTop: '70%' }}>
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
@@ -50,7 +51,7 @@ export default function TelaCentral() {
               <Text style={styles.btnTxt}>Filtros🌪</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ maxWidth: "100%",minHeight: '10%', alignItems: 'center', top: 25}}>
+          <View style={{ maxWidth: "100%", minHeight: '10%', alignItems: 'center', top: 25 }}>
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
@@ -59,7 +60,7 @@ export default function TelaCentral() {
               <Text style={styles.btnTxt}>Notificações❗</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ maxWidth: "100%",minHeight: '10%', alignItems: 'center', top: 25}}>
+          <View style={{ maxWidth: "100%", minHeight: '10%', alignItems: 'center', top: 25 }}>
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
@@ -68,7 +69,7 @@ export default function TelaCentral() {
               <Text style={styles.btnTxt}>Feedback😀</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ maxWidth: "100%",minHeight: '10%', alignItems: 'center', top: 25}}>
+          <View style={{ maxWidth: "100%", minHeight: '10%', alignItems: 'center', top: 25 }}>
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
@@ -79,7 +80,7 @@ export default function TelaCentral() {
           </View>
 
           {/*View picker*/}
-          <View style={{ flex: 1, flexDirection: 'row', left:'1%',width:'97%', maxHeight:60, marginTop:'8%', paddingLeft:'10%', backgroundColor:'#2d742d', borderRadius:20}} >
+          <View style={{ flex: 1, flexDirection: 'row', left: '1%', width: '97%', maxHeight: 60, marginTop: '8%', paddingLeft: '10%', backgroundColor: '#2d742d', borderRadius: 20 }} >
             {/*picker da hora*/}
             <Picker
               style={styles.picker}
@@ -139,7 +140,7 @@ export default function TelaCentral() {
             </TouchableOpacity>
           </View>
         </Modal>
-        
+
         {/* Modal de filtro*/}
         <Modal
           //Modal de filtro
@@ -238,9 +239,18 @@ export default function TelaCentral() {
 
       {/* 
       */}
-      <View style={{ position: 'absolute', zIndex: -1 }}>
-        <Image style={styles.image} source={require("../assets/MapaPlaceholder.jpg")} />
-      </View>
+      
+        <View style={{ width: "100%", height: "100%",position:'absolute', zIndex:-2}}>
+          <MapView
+            style={{ width: "100%", height: "100%" }}
+            initialRegion={{
+              latitude: -25.481162102936597,
+              longitude: -49.29087692187499,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+          />
+        </View>
 
       <View style={styles.Opcoes} >
 
