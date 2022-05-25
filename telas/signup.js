@@ -2,26 +2,28 @@
 import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
 
-const Signup = () => {
-  return (
-    <View style={styles.container}>
+export default class Signup extends Component {
+  render(){
+
+    return (
+      <View style={styles.container}>
       <StatusBar
-        backgroundColor="#8FBC8F"
+        backgroundColor="#2d742d"
         barStyle="light-content"
-      />
+        />
       <Text style={styles.titulo}>Registrar - se</Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
-      />
+        />
       <TextInput
         style={styles.input}
         placeholder="Nome completo"
-      />
+        />
       <TextInput
         style={styles.input}
         placeholder="CPF"
-      />
+        />
       <TextInput
         style={styles.input}
         placeholder="Senha"
@@ -31,16 +33,18 @@ const Signup = () => {
         style={styles.input}
         placeholder="Confirme sua Senha"
         secureTextEntry
-      />
+        />
       <View style={styles.btnContainer}>
         <TouchableOpacity
-          style={styles.userBtn}
-        >
+          style={styles.userBtn}          
+          onPress={() => this.props.navigation.navigate('Login')}
+          >
           <Text style={styles.btnTxt}>Registre-se</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
+}
 }
 
 const styles = StyleSheet.create({
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#8FBC8F',
+    backgroundColor: '#2d742d',
   },
   titulo: {
     fontSize: 30,
@@ -80,7 +84,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#fff',
   }
-
+  
 });
-
-export default Signup;
