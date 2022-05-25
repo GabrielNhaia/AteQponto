@@ -8,11 +8,11 @@ class Login extends Component {
 
       <View style={styles.container}>
         <StatusBar
-          backgroundColor="#8FBC8F"
+          backgroundColor="#2d742d"
           barStyle="light-content"
         />
 
-        <Image style={styles.logo} source={require("../assets/ATEQPONTO_logo.png")} />
+        <Image style={styles.logo} source={require("../assets/bussao.png")} />
 
         <TextInput
           style={styles.input}
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#8FBC8F',
+    backgroundColor: '#2d742d',
   },
   titulo: {
     fontSize: 30,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
 
   },
   logo: {
-    height: 170,
+    height: 300,
     width: 320,
     bottom: 25,
     borderRadius: 12
@@ -85,7 +85,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     color: '#fff',
-
   }
 });
 

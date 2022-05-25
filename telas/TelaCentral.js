@@ -79,7 +79,7 @@ export default function TelaCentral() {
           </View>
 
           {/*View picker*/}
-          <View style={{ flex: 1, flexDirection: 'row', left:'1%',width:'97%', maxHeight:60, marginTop:'8%', paddingLeft:'10%', backgroundColor:'#8FBC8F', borderRadius:20}} >
+          <View style={{ flex: 1, flexDirection: 'row', left:'1%',width:'97%', maxHeight:60, marginTop:'8%', paddingLeft:'10%', backgroundColor:'#2d742d', borderRadius:20}} >
             {/*picker da hora*/}
             <Picker
               style={styles.picker}
@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
     margin: 5,
     marginLeft: 5,
     borderRadius: 10,
-    backgroundColor: '#8FBC8F',
+    backgroundColor: '#2d742d',
   },
   colText: {
     flex: 1,
@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
     margin: 5,
     marginLeft: 5,
     borderRadius: 10,
-    backgroundColor: '#8FBC8F',
+    backgroundColor: '#2d742d',
   },
   modal: {
     width: '50%',
@@ -342,7 +342,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   Opcoes: {
-    backgroundColor: '#8FBC8F',
+    backgroundColor: '#2d742d',
     borderRadius: 12,
     justifyContent: 'center',
     position: 'absolute',

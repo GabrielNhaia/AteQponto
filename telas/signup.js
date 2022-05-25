@@ -8,7 +8,7 @@ export default class Signup extends Component {
     return (
       <View style={styles.container}>
       <StatusBar
-        backgroundColor="#8FBC8F"
+        backgroundColor="#2d742d"
         barStyle="light-content"
         />
       <Text style={styles.titulo}>Registrar - se</Text>
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#8FBC8F',
+    backgroundColor: '#2d742d',
   },
   titulo: {
     fontSize: 30,
