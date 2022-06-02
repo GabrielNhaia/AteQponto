@@ -5,7 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import MapView from 'react-native-maps';
 
 
-export default function TelaCentral() {
+export default function TelaCentral({ navigation }) {
 
   const [horas, sethoras] = useState("Curi");
   const [minutos, setminutos] = useState("tiba");
@@ -21,10 +21,9 @@ export default function TelaCentral() {
       <View style={{ left: "35%", top: "-25%"}} >
         <TouchableOpacity
           style={{ height: 70, width: 70 }}
-          onPress={() => {
-            setver(true)
-          }}>
-          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 40, }} source={require("../assets/perf.png")} />
+          onPress={() => navigation.navigate('Perfil')
+          }>
+          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 15, }} source={require("../assets/Menu.png")} />
         </TouchableOpacity>
       </View>
 
@@ -72,9 +71,8 @@ export default function TelaCentral() {
           <View style={{ maxWidth: "100%", minHeight: '10%', alignItems: 'center', top: 25 }}>
             <TouchableOpacity
               style={styles.userBtnOption}
-              onPress={() => {
-                setisVisible(true)
-              }}>
+              onPress={() => navigation.navigate('Login')
+              }>
               <Text style={styles.btnTxt}>Sair🚪</Text>
             </TouchableOpacity>
           </View>
@@ -297,7 +295,8 @@ const styles = StyleSheet.create({
   },
   picker: {
     width: "45%",
-    left: "15%"
+    left: "15%",
+    color: "#fff"
   },
   retornar: {
     backgroundColor: '#070a08',

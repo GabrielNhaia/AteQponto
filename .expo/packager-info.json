@@ -3,8 +3,8 @@
   "expoServerPort": 19000,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://ny-izz.anonymous.ateqponto.exp.direct",
+  "packagerNgrokUrl": "https://ny-izz.anonymous.ateqponto.exp.direct",
+  "ngrokPid": 12448,
   "webpackServerPort": null
 }
