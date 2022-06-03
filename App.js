@@ -7,6 +7,7 @@ import Signup from './telas/Signup';
 import Login from './telas/Login';
 import TelaCentral from './telas/TelaCentral';
 import Perfil from './telas/Perfil';
+import Notificacao from './telas/Notificacao';
 
 
 class App extends Component {
@@ -47,7 +48,15 @@ class App extends Component {
                 headerTransparent:true,
                 headerShown:false,
               }}
-            />           
+            /> 
+            <Stack.Screen
+              name='Notificacao'
+              component={Notificacao}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
+            />            
           </Stack.Navigator>
         </NavigationContainer>     
     );
