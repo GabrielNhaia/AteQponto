@@ -1,10 +1,17 @@
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet,TouchableOpacity,Text} from 'react-native';
 
-export default function Perfil() {
+export default function Perfil({navigation}) {
 
     return (
         <View style={styles.container}>
-
+            <View style={{ maxWidth: "100%", minHeight: '10%', alignItems: 'center', top: 25 }}>
+            <TouchableOpacity
+              style={styles.userBtnOption}
+              onPress={() => navigation.navigate('TelaCentral')
+              }>
+              <Text style={styles.btnTxt}>Sair🚪</Text>
+            </TouchableOpacity>
+          </View>
         </View>
     );
 }
@@ -14,5 +21,23 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#2d742d',
+    },
+    userBtnOption: {
+      backgroundColor: '#070a08',
+      padding: 15,
+      borderRadius: 15,
+      width: '95%',
+      alignItems: 'center',
+    },
+    userBtn: {
+      backgroundColor: '#070a08',
+      padding: 15,
+      borderRadius: 15,
+      width: '35%',
+    },
+    btnTxt: {
+      fontSize: 14,
+      textAlign: 'center',
+      color: '#fff',
     },
 });
