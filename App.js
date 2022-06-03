@@ -49,8 +49,7 @@ class App extends Component {
               }}
             />           
           </Stack.Navigator>
-        </NavigationContainer>
-     
+        </NavigationContainer>     
     );
   }
 }

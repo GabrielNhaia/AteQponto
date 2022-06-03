@@ -7,12 +7,12 @@ import MapView from 'react-native-maps';
 
 export default function TelaCentral({ navigation }) {
 
-  const [horas, sethoras] = useState("Curi");
-  const [minutos, setminutos] = useState("tiba");
   const [periodo, setperiodo] = useState("Mensal");
   const [isVisible, setisVisible] = useState(false);
   const [ver, setver] = useState(false);
   const [isChecked, setisChecked] = useState(true);
+  const [horas, sethoras] = useState("09");
+  const [minutos, setminutos] = useState("30");
 
   return (
     <View style={styles.container}>
