@@ -9,9 +9,11 @@ class Login extends Component {
     onPanResponderMove: Animated.event([
       null,
       { dx: this.pan.x, dy: this.pan.y }
-    ]),
+    ],
+      { useNativeDriver: false }
+    ),
     onPanResponderRelease: () => {
-      Animated.spring(this.pan, { toValue: { x: 0, y: 0 } }).start();
+      Animated.spring(this.pan, { toValue: { x: 0, y: 0 }, useNativeDriver: false }).start();
     }
   });
 

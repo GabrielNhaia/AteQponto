@@ -65,8 +65,10 @@ export default function TelaCentral({ navigation }) {
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
-                setisVisible(true)
-              }}>
+                setver(false)
+              }}
+              onPressOut={() => navigation.navigate('Feedback')
+              }>
               <Text style={styles.btnTxt}>Feedback😀</Text>
             </TouchableOpacity>
           </View>
