@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Animated, PanResponder, Image } from 'react-native';
 
 
 class Login extends Component {
+  pan = new Animated.ValueXY();
+  panResponder = PanResponder.create({
+    onMoveShouldSetPanResponder: () => true,
+    onPanResponderMove: Animated.event([
+      null,
+      { dx: this.pan.x, dy: this.pan.y }
+    ]),
+    onPanResponderRelease: () => {
+      Animated.spring(this.pan, { toValue: { x: 0, y: 0 } }).start();
+    }
+  });
+
   render() {
     return (
 
@@ -11,8 +23,14 @@ class Login extends Component {
           backgroundColor="#2d742d"
           barStyle="light-content"
         />
-
-        <Image style={styles.logo} source={require("../assets/bussao.png")} />
+        <Animated.View
+          style={{
+            transform: [{ translateX: this.pan.x }, { translateY: this.pan.y }]
+          }}
+          {...this.panResponder.panHandlers}
+        >
+          <Image style={styles.logo} source={require("../assets/bussao.png")} />
+        </Animated.View>
 
         <TextInput
           style={styles.input}

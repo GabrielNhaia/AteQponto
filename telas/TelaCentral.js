@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { Modal, StyleSheet, Text, View, TouchableOpacity, Image, } from 'react-native';
+import { Modal, StyleSheet, Text, View, TouchableOpacity, Image,  } from 'react-native';
 import CheckBox from 'react-native-check-box';
 import { Picker } from '@react-native-picker/picker';
 import MapView from 'react-native-maps';
@@ -54,8 +54,10 @@ export default function TelaCentral({ navigation }) {
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
-                setisVisible(true)
-              }}>
+                setver(false)
+              }}
+              onPressOut={() => navigation.navigate('Notificacao')
+              }>
               <Text style={styles.btnTxt}>Notificações❗</Text>
             </TouchableOpacity>
           </View>
