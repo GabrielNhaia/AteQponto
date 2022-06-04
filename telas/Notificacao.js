@@ -1,6 +1,6 @@
 import {View, StyleSheet,TouchableOpacity,Text} from 'react-native';
 
-export default function Perfil({navigation}) {
+export default function Notificacao({navigation}) {
 
     return (
         <View style={styles.container}>
