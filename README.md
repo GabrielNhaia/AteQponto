@@ -9,7 +9,7 @@ O projeto está sendo desenvolvido em React Native.
 ##
 
 Desenvolvedores:
-    Bryan ##
-    Diego ##
-    Gabriel ##
-    Jhonatan ##
+    Bryan, 
+    Diego, 
+    Gabriel, 
+    Jhonatan.
