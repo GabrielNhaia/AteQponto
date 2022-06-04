@@ -7,3 +7,9 @@ Esse projeto tem como finalidade um aplicativo que auxilie e mostre a seus usuá
 
 O projeto está sendo desenvolvido em React Native.
 ##
+
+Desenvolvedores:
+    Bryan
+    Diego
+    Gabriel
+    Jhonatan
