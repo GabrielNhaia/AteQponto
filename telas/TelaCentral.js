@@ -75,8 +75,11 @@ export default function TelaCentral({ navigation }) {
           <View style={{ maxWidth: "100%", minHeight: '10%', alignItems: 'center', top: 25 }}>
             <TouchableOpacity
               style={styles.userBtnOption}
-              onPress={() => navigation.navigate('Login')
-              }>
+              onPress={() => {
+                setver(false), setisVisible(false)
+              }}
+              onPressOut={() => navigation.navigate('Login')}
+              >
               <Text style={styles.btnTxt}>Sair🚪</Text>
             </TouchableOpacity>
           </View>
