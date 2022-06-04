@@ -1,18 +1,18 @@
 import React, { Component, useState } from 'react';
-import { Modal, StyleSheet, Text, View, TouchableOpacity, Image, } from 'react-native';
+import { Modal, StyleSheet, Text, View, TouchableOpacity, Image,  } from 'react-native';
 import CheckBox from 'react-native-check-box';
 import { Picker } from '@react-native-picker/picker';
 import MapView from 'react-native-maps';
 
 
-export default function TelaCentral() {
+export default function TelaCentral({ navigation }) {
 
-  const [horas, sethoras] = useState("Curi");
-  const [minutos, setminutos] = useState("tiba");
   const [periodo, setperiodo] = useState("Mensal");
   const [isVisible, setisVisible] = useState(false);
   const [ver, setver] = useState(false);
   const [isChecked, setisChecked] = useState(true);
+  const [horas, sethoras] = useState("09");
+  const [minutos, setminutos] = useState("30");
 
   return (
     <View style={styles.container}>
@@ -21,10 +21,9 @@ export default function TelaCentral() {
       <View style={{ left: "35%", top: "-25%"}} >
         <TouchableOpacity
           style={{ height: 70, width: 70 }}
-          onPress={() => {
-            setver(true)
-          }}>
-          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 40, }} source={require("../assets/perf.png")} />
+          onPress={() => navigation.navigate('Perfil')
+          }>
+          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 15, }} source={require("../assets/Menu.png")} />
         </TouchableOpacity>
       </View>
 
@@ -55,8 +54,10 @@ export default function TelaCentral() {
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
-                setisVisible(true)
-              }}>
+                setver(false)
+              }}
+              onPressOut={() => navigation.navigate('Notificacao')
+              }>
               <Text style={styles.btnTxt}>Notificações❗</Text>
             </TouchableOpacity>
           </View>
@@ -64,8 +65,10 @@ export default function TelaCentral() {
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
-                setisVisible(true)
-              }}>
+                setver(false)
+              }}
+              onPressOut={() => navigation.navigate('Feedback')
+              }>
               <Text style={styles.btnTxt}>Feedback😀</Text>
             </TouchableOpacity>
           </View>
@@ -73,8 +76,10 @@ export default function TelaCentral() {
             <TouchableOpacity
               style={styles.userBtnOption}
               onPress={() => {
-                setisVisible(true)
-              }}>
+                setver(false), setisVisible(false)
+              }}
+              onPressOut={() => navigation.navigate('Login')}
+              >
               <Text style={styles.btnTxt}>Sair🚪</Text>
             </TouchableOpacity>
           </View>
@@ -297,7 +302,8 @@ const styles = StyleSheet.create({
   },
   picker: {
     width: "45%",
-    left: "15%"
+    left: "15%",
+    color: "#fff"
   },
   retornar: {
     backgroundColor: '#070a08',

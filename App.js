@@ -7,7 +7,8 @@ import Signup from './telas/Signup';
 import Login from './telas/Login';
 import TelaCentral from './telas/TelaCentral';
 import Perfil from './telas/Perfil';
-
+import Notificacao from './telas/Notificacao';
+import Feedback from './telas/Feedback';
 
 class App extends Component {
   render() {
@@ -47,10 +48,25 @@ class App extends Component {
                 headerTransparent:true,
                 headerShown:false,
               }}
+            /> 
+            <Stack.Screen
+              name='Notificacao'
+              component={Notificacao}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
+            /> 
+            <Stack.Screen
+              name='Feedback'
+              component={Feedback}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
             />           
           </Stack.Navigator>
-        </NavigationContainer>
-     
+        </NavigationContainer>     
     );
   }
 }
