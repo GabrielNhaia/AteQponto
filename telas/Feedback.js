@@ -1,14 +1,17 @@
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Platform } from 'react-native';
 import React, { useState } from 'react';
 import { Picker } from '@react-native-picker/picker';
 import DatePicker from 'react-native-date-picker'
+import IOSPicker from 'react-native-ios-picker';
 
 export default function Feedback({ navigation }) {
 
+  const dados = ["1", "2", "3", "4", "5", "6"];
   const [horas, sethoras] = useState("09");
   const [minutos, setminutos] = useState("30");
   const [date, setDate] = useState(new Date())
   const [open, setOpen] = useState(false)
+
 
   return (
     <View style={styles.container}>
@@ -94,6 +97,9 @@ export default function Feedback({ navigation }) {
           </View>
           <View>
             <Text style={styles.ponto}>Acontecimento:</Text>
+            {/* <IOSPicker
+              data={dados}
+              onValueChange={(d, i) => this.change(d, i)} /> */}
           </View>
         </View>
       </View>
@@ -136,9 +142,9 @@ const styles = StyleSheet.create({
   },
 
   picker: {
+
     width: "30%",
-    left: "3%",
-    color: "#fff"
+    color: "#fff",
   },
   userBtnOption: {
     backgroundColor: '#070a08',
@@ -171,6 +177,9 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: '#ff0',
     marginLeft: 5,
+    paddingTop: 30,
   },
+
+
 }
 );
