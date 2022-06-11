@@ -242,11 +242,14 @@ export default function TelaCentral({ navigation }) {
         </Modal>
       </View>
 
-      {/* 
-      */}
-      
-        <View style={{ width: "100%", height: "100%",position:'absolute', zIndex:-2}}>
+                {/*     MAPA   */}
+        <View style={styles.mapaView}>
           <MapView
+            provider={PROVIDER_GOOGLE}
+            enableZoomControl={true}
+            showsUserLocation = {true}
+            showsMyLocationButton = {true}
+            zoomEnabled = {true}
             style={{ width: "100%", height: "100%" }}
             initialRegion={{
               latitude: -25.481162102936597,
@@ -254,9 +257,51 @@ export default function TelaCentral({ navigation }) {
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421,
             }}
-          />
-        </View>
+          >
+              <MapView.Marker
+                coordinate={{
+                latitude:  -25.495929967534504, 
+                longitude: -49.302469015104435
+              }}
+                title={"Faculdades Santa Cruz"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81050-290"}
+              />
+		          <MapView.Marker
+                coordinate={{
+                latitude:-25.494362882244992, 
+                longitude:-49.29910549458465   
+              }}
+                title={"Rua João Bonat, 432"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81050-170"}
+              />
+		          <MapView.Marker
+                coordinate={{
+                latitude:-25.492991453744153, 
+                longitude:-49.29829236295225 
+              }}
+                title={"Rua Paulina Ader, 836"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81050-250"}
+              />
 
+		          <MapView.Marker
+                coordinate={{
+                latitude:-25.490131141066176, 
+                longitude:-49.28912598367627   
+              }}
+                title={"Rua Maria Trevisan Tortato, 160"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81020-000"}
+              />
+
+	          	<MapView.Marker
+                coordinate={{
+                latitude:-25.432762860035012,   
+                longitude:-49.37380626359049 
+              }}
+                title={"Br 277 - Km 100 (Sent. Ctba)"}
+                description={"Riviera, Curitiba - State of Paraná, 81295-000"}
+                />
+              </MapView>
+        </View>
       <View style={styles.Opcoes} >
 
         {/* botão para abrir modal de opções */}
@@ -380,7 +425,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     color: '#fff',
+  },
+  mapaView: {
+    width: "100%", 
+    height: "100%",
+    position:'absolute', 
+    zIndex:-2
   }
 });
-
 //export default TelaCentral;
