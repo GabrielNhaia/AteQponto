@@ -37,7 +37,10 @@ export default function Perfil({ navigation }) {
           </Animated.View>
         </View>
 
-        <View style={{ backgroundColor: '#fff', height: '30%', width: '90%' }}>
+        <View style={styles.contemTexto}>
+          <View style={{alignItems:'center'}}>
+            <Text style={styles.textos}> Dados do usuario</Text>
+          </View>
           <Text style={styles.textos}> Nome do usuario:</Text>
           <Text style={styles.textos}> CPF:</Text>
           <Text style={styles.textos}> Data de Nascimento:</Text>
@@ -45,13 +48,25 @@ export default function Perfil({ navigation }) {
         </View>
       </View>
 
-      <View style={{ width: "100%", minHeight: '10%', alignItems: 'center', }}>
-        <TouchableOpacity
-          style={styles.userBtnOption}
-          onPress={() => navigation.navigate('TelaCentral')
-          }>
-          <Text style={styles.btnTxt}>Sair🚪</Text>
-        </TouchableOpacity>
+      <View style={{bottom:25}}>
+        {/* Botão alterar dados */}
+        <View style={{ width: "100%", Height: '10%', alignItems: 'center', paddingBottom: 10 }}>
+          <TouchableOpacity
+            style={styles.userBtnOption}
+            onPress={() => navigation.navigate('TelaCentral')
+            }>
+            <Text style={styles.btnTxt}>🌱Alterar Dados🎲</Text>
+          </TouchableOpacity>
+        </View>
+        {/* Botão retornar */}
+        <View style={{ width: "100%", Height: '10%', alignItems: 'center', }}>
+          <TouchableOpacity
+            style={styles.userBtnOption}
+            onPress={() => navigation.navigate('TelaCentral')
+            }>
+            <Text style={styles.btnTxt}>Retornar🚪</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -63,8 +78,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#2d742d',
   },
   contemTela: {
-    minHeight: '68%',
+    minHeight: '20%',
     alignItems: 'center',
+  },
+  contemTexto: {
+    backgroundColor: '#318c46',
+    height: '50%',
+    width: '90%',
+    borderRadius: 10,
   },
   contemTitulo: {
     minHeight: '12%',
@@ -83,23 +104,20 @@ const styles = StyleSheet.create({
   textos: {
     fontSize: 18,
     paddingBottom: 8,
+    color: '#fff',
   },
   userBtnOption: {
     backgroundColor: '#070a08',
-    padding: 15,
+    // padding: 15,
     borderRadius: 15,
     width: '95%',
     alignItems: 'center',
-  },
-  userBtn: {
-    backgroundColor: '#070a08',
-    padding: 15,
-    borderRadius: 15,
-    width: '35%',
   },
   btnTxt: {
     fontSize: 14,
     textAlign: 'center',
     color: '#fff',
+    paddingTop: 12,
+    height: 45,
   },
 });
