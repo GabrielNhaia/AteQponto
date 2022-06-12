@@ -38,8 +38,8 @@ export default function Perfil({ navigation }) {
         </View>
 
         <View style={styles.contemTexto}>
-          <View style={{alignItems:'center'}}>
-            <Text style={styles.textos}> Dados do usuario</Text>
+          <View style={{alignItems:'center', }}>
+            <Text style={styles.titulo1}> Dados do usuario</Text>
           </View>
           <Text style={styles.textos}> Nome do usuario:</Text>
           <Text style={styles.textos}> CPF:</Text>
@@ -96,6 +96,10 @@ const styles = StyleSheet.create({
     height: 150,
     width: 160,
     borderRadius: 30
+  },
+  titulo1: {
+    fontSize: 30,
+    color: '#ffF',
   },
   titulo: {
     fontSize: 35,
