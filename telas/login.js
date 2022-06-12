@@ -3,6 +3,7 @@ import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Animate
 
 
 class Login extends Component {
+  
   pan = new Animated.ValueXY();
   panResponder = PanResponder.create({
     onMoveShouldSetPanResponder: () => true,
@@ -16,6 +17,7 @@ class Login extends Component {
       Animated.spring(this.pan, { toValue: { x: 0, y: 0 }, useNativeDriver: false }).start();
     }
   });
+  
 
   render() {
     return (

@@ -23,7 +23,7 @@ export default function TelaCentral({ navigation }) {
           style={{ height: 70, width: 70 }}
           onPress={() => navigation.navigate('Perfil')
           }>
-          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 15, }} source={require("../assets/Menu.png")} />
+          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 35, }} source={require("../assets/perf.png")} />
         </TouchableOpacity>
       </View>
 
@@ -242,8 +242,7 @@ export default function TelaCentral({ navigation }) {
         </Modal>
       </View>
 
-      {/* 
-      */}
+      {/*  */}
       
         <View style={{ width: "100%", height: "100%",position:'absolute', zIndex:-2}}>
           <MapView
