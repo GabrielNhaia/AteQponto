@@ -133,16 +133,16 @@ const styles = StyleSheet.create({
   tela: {
     height: '77%',
     width: '100%',
-    backgroundColor: '#f02',
+    backgroundColor: '#2d742d',
   },
   aoLado: {
-    maxHeight: '10%',
+    maxHeight: '15%',
     flex: 1,
     flexDirection: 'row',
   },
 
   picker: {
-
+    
     width: "30%",
     color: "#fff",
   },
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     width: '90%',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 15,
     marginBottom: 10,
   },
   userBtn: {
