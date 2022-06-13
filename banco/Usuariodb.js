@@ -3,11 +3,20 @@ import firebase from 'firebaseConnection';
 //const database = firebase();
 
 
-function CadastrarUsuario(id, nome, cpf, email, senha, noti)
+function CadastrarUsuario( nome, cpf, email, senha, noti)
 {
-   firebase()
+    firebase()
+   .ref('/Usuario/').push({
+      Nome: nome, 
+      CPF: cpf,
+      Email : email, 
+      Senha: senha, 
+      Notificacao: noti
+     });
+
+   /*firebase()
   .ref('/Usuario/'+id)
-  .set({
+  .update({
     ID :id, 
     Nome: nome, 
     CPF: cpf,
@@ -15,6 +24,7 @@ function CadastrarUsuario(id, nome, cpf, email, senha, noti)
     Senha: senha, 
     Notificacao: noti
 })
+*/
 }
 
 function LoginUsuario ( CPF,  senha)
