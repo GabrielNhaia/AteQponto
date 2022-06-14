@@ -8,7 +8,7 @@ export default function Notificacao({ navigation }) {
         <Text style={{ fontSize: 25 }}>Notificações❗</Text>
       </View>
       <View style={styles.conteudo}>
-        <Text style={{ fontSize: 20 }}>  Exemplo de conteudo</Text>
+        <Text style={{ fontSize: 20 }}>  exemplo de conteudo</Text>
       </View>
       <View style={styles.conteudo}>
       </View>
