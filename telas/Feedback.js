@@ -80,7 +80,9 @@ export default function Feedback({ navigation }) {
               }>
               <Text style={styles.btnTxt}>Data</Text>
             </TouchableOpacity>
+
             {/*Picker data*/}
+
             <DatePicker
               modal
               open={open}
@@ -99,8 +101,9 @@ export default function Feedback({ navigation }) {
             <Text style={styles.ponto}>Acontecimento:</Text>
             {/* <IOSPicker
               data={dados}
-              onValueChange={(d, i) => this.change(d, i)} /> */}
+            onValueChange={(d, i) => this.change(d, i)} /> */}
           </View>
+
         </View>
       </View>
 
@@ -142,7 +145,6 @@ const styles = StyleSheet.create({
   },
 
   picker: {
-    
     width: "30%",
     color: "#fff",
   },
