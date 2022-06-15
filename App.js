@@ -10,6 +10,25 @@ import Perfil from './telas/Perfil';
 import Notificacao from './telas/Notificacao';
 import Feedback from './telas/Feedback';
 
+import { initializeApp } from 'firebase/app'
+import firebase from 'firebase/compat/app'
+import database from 'firebase/database'
+import 'firebase/database'
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDSQOLouUrM4TBhIF4d5lca1LtR6fJu1G8",
+  authDomain: "ateqponto-a17b0.firebaseapp.com",
+  projectId: "ateqponto-a17b0",
+  storageBucket: "ateqponto-a17b0.appspot.com",
+  messagingSenderId: "541625644275",
+  appId: "1:541625644275:web:82a4e7407a4ae9df2b3386",
+  measurementId: "G-0SNYCY58TL"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
 class App extends Component {
   render() {
     const Stack = createNativeStackNavigator();
