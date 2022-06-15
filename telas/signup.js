@@ -1,12 +1,12 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
 import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
-
+import {CadastrarUsuario} from '../banco/Usuariodb'
 export default class Signup extends Component {
   render(){
 
     return (
-      <View style={styles.container}>
+      <View name="Registrar" style={styles.container}>
       <StatusBar
         backgroundColor="#2d742d"
         barStyle="light-content"
@@ -14,30 +14,37 @@ export default class Signup extends Component {
       <Text style={styles.titulo}>Registrar - se</Text>
       <TextInput
         style={styles.input}
+        name = "Email"
         placeholder="Email"
         />
       <TextInput
         style={styles.input}
+        name = "Nome"
         placeholder="Nome completo"
         />
       <TextInput
         style={styles.input}
+        name = "CPF"
         placeholder="CPF"
         />
       <TextInput
         style={styles.input}
+        name = "Senha"
         placeholder="Senha"
         secureTextEntry
       />
+      {/*
       <TextInput
         style={styles.input}
         placeholder="Confirme sua Senha"
         secureTextEntry
         />
+    */} 
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={styles.userBtn}          
           onPress={() => this.props.navigation.navigate('Login')}
+          onPressOut={ CadastrarUsuario( this.Nome.value, this.CPF.value, this.Email.value, this.Senha.value, true)}
           >
           <Text style={styles.btnTxt}>Registre-se</Text>
         </TouchableOpacity>
