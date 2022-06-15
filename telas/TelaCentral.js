@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { Modal, StyleSheet, Text, View, TouchableOpacity, Image,  } from 'react-native';
 import CheckBox from 'react-native-check-box';
 import { Picker } from '@react-native-picker/picker';
-import MapView from 'react-native-maps';
+import MapView, { Marker, PROVIDER_GOOGLE, } from 'react-native-maps';
 
 
 export default function TelaCentral({ navigation }) {
@@ -23,7 +23,7 @@ export default function TelaCentral({ navigation }) {
           style={{ height: 70, width: 70 }}
           onPress={() => navigation.navigate('Perfil')
           }>
-          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 35, }} source={require("../assets/perf.png")} />
+          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 15, }} source={require("../assets/perf.png")} />
         </TouchableOpacity>
       </View>
 
@@ -242,20 +242,96 @@ export default function TelaCentral({ navigation }) {
         </Modal>
       </View>
 
-      {/*  */}
-      
-        <View style={{ width: "100%", height: "100%",position:'absolute', zIndex:-2}}>
+                {/*     MAPA   */}
+        <View style={styles.mapaView}>
           <MapView
-            style={{ width: "100%", height: "100%" }}
+            provider={PROVIDER_GOOGLE}
+            enableZoomControl={true}
+            showsUserLocation = {true}
+            showsMyLocationButton = {true}
+            zoomEnabled = {true}
+            style={styles.mapaView}
             initialRegion={{
               latitude: -25.481162102936597,
               longitude: -49.29087692187499,
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421,
             }}
-          />
-        </View>
+          >
+              <MapView.Marker
+                coordinate={{
+                latitude:  -25.495929967534504, 
+                longitude: -49.302469015104435
+              }}
+                title={"Faculdades Santa Cruz"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81050-290"}
+              />
+		          <MapView.Marker
+                coordinate={{
+                latitude:-25.494362882244992, 
+                longitude:-49.29910549458465   
+              }}
+                title={"Rua João Bonat, 432"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81050-170"}
+              />
+		          <MapView.Marker
+                coordinate={{
+                latitude:-25.492991453744153, 
+                longitude:-49.29829236295225 
+              }}
+                title={"Rua Paulina Ader, 836"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81050-250"}
+              />
 
+		          <MapView.Marker
+                coordinate={{
+                latitude:-25.490131141066176, 
+                longitude:-49.28912598367627   
+              }}
+                title={"Rua Maria Trevisan Tortato, 160"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81020-000"}
+              />
+
+	          	<MapView.Marker
+                coordinate={{
+                latitude:-25.432762860035012,   
+                longitude:-49.37380626359049 
+              }}
+                title={"Br 277 - Km 100 (Sent. Ctba)"}
+                description={"Riviera, Curitiba - State of Paraná, 81295-000"}
+                />
+                <MapView.Marker
+                coordinate={{
+                latitude: -25.4858110779203, 
+                longitude: -49.29227254323616
+              }}
+                title={"Avenida Brasília, 4554"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 80610-270"}
+              />
+              <MapView.Marker
+                coordinate={{
+                latitude: -25.488939507613317, 
+                longitude: -49.29295691959209
+              }}
+                title={"Travessa Augusto Marach, 199"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81020-220"}
+              />
+              <MapView.Marker
+                coordinate={{
+                latitude: -25.489068851854775, 
+                longitude: -49.29552031339611
+              }}
+                title={"Rua Pedro Zagonel, 136"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81050-001"}
+              />
+              <MapView.Marker
+                coordinate={{
+                latitude: -25.495722604003934, 
+                longitude: -49.30238184648217 
+              }}
+              />
+              </MapView>
+        </View>
       <View style={styles.Opcoes} >
 
         {/* botão para abrir modal de opções */}
@@ -379,7 +455,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     color: '#fff',
+  },
+  mapaView: {
+    width: "100%", 
+    height: "100%",
+    position:'absolute', 
+    zIndex:-2
   }
 });
-
 //export default TelaCentral;
