@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { Modal, StyleSheet, Text, View, TouchableOpacity, Image,  } from 'react-native';
 import CheckBox from 'react-native-check-box';
 import { Picker } from '@react-native-picker/picker';
-import MapView from 'react-native-maps';
+import MapView, { Marker, PROVIDER_GOOGLE, } from 'react-native-maps';
 
 
 export default function TelaCentral({ navigation }) {
@@ -250,7 +250,7 @@ export default function TelaCentral({ navigation }) {
             showsUserLocation = {true}
             showsMyLocationButton = {true}
             zoomEnabled = {true}
-            style={{ width: "100%", height: "100%" }}
+            style={styles.mapaView}
             initialRegion={{
               latitude: -25.481162102936597,
               longitude: -49.29087692187499,
@@ -300,6 +300,36 @@ export default function TelaCentral({ navigation }) {
                 title={"Br 277 - Km 100 (Sent. Ctba)"}
                 description={"Riviera, Curitiba - State of Paraná, 81295-000"}
                 />
+                <MapView.Marker
+                coordinate={{
+                latitude: -25.4858110779203, 
+                longitude: -49.29227254323616
+              }}
+                title={"Avenida Brasília, 4554"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 80610-270"}
+              />
+              <MapView.Marker
+                coordinate={{
+                latitude: -25.488939507613317, 
+                longitude: -49.29295691959209
+              }}
+                title={"Travessa Augusto Marach, 199"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81020-220"}
+              />
+              <MapView.Marker
+                coordinate={{
+                latitude: -25.489068851854775, 
+                longitude: -49.29552031339611
+              }}
+                title={"Rua Pedro Zagonel, 136"}
+                description={"Novo Mundo, Curitiba - State of Paraná, 81050-001"}
+              />
+              <MapView.Marker
+                coordinate={{
+                latitude: -25.495722604003934, 
+                longitude: -49.30238184648217 
+              }}
+              />
               </MapView>
         </View>
       <View style={styles.Opcoes} >
