@@ -1,12 +1,21 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, } from 'react-native';
+import { StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+<<<<<<< HEAD
 import signup from './telas/signup';
 import login from './telas/login';
 //import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
+=======
+import Signup from './telas/Signup';
+import Login from './telas/Login';
+import TelaCentral from './telas/TelaCentral';
+import Perfil from './telas/Perfil';
+import Notificacao from './telas/Notificacao';
+import Feedback from './telas/Feedback';
+>>>>>>> main
 
 class App extends Component {
   render() {
@@ -14,26 +23,67 @@ class App extends Component {
 
     return (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName='login'>
+          <Stack.Navigator initialRouteName='Login'>
             <Stack.Screen
+<<<<<<< HEAD
               name='login'
               component={login}
+=======
+              name='Login'
+              component={Login}
+>>>>>>> main
               options={{
                 headerTransparent:true,
                 headerShown:false,
               }}
             />
             <Stack.Screen
+<<<<<<< HEAD
               name='signup'
               component={signup}
+=======
+              name='Signup'
+              component={Signup}
+>>>>>>> main
               options={{
                 headerTransparent:true,
                 headerShown:false,
               }}
             />
+            <Stack.Screen
+              name='TelaCentral'
+              component={TelaCentral}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
+            /> 
+            <Stack.Screen
+              name='Perfil'
+              component={Perfil}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
+            /> 
+            <Stack.Screen
+              name='Notificacao'
+              component={Notificacao}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
+            /> 
+            <Stack.Screen
+              name='Feedback'
+              component={Feedback}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
+            />           
           </Stack.Navigator>
-        </NavigationContainer>
-     
+        </NavigationContainer>     
     );
   }
 }
@@ -43,7 +93,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#cbf2d6',
+    backgroundColor: '#2d742d',
   },
   titulo: {
     fontSize: 30,

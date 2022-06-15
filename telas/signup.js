@@ -1,47 +1,56 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
 
+export default class Signup extends Component {
+  render(){
 
+<<<<<<< HEAD
 const signup = () => {
      return (
     <View style={styles.container}>
+=======
+    return (
+      <View style={styles.container}>
+>>>>>>> main
       <StatusBar
-        backgroundColor="#cbf2d6"
+        backgroundColor="#2d742d"
         barStyle="light-content"
-      />
+        />
       <Text style={styles.titulo}>Registrar - se</Text>
       <TextInput
-          style={styles.input}
-          placeholder="Email"
+        style={styles.input}
+        placeholder="Email"
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Nome completo"
+      <TextInput
+        style={styles.input}
+        placeholder="Nome completo"
         />
-        <TextInput
-          style={styles.input}
-          placeholder="CPF"
+      <TextInput
+        style={styles.input}
+        placeholder="CPF"
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          secureTextEntry
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Confirme sua Senha"
-          secureTextEntry
+      <TextInput
+        style={styles.input}
+        placeholder="Senha"
+        secureTextEntry
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Confirme sua Senha"
+        secureTextEntry
         />
       <View style={styles.btnContainer}>
         <TouchableOpacity
-          style={styles.userBtn}
-        >
+          style={styles.userBtn}          
+          onPress={() => this.props.navigation.navigate('Login')}
+          >
           <Text style={styles.btnTxt}>Registre-se</Text>
         </TouchableOpacity>
       </View>
     </View>
-    );
+  );
+}
 }
 
 const styles = StyleSheet.create({
@@ -49,7 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#cbf2d6',
+    backgroundColor: '#2d742d',
   },
   titulo: {
     fontSize: 30,
@@ -59,28 +68,27 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '90%',
-    backgroundColor:'#fff',
+    borderRadius: 12,
+    backgroundColor: '#fff',
     padding: 15,
     marginBottom: 10,
   },
-  btnContainer:{
-    flexDirection:'row',
-    justifyContent:'space-between',
+  btnContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     width: '90%',
-
   },
   userBtn: {
     backgroundColor: '#070a08',
+    top: 5,
     padding: 15,
+    borderRadius: 15,
     width: '100%',
   },
-  btnTxt:{
+  btnTxt: {
     fontSize: 18,
     textAlign: 'center',
     color: '#fff',
-
   }
-
+  
 });
-
-export default signup;
