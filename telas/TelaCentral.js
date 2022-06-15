@@ -1,40 +1,3 @@
-<<<<<<< HEAD
-import { Component, React, useState } from 'react';
-import { Modal, StyleSheet, Text, View, TouchableOpacity, Image, } from 'react-native';
-import CheckBox from 'react-native-check-box';
-import { Picker } from '@react-native-picker/picker';
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
-
-export default function TelaCentral() {
-
-  const [selectedLanguage, setSelectedLanguage] = useState();
-  const [isVisible, setisVisible] = useState(false);
-  const [ver, setver] = useState(false);
-  const [isChecked, setisChecked] = useState(true);
-
-  return (
-    <View style={{width: "100%", height: "100%"}}>
-        <MapView
-          style={{width: "100%", height: "100%"}}
-          initialRegion={{
-            latitude: -25.481162102936597, 
-            longitude: -49.29087692187499,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
-        />
-      <View style={styles.perfTam}>
-       
-      </View>
-
-      <View style={{ height: 200, width: 200 }}>
-        <Modal
-          //Modal de opções
-          animationType='slide'
-          visible={ver}
-        >
-          <Image style={{ height: 200, width: 100, bottom: 25, top: 25, left: "37%", borderRadius: 12 }} source={require("../assets/pinhao.png")} />
-=======
 import React, { Component, useState } from 'react';
 import { Modal, StyleSheet, Text, View, TouchableOpacity, Image,  } from 'react-native';
 import CheckBox from 'react-native-check-box';
@@ -170,7 +133,6 @@ export default function TelaCentral({ navigation }) {
               <Picker.Item label="50" value="50" />
             </Picker>
           </View>
->>>>>>> main
 
           <View
             style={{ bottom: 8, position: "absolute", width: "100%" }}   >
@@ -184,10 +146,7 @@ export default function TelaCentral({ navigation }) {
           </View>
         </Modal>
 
-<<<<<<< HEAD
-=======
         {/* Modal de filtro*/}
->>>>>>> main
         <Modal
           //Modal de filtro
           transparent={true}
@@ -196,11 +155,6 @@ export default function TelaCentral({ navigation }) {
         >
           <View style={styles.umColText}>
             <Text style={{ fontSize: 20, color: "#fff" }}>Filtrar perigo:</Text>
-<<<<<<< HEAD
-          </View>
-          <View style={styles.colText}>
-            <Text style={{ fontSize: 20, color: "#fff" }}>Filtrar Por periodo:</Text>
-=======
             <View style={{ flex: 1, flexDirection: 'row' }}>
               <CheckBox
                 style={{ maxWidth: 40, left: 20, top: "2%" }}
@@ -262,7 +216,6 @@ export default function TelaCentral({ navigation }) {
               <Picker.Item label="Mensal" value="Mensal" />
               <Picker.Item label="Semestral" value="Semestral" />
             </Picker>
->>>>>>> main
           </View>
           <View style={styles.colText}>
             <Text style={{ fontSize: 20, color: "#fff" }}>Mostrar pontos?</Text>
@@ -271,11 +224,8 @@ export default function TelaCentral({ navigation }) {
               onClick={() => {
                 setisChecked(!isChecked)
               }}
-<<<<<<< HEAD
-=======
               checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
               unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
->>>>>>> main
               isChecked={isChecked}
               leftText={isChecked ? "Sim 👍" : "Não 👎"}
             />
@@ -291,15 +241,7 @@ export default function TelaCentral({ navigation }) {
           </View>
         </Modal>
       </View>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 
-      {/* 
-      */}
-=======
-
->>>>>>> main
                 {/*     MAPA   */}
         <View style={styles.mapaView}>
           <MapView
@@ -308,11 +250,7 @@ export default function TelaCentral({ navigation }) {
             showsUserLocation = {true}
             showsMyLocationButton = {true}
             zoomEnabled = {true}
-<<<<<<< HEAD
-            style={{ width: "100%", height: "100%" }}
-=======
             style={styles.mapaView}
->>>>>>> main
             initialRegion={{
               latitude: -25.481162102936597,
               longitude: -49.29087692187499,
@@ -362,12 +300,6 @@ export default function TelaCentral({ navigation }) {
                 title={"Br 277 - Km 100 (Sent. Ctba)"}
                 description={"Riviera, Curitiba - State of Paraná, 81295-000"}
                 />
-<<<<<<< HEAD
-              </MapView>
-        </View>
-
->>>>>>> Stashed changes
-=======
                 <MapView.Marker
                 coordinate={{
                 latitude: -25.4858110779203, 
@@ -400,7 +332,6 @@ export default function TelaCentral({ navigation }) {
               />
               </MapView>
         </View>
->>>>>>> main
       <View style={styles.Opcoes} >
 
         {/* botão para abrir modal de opções */}
@@ -412,13 +343,8 @@ export default function TelaCentral({ navigation }) {
           <Text style={styles.btnTxt}>Opções</Text>
         </TouchableOpacity>
 
-<<<<<<< HEAD
-        <Text style={styles.Hora}>
-          HH:MM
-=======
         <Text style={styles.Hora} >
           {horas}:{minutos}
->>>>>>> main
         </Text>
 
         {/* botão para abrir modal de filtros */}
@@ -437,14 +363,8 @@ export default function TelaCentral({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-<<<<<<< HEAD
-    height: '8%',
-    position: 'absolute',
-    bottom: 0,
-=======
     height: '100%',
     position: 'absolute',
->>>>>>> main
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -452,13 +372,6 @@ const styles = StyleSheet.create({
   perfTam: {
     height: 25,
     width: 25,
-<<<<<<< HEAD
-    top: -500,
-    left: "28%",
-    zIndex: 1,
-    borderRadius: 30,
-  },
-=======
     zIndex: 1,
     borderRadius: 30,
   },
@@ -467,7 +380,6 @@ const styles = StyleSheet.create({
     left: "15%",
     color: "#fff"
   },
->>>>>>> main
   retornar: {
     backgroundColor: '#070a08',
     left: 2,
@@ -475,8 +387,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     width: '99%',
   },
-<<<<<<< HEAD
-=======
   userBtnOption: {
     backgroundColor: '#070a08',
     padding: 15,
@@ -484,7 +394,6 @@ const styles = StyleSheet.create({
     width: '95%',
     alignItems: 'center',
   },
->>>>>>> main
   userBtn: {
     backgroundColor: '#070a08',
     padding: 15,
@@ -493,11 +402,7 @@ const styles = StyleSheet.create({
   },
   image: {
     justifyContent: 'flex-start',
-<<<<<<< HEAD
-    marginBottom: 700,
-=======
     zIndex: -1,
->>>>>>> main
   },
   umColText: {
     marginTop: "100%",
@@ -508,11 +413,7 @@ const styles = StyleSheet.create({
     margin: 5,
     marginLeft: 5,
     borderRadius: 10,
-<<<<<<< HEAD
-    backgroundColor: '#8FBC8F',
-=======
     backgroundColor: '#2d742d',
->>>>>>> main
   },
   colText: {
     flex: 1,
@@ -522,11 +423,7 @@ const styles = StyleSheet.create({
     margin: 5,
     marginLeft: 5,
     borderRadius: 10,
-<<<<<<< HEAD
-    backgroundColor: '#8FBC8F',
-=======
     backgroundColor: '#2d742d',
->>>>>>> main
   },
   modal: {
     width: '50%',
@@ -536,11 +433,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   Opcoes: {
-<<<<<<< HEAD
-    backgroundColor: '#8FBC8F',
-=======
     backgroundColor: '#2d742d',
->>>>>>> main
     borderRadius: 12,
     justifyContent: 'center',
     position: 'absolute',
@@ -570,8 +463,4 @@ const styles = StyleSheet.create({
     zIndex:-2
   }
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 //export default TelaCentral;

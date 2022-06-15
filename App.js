@@ -3,19 +3,12 @@ import React, { Component } from 'react';
 import { StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-<<<<<<< HEAD
-import signup from './telas/signup';
-import login from './telas/login';
-//import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
-
-=======
 import Signup from './telas/Signup';
 import Login from './telas/Login';
 import TelaCentral from './telas/TelaCentral';
 import Perfil from './telas/Perfil';
 import Notificacao from './telas/Notificacao';
 import Feedback from './telas/Feedback';
->>>>>>> main
 
 class App extends Component {
   render() {
@@ -25,26 +18,16 @@ class App extends Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName='Login'>
             <Stack.Screen
-<<<<<<< HEAD
-              name='login'
-              component={login}
-=======
               name='Login'
               component={Login}
->>>>>>> main
               options={{
                 headerTransparent:true,
                 headerShown:false,
               }}
             />
             <Stack.Screen
-<<<<<<< HEAD
-              name='signup'
-              component={signup}
-=======
               name='Signup'
               component={Signup}
->>>>>>> main
               options={{
                 headerTransparent:true,
                 headerShown:false,

@@ -5,14 +5,8 @@ import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 
 export default class Signup extends Component {
   render(){
 
-<<<<<<< HEAD
-const signup = () => {
-     return (
-    <View style={styles.container}>
-=======
     return (
       <View style={styles.container}>
->>>>>>> main
       <StatusBar
         backgroundColor="#2d742d"
         barStyle="light-content"
@@ -90,5 +84,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#fff',
   }
-  
 });

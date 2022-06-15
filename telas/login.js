@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity,  } from 'react-native';
-=======
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Animated, PanResponder, Image } from 'react-native';
->>>>>>> main
 
 
 class Login extends Component {
