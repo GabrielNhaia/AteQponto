@@ -1,8 +1,19 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
 import React, { Component } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
+// import {CadastrarUsuario} from '../banco/Usuariodb'
 
 export default class Signup extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      Email: "",
+      Nome: "",
+      CPF: "",
+      Senha:"",
+    };
+
+  }
   render(){
 
     return (
@@ -37,7 +48,7 @@ export default class Signup extends Component {
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={styles.userBtn}          
-          onPress={() => this.props.navigation.navigate('Login')}
+          onPress={() => {this.props.navigation.navigate('Login')}}
           >
           <Text style={styles.btnTxt}>Registre-se</Text>
         </TouchableOpacity>
