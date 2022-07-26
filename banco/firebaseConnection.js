@@ -14,18 +14,21 @@ const firebaseConfig = {
   messagingSenderId: "541625644275",
   appId: "1:541625644275:web:82a4e7407a4ae9df2b3386",
   measurementId: "G-0SNYCY58TL"
+
 };
 
 {
   
+  
   const app = initializeApp(firebaseConfig);
-  const firebase = getDatabase(app);
+  const db = getDatabase(app);
   const database = getDatabase(app);
   //analytics = getAnalytics(app);
+  
 }
 // const database = getDatabase(app);
 // return database; 
 
-export default firebase;
+export default db;
 //export default analytics;
 //const app =

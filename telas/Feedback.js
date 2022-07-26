@@ -2,8 +2,8 @@
 import { View, StyleSheet, TouchableOpacity, Text, TextInput, Platform } from 'react-native';
 import React, { useState } from 'react';
 import { Picker } from '@react-native-picker/picker';
-import DatePicker from 'react-native-date-picker'
-import IOSPicker from 'react-native-ios-picker';
+// import DatePicker from 'react-native-date-picker';
+// import IOSPicker from 'react-native-ios-picker';
 
 {/*Export*/ }
 export default function Feedback({ navigation }) {
@@ -100,7 +100,7 @@ export default function Feedback({ navigation }) {
             </View>
 
             {/*PICKER DATA*/}
-            <DatePicker
+            {/* <DatePicker
               modal
               open={open}
               date={date}
@@ -111,7 +111,7 @@ export default function Feedback({ navigation }) {
               onCancel={() => {
                 setOpen(false)
               }}
-            />
+            /> */}
           </View>
           <View style={styles.terreno}>
             <Text style={styles.ponto}>Acontecimento:</Text>
