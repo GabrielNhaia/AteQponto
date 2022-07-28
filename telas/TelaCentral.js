@@ -362,10 +362,10 @@ export default function TelaCentral({ navigation, route }) {
           zoomEnabled={true}
           style={styles.mapaView}
           initialRegion={{
-            latitude: -25.481162102936597,
-            longitude: -49.29087692187499,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
+            latitude: -25.495929967534504,
+            longitude: -49.302469015104435,
+            latitudeDelta: 0.0122,
+            longitudeDelta: 0.0221,
           }}
         >
           <MapView.Marker
