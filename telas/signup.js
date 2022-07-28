@@ -84,5 +84,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#fff',
   }
-  
 });
