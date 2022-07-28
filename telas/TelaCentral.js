@@ -21,25 +21,26 @@ export default function TelaCentral({ navigation, route }) {
   const [isChecked, setisChecked] = useState(true);
   const [horas, sethoras] = useState("09");
   const [minutos, setminutos] = useState("30");
-  const [perigo, setPerigo] = useState(0);  
+  const [perigo, setPerigo] = useState(0);
   const [userName, setUserName] = useState("");
-  
-  
+
+
   return (
 
 
     <View style={styles.container}>
 
-      {/* Botão de perfil*/}
-      <View style={{ left: "35%", top: "-25%"}} >
-        <View style={{backgroundColor:'white', borderRadius:10}}>
-          <Text style={{fontSize:15}}>Ola, {route.params.paramKey}</Text>
+      {/* Olá, usuario */}
+      <View style={{ left: "35%", top: "-25%" }} >
+        <View style={{ backgroundColor: 'white', borderRadius: 10 }}>
+          <Text style={{ fontSize: 15 }}>Ola, {route.params.paramKey}</Text>
         </View>
       </View>
-      <View style={{ left: "35%", top: "-25%"}} >
+      {/* Botão de perfil */}
+      <View style={{ left: "35%", top: "-25%" }} >
         <TouchableOpacity
           style={{ height: 70, width: 70 }}
-          onPress={() => navigation.navigate('Perfil',{route} )
+          onPress={() => navigation.navigate('Perfil', { route })
           }>
           <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 15, }} source={require("../assets/perf.png")} />
         </TouchableOpacity>
@@ -284,29 +285,29 @@ export default function TelaCentral({ navigation, route }) {
                 <Text style={{ color: '#fff', margin: '2%', fontSize: 18 }}>Nivel de perigo:</Text>
                 <View style={styles.campo5}>
                   <TouchableOpacity
-                    onPress={() => {setisblue('black'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(1);}}
-                    style={{ backgroundColor: 'blue' , height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent:'center', alignItems:'center' }}>
-                    <Text style={{color: isblue, fontSize:38}}>✔</Text>
+                    onPress={() => { setisblue('black'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(1); }}
+                    style={{ backgroundColor: 'blue', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ color: isblue, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => { setisgreen('black'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(2);}}
-                    style={{ backgroundColor: 'green' , height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent:'center', alignItems:'center' }}>
-                    <Text style={{color: isgreen, fontSize:38}}>✔</Text>
+                    onPress={() => { setisgreen('black'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(2); }}
+                    style={{ backgroundColor: 'green', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ color: isgreen, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('black'); setisorange('orange'); setisred('red');setPerigo(3);}}
-                    style={{ backgroundColor: 'yellow' , height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent:'center', alignItems:'center' }}>
-                    <Text style={{color: isyellow, fontSize:38}}>✔</Text>
+                    onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('black'); setisorange('orange'); setisred('red'); setPerigo(3); }}
+                    style={{ backgroundColor: 'yellow', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ color: isyellow, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('black'); setisred('red');setPerigo(4);}}
-                    style={{ backgroundColor: 'orange' , height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent:'center', alignItems:'center' }}>
-                    <Text style={{color: isorange, fontSize:38}}>✔</Text>
+                    onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('black'); setisred('red'); setPerigo(4); }}
+                    style={{ backgroundColor: 'orange', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ color: isorange, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('black');setPerigo(5);}}
-                    style={{ backgroundColor: 'red' , height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent:'center', alignItems:'center' }}>
-                    <Text style={{color: isred, fontSize:38}}>✔</Text>
+                    onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('black'); setPerigo(5); }}
+                    style={{ backgroundColor: 'red', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ color: isred, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   {/* <Image style={styles.paleta} source={require("../assets/paleta.png")} /> */}
                 </View>
@@ -331,7 +332,7 @@ export default function TelaCentral({ navigation, route }) {
                   onPress={() => {
                     setver(false);
                     setponto(false);
-                    navigation.navigate('Feedback');
+                    navigation.navigate('FeedbackNew');
                   }}>
                   <Text style={styles.btnTxt}>Feedback😀</Text>
                 </TouchableOpacity>
@@ -376,8 +377,8 @@ export default function TelaCentral({ navigation, route }) {
             description={"Novo Mundo, Curitiba - State of Paraná, 81050-290"}
             onPress={() => {
               setponto(true);
-              setPontoNome('Universidade Santa Cruz') ;
-              setPontoEndereco('Rua Primo Lourenço Tosin, 1082 - Novo Mundo, Curitiba - PR, 81050-290') ;
+              setPontoNome('Universidade Santa Cruz');
+              setPontoEndereco('Rua Primo Lourenço Tosin, 1082 - Novo Mundo, Curitiba - PR, 81050-290');
             }}
           />
           <MapView.Marker
@@ -389,8 +390,8 @@ export default function TelaCentral({ navigation, route }) {
             description={"R. Pedro Gusso, 878-1030 - Novo Mundo, Curitiba - PR, 81050-200"}
             onPress={() => {
               setponto(true);
-              setPontoNome('Unidade de Saude Vila Feliz') ;
-              setPontoEndereco('R. Pedro Gusso, 878-1030 - Novo Mundo, Curitiba - PR, 81050-200') ;
+              setPontoNome('Unidade de Saude Vila Feliz');
+              setPontoEndereco('R. Pedro Gusso, 878-1030 - Novo Mundo, Curitiba - PR, 81050-200');
             }}
           />
           <MapView.Marker

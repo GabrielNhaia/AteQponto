@@ -91,20 +91,20 @@ export default function FeedbackNew({ navigation, route }) {
         <View style={{ width: "100%", Height: '10%', alignItems: 'center', paddingBottom: 10 }}>
           <TouchableOpacity
             style={styles.userBtnOption}
-            onPress={() => navigation.navigate('TelaCentral', {route})
+            onPress={() => navigation.navigate('Login')
             }>
             <Text style={styles.btnTxt}>Enviar Feedback 📨</Text>
           </TouchableOpacity>
         </View>
         {/* Botão retornar */}
-        <View style={{ width: "100%", Height: '10%', alignItems: 'center', }}>
+        {/* <View style={{ width: "100%", Height: '10%', alignItems: 'center', }}>
           <TouchableOpacity
             style={styles.userBtnOption}
             onPress={() => navigation.navigate('TelaCentral', {route})
             }>
             <Text style={styles.btnTxt}>Retornar🚪</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     </View>
   );
