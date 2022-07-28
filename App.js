@@ -9,6 +9,7 @@ import TelaCentral from './telas/TelaCentral';
 import Perfil from './telas/Perfil';
 import Notificacao from './telas/Notificacao';
 import Feedback from './telas/Feedback';
+import FeedbackNew from './telas/FeedbackNew';
 
 class App extends Component {
   render() {
@@ -60,6 +61,14 @@ class App extends Component {
             <Stack.Screen
               name='Feedback'
               component={Feedback}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
+            />  
+            <Stack.Screen
+              name='FeedbackNew'
+              component={FeedbackNew}
               options={{
                 headerTransparent:true,
                 headerShown:false,

@@ -1,6 +1,7 @@
 import { View, StyleSheet, TouchableOpacity, Text, Animated, PanResponder, Image } from 'react-native';
+import Login from './Login';
 
-export default function Perfil({ navigation }) {
+export default function Perfil({ navigation, route}) {
 
   pan = new Animated.ValueXY();
   panResponder = PanResponder.create({
@@ -16,6 +17,7 @@ export default function Perfil({ navigation }) {
     }
   });
 
+  const userName = Login.userName;
 
   return (
     <View style={styles.container}>
@@ -41,8 +43,8 @@ export default function Perfil({ navigation }) {
           <View style={{alignItems:'center', }}>
             <Text style={styles.titulo1}> Dados do usuario</Text>
           </View>
-          <Text style={styles.textos}> Nome do usuario:</Text>
-          <Text style={styles.textos}> CPF:</Text>
+          <Text style={styles.textos}> Nome do usuario: {userName} {route.params.paramKey} </Text>
+          <Text style={styles.textos}> CPF: </Text> 
           <Text style={styles.textos}> Data de Nascimento:</Text>
           <Text style={styles.textos}> E-mail:</Text>
         </View>
@@ -53,20 +55,20 @@ export default function Perfil({ navigation }) {
         <View style={{ width: "100%", Height: '10%', alignItems: 'center', paddingBottom: 10 }}>
           <TouchableOpacity
             style={styles.userBtnOption}
-            onPress={() => navigation.navigate('TelaCentral')
+            onPress={() => navigation.navigate('TelaCentral', {paramKey : userName})
             }>
             <Text style={styles.btnTxt}>🌱Alterar Dados🎲</Text>
           </TouchableOpacity>
         </View>
         {/* Botão retornar */}
-        <View style={{ width: "100%", Height: '10%', alignItems: 'center', }}>
+        {/* <View style={{ width: "100%", Height: '10%', alignItems: 'center', }}>
           <TouchableOpacity
             style={styles.userBtnOption}
-            onPress={() => navigation.navigate('TelaCentral')
+            onPress={() => navigation.navigate('TelaCentral', {route})
             }>
             <Text style={styles.btnTxt}>Retornar🚪</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     </View>
   );
