@@ -181,29 +181,29 @@ export default function TelaCentral({ navigation, route }) {
               {/* Campos */}
               <View style={styles.campoPerigo}>
                 <TouchableOpacity
-                  onPress={() => { setisblue('black'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(1); }}
+                  onPress={() => { setisblueFiltro('black'); setisgreenFiltro('green'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(1); }}
                   style={{ backgroundColor: 'blue', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-                  <Text style={{ color: isblue, fontSize: 38 }}>✔</Text>
+                  <Text style={{ color: isblueFiltro, fontSize: 38 }}>✔</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => { setisgreen('black'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(2); }}
+                  onPress={() => { setisgreenFiltro('black'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(2); }}
                   style={{ backgroundColor: 'green', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-                  <Text style={{ color: isgreen, fontSize: 38 }}>✔</Text>
+                  <Text style={{ color: isgreenFiltro, fontSize: 38 }}>✔</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('black'); setisorange('orange'); setisred('red'); setPerigo(3); }}
+                  onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('black'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(3); }}
                   style={{ backgroundColor: 'yellow', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-                  <Text style={{ color: isyellow, fontSize: 38 }}>✔</Text>
+                  <Text style={{ color: isyellowFiltro, fontSize: 38 }}>✔</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('black'); setisred('red'); setPerigo(4); }}
+                  onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('black'); setisredFiltro('red'); setPerigo(4); }}
                   style={{ backgroundColor: 'orange', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-                  <Text style={{ color: isorange, fontSize: 38 }}>✔</Text>
+                  <Text style={{ color: isorangeFiltro, fontSize: 38 }}>✔</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('black'); setPerigo(5); }}
+                  onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('black'); setPerigo(5); }}
                   style={{ backgroundColor: 'red', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-                  <Text style={{ color: isred, fontSize: 38 }}>✔</Text>
+                  <Text style={{ color: isredFiltro, fontSize: 38 }}>✔</Text>
                 </TouchableOpacity>
                 {/* <Image style={styles.paleta} source={require("../assets/paleta.png")} /> */}
               </View>
@@ -259,7 +259,6 @@ export default function TelaCentral({ navigation, route }) {
                 />
               </View>
             </View> */}
-
             {/* Filtrar Por periodo*/}
             <View style={styles.colText}>
               <Text style={{ fontSize: 20, color: "#fff" }}>Filtrar Por periodo:</Text>
