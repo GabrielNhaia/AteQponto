@@ -18,10 +18,16 @@ export default function TelaCentral({ navigation, route }) {
   const [isyellow, setisyellow] = useState('yellow');
   const [isorange, setisorange] = useState('orange');
   const [isred, setisred] = useState('red');
+  const [isblueFiltro, setisblueFiltro] = useState('blue');
+  const [isgreenFiltro, setisgreenFiltro] = useState('green');
+  const [isyellowFiltro, setisyellowFiltro] = useState('yellow');
+  const [isorangeFiltro, setisorangeFiltro] = useState('orange');
+  const [isredFiltro, setisredFiltro] = useState('red');
   const [isChecked, setisChecked] = useState(true);
   const [horas, sethoras] = useState("09");
   const [minutos, setminutos] = useState("30");
   const [perigo, setPerigo] = useState(0);
+  const [PerigoPonto, setPerigoPonto] = useState(0);
   const [userName, setUserName] = useState("");
 
 
@@ -360,7 +366,7 @@ export default function TelaCentral({ navigation, route }) {
                 {/* Campo de descreção */}
                 <Text style={{ color: '#fff', margin: '2%', fontSize: 18 }}>Descrição:</Text>
                 <View style={styles.campo3}>
-                  <Text> {pontoEndereco} {perigo} </Text>
+                  <Text> {pontoEndereco} {PerigoPonto} </Text>
                 </View>
                 {/* Campo de nivel de perigo */}
                 <Text style={{ color: '#fff', margin: '2%', fontSize: 18 }}>Nivel de perigo:</Text>
@@ -463,6 +469,8 @@ export default function TelaCentral({ navigation, route }) {
               setponto(true);
               setPontoNome('Universidade Santa Cruz');
               setPontoEndereco('Rua Primo Lourenço Tosin, 1082 - Novo Mundo, Curitiba - PR, 81050-290');
+              setPerigoPonto(4); 
+              setisblue('blue'); setisgreen('green'); setisyellow('yellow'); setisorange('black'); setisred('red'); 
             }}
           />
           <MapView.Marker
@@ -476,6 +484,8 @@ export default function TelaCentral({ navigation, route }) {
               setponto(true);
               setPontoNome('Unidade de Saude Vila Feliz');
               setPontoEndereco('R. Pedro Gusso, 878-1030 - Novo Mundo, Curitiba - PR, 81050-200');
+              setPerigoPonto(2); 
+              setisblue('blue'); setisgreen('black'); setisyellow('yellow'); setisorange('orange'); setisred('red'); 
             }}
           />
           <MapView.Marker
