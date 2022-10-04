@@ -43,7 +43,7 @@ export default function Perfil({ navigation, route}) {
           <View style={{alignItems:'center', }}>
             <Text style={styles.titulo1}> Dados do usuario</Text>
           </View>
-          <Text style={styles.textos}> Nome do usuario: {userName} {route.params.paramKey} </Text>
+          <Text style={styles.textos}> Nome do usuario: {userName} {route.params?.paramKey} </Text>
           <Text style={styles.textos}> CPF: </Text> 
           <Text style={styles.textos}> Data de Nascimento:</Text>
           <Text style={styles.textos}> E-mail:</Text>
@@ -55,7 +55,7 @@ export default function Perfil({ navigation, route}) {
         <View style={{ width: "100%", Height: '10%', alignItems: 'center', paddingBottom: 10 }}>
           <TouchableOpacity
             style={styles.userBtnOption}
-            onPress={() => navigation.navigate('TelaCentral', {paramKey : userName})
+            onPress={() => navigation.navigate('Login')
             }>
             <Text style={styles.btnTxt}>🌱Alterar Dados🎲</Text>
           </TouchableOpacity>
@@ -64,7 +64,7 @@ export default function Perfil({ navigation, route}) {
         {/* <View style={{ width: "100%", Height: '10%', alignItems: 'center', }}>
           <TouchableOpacity
             style={styles.userBtnOption}
-            onPress={() => navigation.navigate('TelaCentral', {route})
+            onPress={() => navigation.navigate('TelaCentral')
             }>
             <Text style={styles.btnTxt}>Retornar🚪</Text>
           </TouchableOpacity>

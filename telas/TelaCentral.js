@@ -32,8 +32,8 @@ export default function TelaCentral({ navigation, route }) {
 
       {/* Olá, usuario */}
       <View style={{ left: "35%", top: "-25%" }} >
-        <View style={{ backgroundColor: 'white', borderRadius: 10 }}>
-          <Text style={{ fontSize: 15 }}>Ola, {route.params.paramKey}</Text>
+        <View style={{ backgroundColor: 'white', borderRadius: 10, borderColor:'#318c46', borderWidth:1 }}>
+          <Text style={{ fontSize: 15 }}>Ola, {route.params?.paramKey}</Text>
         </View>
       </View>
       {/* Botão de perfil */}
@@ -42,7 +42,7 @@ export default function TelaCentral({ navigation, route }) {
           style={{ height: 70, width: 70 }}
           onPress={() => navigation.navigate('Perfil', { route })
           }>
-          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 15, }} source={require("../assets/perf.png")} />
+          <Image style={{ maxWidth: 70, maxHeight: 70, borderRadius: 15,  borderColor:'#318c46', borderWidth:1 }} source={require("../assets/perf.png")} />
         </TouchableOpacity>
       </View>
 
@@ -123,7 +123,87 @@ export default function TelaCentral({ navigation, route }) {
         >
           <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'flex-end' }}>
             {/* Filtrar perigo */}
-            <View style={styles.colText}>
+            <View style={styles.colPerigo}>
+              <Text style={{ fontSize: 20, color: "#fff", position: 'absolute', bottom:'75%', right:'65%' }}>Filtrar perigo:</Text>
+              {/* <View style={{ flex: 1, flexDirection: 'row', paddingTop: '7%' }}>
+                <CheckBox
+                  style={{ maxWidth: 40, left: 20, top: "2%" }}
+                  onClick={() => {
+                    setisChecked(!isChecked)
+                  }}
+                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
+                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
+                  isChecked={isChecked}
+                />
+                <CheckBox
+                  style={{ maxWidth: 40, paddingLeft: 60, top: "2%" }}
+                  onClick={() => {
+                    setisChecked(!isChecked)
+                  }}
+                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
+                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
+                  isChecked={isChecked}
+                />
+                <CheckBox
+                  style={{ maxWidth: 40, paddingLeft: 60, top: "2%" }}
+                  onClick={() => {
+                    setisChecked(!isChecked)
+                  }}
+                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
+                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
+                  isChecked={isChecked}
+                />
+                <CheckBox
+                  style={{ maxWidth: 40, paddingLeft: 60, top: "2%" }}
+                  onClick={() => {
+                    setisChecked(!isChecked)
+                  }}
+                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
+                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
+                  isChecked={isChecked}
+                />
+                <CheckBox
+                  style={{ maxWidth: 40, paddingLeft: 60, top: "2%" }}
+                  onClick={() => {
+                    setisChecked(!isChecked)
+                  }}
+                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
+                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
+                  isChecked={isChecked}
+                />
+              </View> */}
+              {/* Campos */}
+              <View style={styles.campoPerigo}>
+                <TouchableOpacity
+                  onPress={() => { setisblue('black'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(1); }}
+                  style={{ backgroundColor: 'blue', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                  <Text style={{ color: isblue, fontSize: 38 }}>✔</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => { setisgreen('black'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(2); }}
+                  style={{ backgroundColor: 'green', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                  <Text style={{ color: isgreen, fontSize: 38 }}>✔</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('black'); setisorange('orange'); setisred('red'); setPerigo(3); }}
+                  style={{ backgroundColor: 'yellow', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                  <Text style={{ color: isyellow, fontSize: 38 }}>✔</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('black'); setisred('red'); setPerigo(4); }}
+                  style={{ backgroundColor: 'orange', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                  <Text style={{ color: isorange, fontSize: 38 }}>✔</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('black'); setPerigo(5); }}
+                  style={{ backgroundColor: 'red', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                  <Text style={{ color: isred, fontSize: 38 }}>✔</Text>
+                </TouchableOpacity>
+                {/* <Image style={styles.paleta} source={require("../assets/paleta.png")} /> */}
+              </View>
+            </View> 
+            {/* Filtrar perigo old */}
+            {/* <View style={styles.colText}>
               <Text style={{ fontSize: 20, color: "#fff", position: 'absolute' }}>Filtrar perigo:</Text>
               <View style={{ flex: 1, flexDirection: 'row', paddingTop: '7%' }}>
                 <CheckBox
@@ -172,8 +252,9 @@ export default function TelaCentral({ navigation, route }) {
                   isChecked={isChecked}
                 />
               </View>
-            </View>
-            {/* Filtrar Por periodo */}
+            </View> */}
+
+            {/* Filtrar Por periodo*/}
             <View style={styles.colText}>
               <Text style={{ fontSize: 20, color: "#fff" }}>Filtrar Por periodo:</Text>
               {/*picker do periodo*/}
@@ -261,14 +342,14 @@ export default function TelaCentral({ navigation, route }) {
             </View>
           </View>
         </Modal>
-        {/* Modal dos ponto */}
+        {/* Modal dos pontos */}
         <Modal
           animationType='fade'
           transparent={true}
           visible={ponto}
         >
           <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-            {/* Botão Filtros */}
+            {/* Conteudo */}
             <View style={styles.conteudoPonto}>
               <View style={styles.campo0}>
                 {/* Campo de indicador de ponto */}
@@ -283,34 +364,36 @@ export default function TelaCentral({ navigation, route }) {
                 </View>
                 {/* Campo de nivel de perigo */}
                 <Text style={{ color: '#fff', margin: '2%', fontSize: 18 }}>Nivel de perigo:</Text>
+                {/* Campos */}
                 <View style={styles.campo5}>
                   <TouchableOpacity
-                    onPress={() => { setisblue('black'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(1); }}
+                    // onPress={() => { setisblue('black'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(1); }}
                     style={{ backgroundColor: 'blue', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ color: isblue, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => { setisgreen('black'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(2); }}
+                    // onPress={() => { setisgreen('black'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('red'); setPerigo(2); }}
                     style={{ backgroundColor: 'green', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ color: isgreen, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('black'); setisorange('orange'); setisred('red'); setPerigo(3); }}
+                    // onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('black'); setisorange('orange'); setisred('red'); setPerigo(3); }}
                     style={{ backgroundColor: 'yellow', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ color: isyellow, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('black'); setisred('red'); setPerigo(4); }}
+                    // onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('black'); setisred('red'); setPerigo(4); }}
                     style={{ backgroundColor: 'orange', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ color: isorange, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('black'); setPerigo(5); }}
+                    // onPress={() => { setisgreen('green'); setisblue('blue'); setisyellow('yellow'); setisorange('orange'); setisred('black'); setPerigo(5); }}
                     style={{ backgroundColor: 'red', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ color: isred, fontSize: 38 }}>✔</Text>
                   </TouchableOpacity>
                   {/* <Image style={styles.paleta} source={require("../assets/paleta.png")} /> */}
                 </View>
+                {/* Botão de ocorrencias */}
                 <TouchableOpacity
                   style={styles.btnOcorrencia}
                   onPress={() => {
@@ -326,6 +409,7 @@ export default function TelaCentral({ navigation, route }) {
                   <Text style={styles.btnTxt}>Ver ocorrencias❗</Text>
                 </TouchableOpacity>
               </View>
+              {/* Botão de feedback */}
               <View style={styles.campo1}>
                 <TouchableOpacity
                   style={styles.userBtnOption}
@@ -537,17 +621,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     zIndex: -1,
   },
-  colText: {
-    flex: 1,
-    flexDirection: 'row',
-    maxHeight: 80,
-    width: "97%",
-    paddingLeft: "2%",
-    margin: 5,
-    marginLeft: 5,
-    borderRadius: 10,
-    backgroundColor: '#2d742d',
-  },
   fimColText: {
     flex: 1,
     flexDirection: 'row',
@@ -584,6 +657,41 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#2d742d',
     justifyContent: 'center'
+  },
+  colText: {
+    flex: 1,
+    flexDirection: 'row',
+    maxHeight: 80,
+    width: "97%",
+    paddingLeft: "2%",
+    margin: 5,
+    marginLeft: 5,
+    borderRadius: 10,
+    backgroundColor: '#2d742d',
+  },
+  colPerigo: {
+    flex: 1,
+    flexDirection: 'column',
+    maxHeight: 140,
+    width: "97%",
+    paddingLeft: "2%",
+    margin: 5,
+    marginLeft: 5,
+    borderRadius: 10,
+    backgroundColor: '#2d742d',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingBottom:'2%'
+  },
+  campoPerigo: {
+    flex: 2,
+    flexDirection: 'row',
+    maxHeight: '60%',
+    width: '97%',
+    borderRadius: 10,
+    backgroundColor: '#535454',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   conteudoPonto: {
     flex: 1,
@@ -663,9 +771,11 @@ const styles = StyleSheet.create({
   Opcoes: {
     backgroundColor: '#2d742d',
     borderRadius: 12,
+    borderColor:'#318c46', 
+    borderWidth:4,
     justifyContent: 'center',
     position: 'absolute',
-    bottom: 9,
+    bottom: 5,
     flexDirection: "row",
   },
   Hora: {
