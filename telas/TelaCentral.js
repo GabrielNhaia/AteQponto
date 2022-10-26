@@ -513,6 +513,7 @@ export default function TelaCentral({ navigation, route }) {
             description={"Novo Mundo, Curitiba - State of Paraná, 81020-000"}
           />
 
+
           <MapView.Marker
             coordinate={{
               latitude: -25.432762860035012,
