@@ -1,5 +1,7 @@
 import {app, db, Usuario} from '../banco/firebaseConnection';
-import {firestore} from '@react-native-firebase/firestore';
+import { collection, addDoc , firestore} from "firebase/firestore";
+import 'firebase/firestore';
+// import {firestore} from '@react-native-firebase/firestore';
 //import Usuario from '../classes/Usuario';
 //const database = firebase();
 
@@ -7,7 +9,8 @@ import {firestore} from '@react-native-firebase/firestore';
 
 export function CadastrarUsuario( nome, cpf, email, senha, noti)
 {
-   app.firestore()
+   
+   firestore()
    .collection('Usuario')
    .doc('OKGPlJCGoa6Da2jMembL')
    .set({

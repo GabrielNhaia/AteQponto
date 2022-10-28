@@ -1,15 +1,10 @@
-import { initializeApp,firebase } from "firebase/app";
+import { initializeApp , firebase } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
 import 'firebase/firestore';
-import { getDatabase } from "firebase/database";
-import {firestore} from '@react-native-firebase/firestore';
-// import * as firebaseConnection from '../banco';
+// import * as firebase from 'firebase';
 import '@firebase/firestore';
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDSQOLouUrM4TBhIF4d5lca1LtR6fJu1G8",
   authDomain: "ateqponto-a17b0.firebaseapp.com",
@@ -21,10 +16,16 @@ const firebaseConfig = {
   measurementId: "G-0SNYCY58TL"
 };
 
-// Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
+ 
+
+// if (!firebase.apps.length) {
+//   firebase.initializeApp(firebaseConfig);
+// }
+
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+
+export const db = getFirestore(app);
+// const db = getDatabase(app);
 // export const usuario =  firestore().collection('Usuario').get();
 // export const Usuario = firestore.firestore().collection('Usuario');
 
