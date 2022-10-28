@@ -1,18 +1,33 @@
 import db from '../banco/firebaseConnection';
+import { getFirestore, collection, query, where, getDocs, addDoc } from 'firebase/firestore';
+
+//import firestore from '@react-native-firebase/firestore';
+const Usuarios = collection(db,'Usuario');
+
 //import Usuario from '../classes/Usuario';
 //const database = firebase();
 
 
 export function CadastrarUsuario( nome, cpf, email, senha, noti)
 {
-   db().ref('/Usuario/').push({
+   addDoc(Usuarios,({   
+      Nome: nome, 
+      CPF: cpf,
+      Email : email, 
+      Senha: senha, 
+      Notificacao: noti,
+    }));
+    //.then(() => {
+     //   console.log('usuario adicionado!');
+    //});
+   /*db().ref('/Usuario/').push({
       Nome: nome, 
       CPF: cpf,
       Email : email, 
       Senha: senha, 
       Notificacao: noti
      });
-
+*/
    /*firebase()
   .ref('/Usuario/'+id)
   .update({
