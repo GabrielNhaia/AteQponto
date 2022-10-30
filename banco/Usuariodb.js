@@ -1,27 +1,35 @@
 import {app, db, Usuario} from '../banco/firebaseConnection';
 import { collection, addDoc , firestore} from "firebase/firestore";
+
 import 'firebase/firestore';
 // import {firestore} from '@react-native-firebase/firestore';
 //import Usuario from '../classes/Usuario';
 //const database = firebase();
-
+const Usuarios = collection(db,'Usuario');
 // const CadastrarUsuario = app.firestore().collection('entities')
 
 export function CadastrarUsuario( nome, cpf, email, senha, noti)
 {
-   
-   firestore()
-   .collection('Usuario')
-   .doc('OKGPlJCGoa6Da2jMembL')
-   .set({
+   addDoc(Usuarios,({   
       CPF: cpf,
       Email : email, 
       Notificacao: noti,
       Nome: nome, 
       Senha: senha, 
-   });
+    }));
+    
+   } 
+   // firestore()
+   // .collection('Usuario')
+   // .doc('OKGPlJCGoa6Da2jMembL')
+   // .set({
+   //    CPF: cpf,
+   //    Email : email, 
+   //    Notificacao: noti,
+   //    Nome: nome, 
+   //    Senha: senha, 
+   // });
    
-} 
 
    // firebase.db().ref('/Usuario/').push({
    //    Nome: nome, 
