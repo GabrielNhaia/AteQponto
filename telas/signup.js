@@ -1,20 +1,13 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
-import React, { Component } from 'react';
+import React, { Component, useState} from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
 import {CadastrarUsuario, Usuariodb} from '../banco/Usuariodb';
 
-export default class Signup extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      Email: "",
-      Nome: "",
-      CPF: "",
-      Senha:"",
-    };
 
-  }
-  render(){
+export default function Signup() {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
     return (
       <View style={styles.container}>
@@ -23,32 +16,37 @@ export default class Signup extends Component {
         barStyle="light-content"
         />
       <Text style={styles.titulo}>Registrar - se</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
+      <TextInput      
+        style={styles.input}        
+        placeholder="Email"           
+        keyboardType="email-address"         
+        onChangeText={(value) => setEmail(value)} 
         />
       <TextInput
         style={styles.input}
-        placeholder="Nome completo"
+        placeholder="Nome completo"        
+        onChangeText={(value) => setName(value)} 
         />
       <TextInput
         style={styles.input}
         placeholder="CPF"
+        maxLength={11}
+        keyboardType="number-pad"
         />
       <TextInput
         style={styles.input}
         placeholder="Senha"
-        secureTextEntry
+        secureTextEntry={true}
       />
       <TextInput
         style={styles.input}
         placeholder="Confirme sua Senha"
-        secureTextEntry
+        secureTextEntry={true}
         />
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={styles.userBtn}          
-          onPress={() => CadastrarUsuario("jhonatan","11111111111","jhonatan@jhonatan.jhonatan.jhonatan","jhonatan", false)}
+          onPress={() => CadastrarUsuario(name,"11111111111","jhonatan@jhonatan.jhonatan.jhonatan","jhonatan", false)}
           >
           <Text style={styles.btnTxt}>Registre-se</Text>
         </TouchableOpacity>
@@ -56,7 +54,7 @@ export default class Signup extends Component {
     </View>
   );
 }
-}
+
 
 const styles = StyleSheet.create({
   container: {

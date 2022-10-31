@@ -1,14 +1,17 @@
 import {app, db, Usuario} from '../banco/firebaseConnection';
 import { collection, addDoc , firestore} from "firebase/firestore";
-
+import { LogBox } from 'react-native';
 import 'firebase/firestore';
 // import {firestore} from '@react-native-firebase/firestore';
 //import Usuario from '../classes/Usuario';
 //const database = firebase();
+
 const Usuarios = collection(db,'Usuario');
+LogBox.ignoreLogs(['Setting a timer for a long period of time'])
+
 // const CadastrarUsuario = app.firestore().collection('entities')
 
-export function CadastrarUsuario( nome, cpf, email, senha, noti)
+export async function CadastrarUsuario( nome, cpf, email, senha, noti)
 {
    addDoc(Usuarios,({   
       CPF: cpf,
