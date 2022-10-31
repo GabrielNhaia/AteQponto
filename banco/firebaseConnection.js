@@ -2,7 +2,6 @@ import { initializeApp , firebase } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 import 'firebase/firestore';
-// import * as firebase from 'firebase';
 import '@firebase/firestore';
 
 const firebaseConfig = {
@@ -18,16 +17,11 @@ const firebaseConfig = {
 
  
 
-// if (!firebase.apps.length) {
-//   firebase.initializeApp(firebaseConfig);
-// }
 
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 // const db = getDatabase(app);
-// export const usuario =  firestore().collection('Usuario').get();
-// export const Usuario = firestore.firestore().collection('Usuario');
 
 
 export {app};
