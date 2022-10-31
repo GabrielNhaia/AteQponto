@@ -4,10 +4,13 @@ import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 
 import {CadastrarUsuario, Usuariodb} from '../banco/Usuariodb';
 
 
-export default function Signup() {
+export default function Signup({navigation,route}) {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [CPF, setCPF] = useState("");  
+  const [senha, setSenha] = useState("");
+  const [senha2, setSenha2] = useState("");
 
     return (
       <View style={styles.container}>
@@ -32,21 +35,26 @@ export default function Signup() {
         placeholder="CPF"
         maxLength={11}
         keyboardType="number-pad"
+        onChangeText={(value) => setCPF(value)} 
         />
       <TextInput
         style={styles.input}
         placeholder="Senha"
-        secureTextEntry={true}
+        secureTextEntry={true}        
+        onChangeText={(value) => setSenha(value)} 
       />
       <TextInput
         style={styles.input}
         placeholder="Confirme sua Senha"
-        secureTextEntry={true}
+        secureTextEntry={true}        
+        onChangeText={(value) => setSenha2(value)} 
         />
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={styles.userBtn}          
-          onPress={() => CadastrarUsuario(name,"11111111111","jhonatan@jhonatan.jhonatan.jhonatan","jhonatan", false)}
+          onPress={() => {
+            CadastrarUsuario(name,CPF,email,senha,false), 
+            navigation.navigate('Login') }}
           >
           <Text style={styles.btnTxt}>Registre-se</Text>
         </TouchableOpacity>

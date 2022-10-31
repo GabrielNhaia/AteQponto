@@ -20,28 +20,8 @@ export async function CadastrarUsuario( nome, cpf, email, senha, noti)
       Nome: nome, 
       Senha: senha, 
     }));
-    
    } 
-   // firestore()
-   // .collection('Usuario')
-   // .doc('OKGPlJCGoa6Da2jMembL')
-   // .set({
-   //    CPF: cpf,
-   //    Email : email, 
-   //    Notificacao: noti,
-   //    Nome: nome, 
-   //    Senha: senha, 
-   // });
    
-
-   // firebase.db().ref('/Usuario/').push({
-   //    Nome: nome, 
-   //    CPF: cpf,
-   //    Email : email, 
-   //    Senha: senha, 
-   //    Notificacao: noti
-   //   });
-
 function LoginUsuario ( CPF,  senha)
 {
 
