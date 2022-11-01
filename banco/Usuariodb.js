@@ -5,6 +5,8 @@ import 'firebase/firestore';
 
 LogBox.ignoreLogs(['Setting a timer for a long period of time'])
 const Usuarios = collection(db,'Usuario');
+
+const Feedback = collection(db,'Feedback');
 // const logar = getDocs(Usuarios);
 
 
@@ -17,7 +19,20 @@ export async function CadastrarUsuario( nome, cpf, email, senha, noti)
       Nome: nome, 
       Senha: senha, 
     }));
-   } 
+} 
+
+export async function RegistrarFeedback( comentario, data, nome, nota, pontoNome, cpf)
+{
+   addDoc(Feedback,({   
+      CPF: cpf,
+      Comentario: comentario,
+      Data: data,
+      Nome: nome, 
+      Nota : nota, 
+      PontoNome: pontoNome,
+    }));
+} 
+
 
 function LoginUsuario ( CPF,  senha)
 {
