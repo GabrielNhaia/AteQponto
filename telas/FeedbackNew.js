@@ -9,7 +9,7 @@ export default function FeedbackNew({ navigation, route }) {
   const [minutos, setminutos] = useState("30");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [CPF, setCPF] = useState("");  
+  const [pontoNome, setPontoNome] = useState("UniSantaCruz");  
   const [comentario, setComentario] = useState("");
 
   return (
@@ -23,10 +23,19 @@ export default function FeedbackNew({ navigation, route }) {
         <View style={styles.conteudo}>
           <View style={styles.campoPonto}>
             <Text style={styles.txt}>Ponto:</Text>
-            <TextInput
+            <Picker
+              style={styles.inputPonto}
+              selectedValue={pontoNome}              
+              onValueChange={(itemValue) =>
+                setPontoNome(itemValue)
+              }>
+              <Picker.Item label="UniSantacruz" value="UniSantacruz" />
+              <Picker.Item label="Pedro Gusso" value="Pedro Gusso" />
+            </Picker>
+            {/* <TextInput
               style={styles.inputPonto}
               placeholder="Ponto"
-            />
+            /> */}
           </View>
           <View style={styles.campoPonto}>
             <Text style={styles.txt}>Horario:</Text>
@@ -61,7 +70,7 @@ export default function FeedbackNew({ navigation, route }) {
               <Picker.Item label="22" value="22" />
               <Picker.Item label="23" value="23" />
             </Picker>
-            {/*PPICKER DO MINUTOS*/}
+            {/*PICKER DO MINUTOS*/}
             <Picker
               style={styles.picker}
               selectedValue={minutos}
@@ -98,7 +107,7 @@ export default function FeedbackNew({ navigation, route }) {
           <TouchableOpacity
             style={styles.userBtnOption}
             onPress={() => {
-              RegistrarFeedback(comentario, "data", "nome", "nota", "pontoNome", "11111111111"),
+              RegistrarFeedback(comentario, "data", "nome", "nota", pontoNome, "11111111111"),
               navigation.navigate('Login')}
             }>
             <Text style={styles.btnTxt}>Enviar Feedback 📨</Text>
