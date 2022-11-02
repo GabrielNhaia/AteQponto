@@ -1,43 +1,48 @@
+
 import {app, db, Usuario} from '../banco/firebaseConnection';
-import {firestore} from '@react-native-firebase/firestore';
-//import Usuario from '../classes/Usuario';
-//const database = firebase();
+import { collection, addDoc , firestore, getDoc,getDocs} from "firebase/firestore";
+import { LogBox } from 'react-native';
+import 'firebase/firestore';
 
-// const CadastrarUsuario = app.firestore().collection('entities')
+LogBox.ignoreLogs(['Setting a timer for a long period of time'])
+const Usuarios = collection(db,'Usuario');
 
-export function CadastrarUsuario( nome, cpf, email, senha, noti)
+const Feedback = collection(db,'Feedback');
+
+
+export async function CadastrarUsuario( nome, cpf, email, senha, noti)
 {
-   app.firestore()
-   .collection('Usuario')
-   .doc('OKGPlJCGoa6Da2jMembL')
-   .set({
+   addDoc(Usuarios,({   
       CPF: cpf,
       Email : email, 
       Notificacao: noti,
       Nome: nome, 
       Senha: senha, 
-   });
-   
+    }));
 } 
 
-   // firebase.db().ref('/Usuario/').push({
-   //    Nome: nome, 
-   //    CPF: cpf,
-   //    Email : email, 
-   //    Senha: senha, 
-   //    Notificacao: noti
-   //   });
+export async function RegistrarFeedback( comentario, data, nome, nota, pontoNome, cpf)
+{
+   addDoc(Feedback,({   
+      CPF: cpf,
+      Comentario: comentario,
+      Data: data,
+      Nome: nome, 
+      Nota : nota, 
+      PontoNome: pontoNome,
+    }));
+} 
+
 
 function LoginUsuario ( CPF,  senha)
 {
-
+   
    db()
    .ref('Usuario/')
    .onValue((CPF) => {
       const data = snapshot.val();
       if(data.Senha == senha)
       {
-         //updateStarCount(postElement, data);
          return data;
 
       }
@@ -72,6 +77,5 @@ function AlterarUsuario (  id,nome,email, senha, noti)
 function DeletarUsuario (id)
 {
    db().ref('/Usuario/'+{id}+'').remove();
-
 
 }

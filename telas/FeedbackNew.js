@@ -1,11 +1,16 @@
 import { View, StyleSheet, TouchableOpacity, Text, TextInput } from 'react-native';
 import React, { useState } from 'react';
 import { Picker } from '@react-native-picker/picker';
+import { RegistrarFeedback } from '../banco/Usuariodb';
 
 export default function FeedbackNew({ navigation, route }) {
 
   const [horas, sethoras] = useState("09");
   const [minutos, setminutos] = useState("30");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [CPF, setCPF] = useState("");  
+  const [comentario, setComentario] = useState("");
 
   return (
     <View style={styles.container}>
@@ -80,6 +85,7 @@ export default function FeedbackNew({ navigation, route }) {
               <TextInput
                 style={styles.inputCampo}
                 placeholder="Feedback"
+                onChangeText={(value) => setComentario(value)} 
               />
             </View>
           </View>
@@ -91,7 +97,9 @@ export default function FeedbackNew({ navigation, route }) {
         <View style={{ width: "100%", Height: '10%', alignItems: 'center', paddingBottom: 10 }}>
           <TouchableOpacity
             style={styles.userBtnOption}
-            onPress={() => navigation.navigate('Login')
+            onPress={() => {
+              RegistrarFeedback(comentario, "data", "nome", "nota", "pontoNome", "11111111111"),
+              navigation.navigate('Login')}
             }>
             <Text style={styles.btnTxt}>Enviar Feedback 📨</Text>
           </TouchableOpacity>
