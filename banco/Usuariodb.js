@@ -1,3 +1,4 @@
+
 import {app, db, Usuario} from '../banco/firebaseConnection';
 import { collection, addDoc , firestore, getDoc,getDocs} from "firebase/firestore";
 import { LogBox } from 'react-native';
@@ -36,7 +37,6 @@ export async function RegistrarFeedback( comentario, data, nome, nota, pontoNome
 function LoginUsuario ( CPF,  senha)
 {
    
-    
    db()
    .ref('Usuario/')
    .onValue((CPF) => {
@@ -44,6 +44,7 @@ function LoginUsuario ( CPF,  senha)
       if(data.Senha == senha)
       {
          return data;
+
       }
       else{
          return "Erro no login";
@@ -76,6 +77,5 @@ function AlterarUsuario (  id,nome,email, senha, noti)
 function DeletarUsuario (id)
 {
    db().ref('/Usuario/'+{id}+'').remove();
-
 
 }

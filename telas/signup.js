@@ -13,7 +13,7 @@ export default function Signup({navigation,route}) {
   const [senha2, setSenha2] = useState("");
 
     return (
-      <View style={styles.container}>
+      <View name="Registrar" style={styles.container}>
       <StatusBar
         backgroundColor="#2d742d"
         barStyle="light-content"
@@ -32,6 +32,7 @@ export default function Signup({navigation,route}) {
         />
       <TextInput
         style={styles.input}
+        name = "CPF"
         placeholder="CPF"
         minLength={11}
         maxLength={11}
@@ -40,19 +41,22 @@ export default function Signup({navigation,route}) {
         />
       <TextInput
         style={styles.input}
+        name = "Senha"
         placeholder="Senha"
         secureTextEntry={true}        
         onChangeText={(value) => setSenha(value)} 
       />
+      {/*
       <TextInput
         style={styles.input}
         placeholder="Confirme sua Senha"
         secureTextEntry={true}        
         onChangeText={(value) => setSenha2(value)} 
         />
+    */} 
       <View style={styles.btnContainer}>
         <TouchableOpacity
-          style={styles.userBtn}          
+          style={styles.userBtn} 
           onPress={() => {
             CadastrarUsuario(name,CPF,email,senha,false), 
             navigation.navigate('Login') }}
