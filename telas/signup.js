@@ -1,6 +1,7 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
 import React, { Component, useState} from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
+import internal from 'stream';
 import {CadastrarUsuario, Usuariodb} from '../banco/Usuariodb';
 
 
@@ -33,6 +34,7 @@ export default function Signup({navigation,route}) {
       <TextInput
         style={styles.input}
         placeholder="CPF"
+        minLength={11}
         maxLength={11}
         keyboardType="number-pad"
         onChangeText={(value) => setCPF(value)} 

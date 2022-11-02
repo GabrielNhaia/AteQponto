@@ -7,7 +7,6 @@ LogBox.ignoreLogs(['Setting a timer for a long period of time'])
 const Usuarios = collection(db,'Usuario');
 
 const Feedback = collection(db,'Feedback');
-// const logar = getDocs(Usuarios);
 
 
 export async function CadastrarUsuario( nome, cpf, email, senha, noti)
