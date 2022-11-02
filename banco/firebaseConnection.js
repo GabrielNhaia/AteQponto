@@ -1,17 +1,14 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
-import analytics from "firebase/analytics";
-import {getDatabase} from'firebase/database';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp , firebase } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import 'firebase/firestore';
+import '@firebase/firestore';
+
 const firebaseConfig = {
   apiKey: "AIzaSyDSQOLouUrM4TBhIF4d5lca1LtR6fJu1G8",
   authDomain: "ateqponto-a17b0.firebaseapp.com",
+  databaseURL: "https://ateqponto-a17b0-default-rtdb.firebaseio.com",
   projectId: "ateqponto-a17b0",
   storageBucket: "ateqponto-a17b0.appspot.com",
   messagingSenderId: "541625644275",
@@ -19,14 +16,9 @@ const firebaseConfig = {
   measurementId: "G-0SNYCY58TL"
 };
 
-// Initialize Firebase  
-//if(!firebase.apps.length)
+const app = initializeApp(firebaseConfig);
 
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
+export const db = getFirestore(app);
+// const db = getDatabase(app);
 
-    //analytics = getAnalytics(app);
-
-export default db;
-//export default analytics;
-//const app = 
+export {app};
