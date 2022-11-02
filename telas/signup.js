@@ -1,7 +1,6 @@
 //DESENVOLVIDO PELA EQUIPE MAPA DO CRIME - TCC(USC)
 import React, { Component, useState} from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
-import internal from 'stream';
 import {CadastrarUsuario, Usuariodb} from '../banco/Usuariodb';
 
 
