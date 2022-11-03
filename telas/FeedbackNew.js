@@ -5,12 +5,28 @@ import { RegistrarFeedback } from '../banco/Usuariodb';
 
 export default function FeedbackNew({ navigation, route }) {
 
+  const [dia, setDia] = useState("04");
+  const [mes, setMes] = useState("11");
+  const [ano, setAno] = useState("2022");
   const [horas, sethoras] = useState("09");
   const [minutos, setminutos] = useState("30");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [pontoNome, setPontoNome] = useState("UniSantaCruz");  
+  const [pontoNome, setPontoNome] = useState("UniSantaCruz");
   const [comentario, setComentario] = useState("");
+
+  const [isblue, setisblue] = useState('blue');
+  const [isgreen, setisgreen] = useState('green');
+  const [isyellow, setisyellow] = useState('yellow');
+  const [isorange, setisorange] = useState('orange');
+  const [isred, setisred] = useState('red');
+  const [isblueFiltro, setisblueFiltro] = useState('blue');
+  const [isgreenFiltro, setisgreenFiltro] = useState('green');
+  const [isyellowFiltro, setisyellowFiltro] = useState('yellow');
+  const [isorangeFiltro, setisorangeFiltro] = useState('orange');
+  const [isredFiltro, setisredFiltro] = useState('red');
+  const [perigo, setPerigo] = useState(0);
+  const [PerigoPonto, setPerigoPonto] = useState(0);
 
   return (
     <View style={styles.container}>
@@ -25,7 +41,7 @@ export default function FeedbackNew({ navigation, route }) {
             <Text style={styles.txt}>Ponto:</Text>
             <Picker
               style={styles.inputPonto}
-              selectedValue={pontoNome}              
+              selectedValue={pontoNome}
               onValueChange={(itemValue) =>
                 setPontoNome(itemValue)
               }>
@@ -87,6 +103,109 @@ export default function FeedbackNew({ navigation, route }) {
           </View>
           <View style={styles.campoPonto}>
             <Text style={styles.txt}>Data:</Text>
+            {/*PICKER DO DIA*/}
+            <Picker
+              style={styles.pickerData}
+              selectedValue={dia}
+              onValueChange={(itemValue) =>
+                setDia(itemValue)
+              }>
+              <Picker.Item label="01" value="01" />
+              <Picker.Item label="02" value="02" />
+              <Picker.Item label="03" value="03" />
+              <Picker.Item label="04" value="04" />
+              <Picker.Item label="05" value="05" />
+              <Picker.Item label="06" value="06" />
+              <Picker.Item label="07" value="07" />
+              <Picker.Item label="08" value="08" />
+              <Picker.Item label="09" value="09" />
+              <Picker.Item label="10" value="10" />
+              <Picker.Item label="11" value="11" />
+              <Picker.Item label="12" value="12" />
+              <Picker.Item label="13" value="13" />
+              <Picker.Item label="14" value="14" />
+              <Picker.Item label="15" value="15" />
+              <Picker.Item label="16" value="16" />
+              <Picker.Item label="17" value="17" />
+              <Picker.Item label="18" value="18" />
+              <Picker.Item label="19" value="19" />
+              <Picker.Item label="20" value="20" />
+              <Picker.Item label="21" value="21" />
+              <Picker.Item label="22" value="22" />
+              <Picker.Item label="23" value="23" />
+              <Picker.Item label="24" value="24" />
+              <Picker.Item label="25" value="25" />
+              <Picker.Item label="26" value="26" />
+              <Picker.Item label="27" value="27" />
+              <Picker.Item label="28" value="28" />
+              <Picker.Item label="29" value="29" />
+              <Picker.Item label="30" value="30" />
+            </Picker>
+            {/*PICKER DO MES*/}
+            <Picker
+              style={styles.pickerData}
+              selectedValue={mes}
+              onValueChange={(itemValue) =>
+                setMes(itemValue)
+              }>
+              <Picker.Item label="01" value="01" />
+              <Picker.Item label="02" value="02" />
+              <Picker.Item label="03" value="03" />
+              <Picker.Item label="04" value="04" />
+              <Picker.Item label="05" value="05" />
+              <Picker.Item label="06" value="06" />
+              <Picker.Item label="07" value="07" />
+              <Picker.Item label="08" value="08" />
+              <Picker.Item label="09" value="09" />
+              <Picker.Item label="10" value="10" />
+              <Picker.Item label="11" value="11" />
+              <Picker.Item label="12" value="12" />
+            </Picker>
+            {/*PICKER DO Ano*/}
+            <Picker
+              style={styles.picker}
+              selectedValue={ano}
+              onValueChange={(itemValue) =>
+                setAno(itemValue)
+              }>
+              <Picker.Item label="2019" value="2019" />
+              <Picker.Item label="2020" value="2020" />
+              <Picker.Item label="2021" value="2021" />
+              <Picker.Item label="2022" value="2022" />
+              <Picker.Item label="2023" value="2023" />
+            </Picker>
+          </View>
+          
+          {/* Campos */}
+          <View style={{left:10}}>
+            <Text style={styles.txt}>Perigo:</Text>
+          </View>
+          <View style={styles.campoPerigo}>
+            <TouchableOpacity
+              onPress={() => { setisblueFiltro('black'); setisgreenFiltro('green'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(1); }}
+              style={{ backgroundColor: 'blue', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{ color: isblueFiltro, fontSize: 38 }}>✔</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => { setisgreenFiltro('black'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(2); }}
+              style={{ backgroundColor: 'green', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{ color: isgreenFiltro, fontSize: 38 }}>✔</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('black'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(3); }}
+              style={{ backgroundColor: 'yellow', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{ color: isyellowFiltro, fontSize: 38 }}>✔</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('black'); setisredFiltro('red'); setPerigo(4); }}
+              style={{ backgroundColor: 'orange', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{ color: isorangeFiltro, fontSize: 38 }}>✔</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('black'); setPerigo(5); }}
+              style={{ backgroundColor: 'red', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{ color: isredFiltro, fontSize: 38 }}>✔</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.campoAcontecimento}>
             <Text style={styles.txt}>Acontecimento:</Text>
@@ -94,10 +213,11 @@ export default function FeedbackNew({ navigation, route }) {
               <TextInput
                 style={styles.inputCampo}
                 placeholder="Feedback"
-                onChangeText={(value) => setComentario(value)} 
+                onChangeText={(value) => setComentario(value)}
               />
             </View>
           </View>
+          
         </View>
       </View>
       {/* Botões */}
@@ -107,8 +227,9 @@ export default function FeedbackNew({ navigation, route }) {
           <TouchableOpacity
             style={styles.userBtnOption}
             onPress={() => {
-              RegistrarFeedback(comentario, "data", "nome", "nota", pontoNome, "11111111111"),
-              navigation.navigate('Login')}
+              RegistrarFeedback(comentario, dia + '-' + mes + '-' + ano + ' hr:' + horas + ':' + minutos, "nome", "nota", pontoNome, "11111111111", perigo),
+                navigation.navigate('Login')
+            }
             }>
             <Text style={styles.btnTxt}>Enviar Feedback 📨</Text>
           </TouchableOpacity>
@@ -143,23 +264,29 @@ const styles = StyleSheet.create({
     height: '60%',
     color: "#fff",
     backgroundColor: '#2d742d',
-  },  
+  },
+  pickerData: {
+    width: "30%",
+    height: '60%',
+    color: "#fff",
+    backgroundColor: '#2d742d',
+  },
   campo: {
     minHeight: '100%',
-    minWidth: '95%',
+    minWidth: '9%',
     flex: 1,
     flexDirection: 'column',
     paddingTop: 10,
     borderRadius: 15,
   },
   inputCampo: {
-    minHeight: '40%',
+    minHeight: '5%',
     minWidth: '95%',
     borderRadius: 15,
     backgroundColor: '#fff',
     padding: 15,
     marginBottom: 10,
-  },  
+  },
   campoAcontecimento: {
     flex: 2,
     flexDirection: 'column',
@@ -218,5 +345,16 @@ const styles = StyleSheet.create({
     borderRadius: 11,
     backgroundColor: '#fff',
     marginLeft: '1%',
+  },
+  campoPerigo: {
+    flex: 2,
+    flexDirection: 'row',
+    maxHeight: '50%',
+    width: '92%',
+    left:15,
+    borderRadius: 10,
+    backgroundColor: '#535454',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

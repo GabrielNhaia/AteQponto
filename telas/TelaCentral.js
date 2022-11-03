@@ -205,7 +205,6 @@ export default function TelaCentral({ navigation, route }) {
                   style={{ backgroundColor: 'red', height: '60%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
                   <Text style={{ color: isredFiltro, fontSize: 38 }}>✔</Text>
                 </TouchableOpacity>
-                {/* <Image style={styles.paleta} source={require("../assets/paleta.png")} /> */}
               </View>
             </View> 
             {/* Filtrar perigo old */}

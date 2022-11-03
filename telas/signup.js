@@ -8,7 +8,7 @@ export default function Signup({navigation,route}) {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [CPF, setCPF] = useState("");  
+  const [CPF, setCPF] = useState(1);  
   const [senha, setSenha] = useState("");
   const [senha2, setSenha2] = useState("");
 
