@@ -1,5 +1,8 @@
 import React, { Component, useState} from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Animated, PanResponder, Image } from 'react-native';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['deprecated-react-native-prop-types'])
 
 export default function Login ({ navigation , route}) {
   
@@ -42,10 +45,12 @@ export default function Login ({ navigation , route}) {
           onChangeText={(username) => setUserName(username)}
           style={styles.input}
           placeholder="Usuário"
+          placeholderTextColor={"#a8a7a7"}
         />
         <TextInput
           style={styles.input}
-          placeholder="Senha"
+          placeholder="Senha"          
+          placeholderTextColor={"#a8a7a7"}
           secureTextEntry
         />
         <View style={styles.btnContainer}>

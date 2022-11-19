@@ -213,6 +213,7 @@ export default function FeedbackNew({ navigation, route }) {
               <TextInput
                 style={styles.inputCampo}
                 placeholder="Feedback"
+                placeholderTextColor={"#a8a7a7"}
                 onChangeText={(value) => setComentario(value)}
               />
             </View>

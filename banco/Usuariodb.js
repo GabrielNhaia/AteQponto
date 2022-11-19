@@ -1,9 +1,10 @@
 import {app, db, Usuario} from '../banco/firebaseConnection';
 import { collection, addDoc , firestore, getDoc,getDocs} from "firebase/firestore";
-import { LogBox } from 'react-native';
 import 'firebase/firestore';
+import { LogBox } from 'react-native';
 
 LogBox.ignoreLogs(['Setting a timer for a long period of time'])
+
 const Usuarios = collection(db,'Usuario');
 
 const Feedback = collection(db,'Feedback');
