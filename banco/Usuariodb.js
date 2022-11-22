@@ -36,64 +36,38 @@ export async function RegistrarFeedback( comentario, data, nome, nota, pontoNome
 export async function LoginUsuario( cpf,  senha)
 {
    console.log("entrou");
+   var entrou = false;
    const q = query(Usuarios, where("CPF", "==", cpf));
    var ID = "0";
    if( q != null)
    {
       console.log("procurou");
-      //const querySnapshot =  getDocs(q);
-      /*const b = query(q, where('Senha', '==', [senha]));
-      if(b != null)
-      {
-         console.log("foi");
-         return "Foi";
-      }
-      else{
-         console.log("não foi");
-         return "Falha no Login";
-      }
-   */
-     /* const Us = getDoc(q);
-      console.log(Us.Senha);
-      if(Us.Senha == senha)
-      {
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((Usuario) => {
          console.log("comparou");
+         console.log(Usuario.data().Senha);
+         if(Usuario.data().Senha === senha)
+         {
+            console.log("achou senha");
 
-         ID = Us.CPF
-         return ID;
+            ID = Usuario.data().CPF
+            console.log("Id: " + ID );
+            entrou = true;
+            console.log(entrou);
 
-      }
-      */
-  const querySnapshot = await getDocs(q);
-   querySnapshot.forEach((Usuario) => {
-      console.log("comparou");
-      console.log(Usuario.data());
-      console.log(Usuario.data().Senha);
-      //console.log(Usuario.Senha);
-
-      if(Usuario.data().Senha === senha)
-      {
-         console.log("achou senha");
-
-         //ID  = Fieldpath(Usuario);
-         ID = Usuario.data().CPF
-         console.log("Id: " + ID );
-
-         return ID;
-
-      }else{
-         console.log("Falha no Login");
-   
-         return "Falha no Login";
+        }else{
+            console.log("Falha no Login");
+            entrou = false;
       }
  
    })
    }
    else{
       console.log("Falha no Login");
+      entrou = false;
 
-      return "Falha no Login";
    }
+   return entrou;
   
 }
 

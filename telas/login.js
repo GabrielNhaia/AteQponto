@@ -20,10 +20,8 @@ const intervalId = setInterval(() => {
 
 export default function Login ({ navigation , route}) {
   
-  //var loadingSpinner = require('loading-spinner');
 
   const [userName, setUserName] = useState("");
- // const ID = useState("");
 
   const [cpf, setCPF] = useState("");  
   const [senha, setSenha] = useState("");
@@ -82,23 +80,14 @@ export default function Login ({ navigation , route}) {
 
           <TouchableOpacity
             style={styles.userBtn}
-            onPress={() =>  {  //loading.start(); 
-              /*loadingSpinner.start(
-                [Integer, default: 100], // Interval (in ms) between each spinner sequence element
-                {
-                  clearChar:  [Boolean, default: false], // Clear the spinner when stop() is called
-                  clearLine:  [Boolean, default: false], // Clear the entire line when stop() is called
-                  doNotBlock: [Boolean, default: false], // Does not prevent the process from exiting
-                  hideCursor: [Boolean, default: false]  // Hide the cursor until stop() is called
-                }
-              ); 
-              */
-              var ID = LoginUsuario(cpf,senha)
-
-           if( ID != "Falha no Login") 
+            onPress={async () =>  {  
+            var entrou = false;
+            entrou = await LoginUsuario(cpf,senha)
+            console.log(entrou );
+            if(entrou) 
             {
-           navigation.navigate('TelaCentral')
-          console.log("Login Sucesso");
+             navigation.navigate('TelaCentral')
+             console.log("Login Sucesso");
             }
             else
             {
@@ -106,6 +95,7 @@ export default function Login ({ navigation , route}) {
              console.log("Login falha");
 
             }
+  
             }
           }
           >
