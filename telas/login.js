@@ -1,11 +1,33 @@
 import React, { Component, useState} from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Animated, PanResponder, Image } from 'react-native';
+import { LoginUsuario } from '../banco/Usuariodb';
+/*import { DeterminateBar } from 'node-loading';
+const loading = DeterminateBar();
+
+let progress = 0;
+loading.message = 'Verificando Login';
+const intervalId = setInterval(() => {
+  loading.setProgress(++progress);
+
+  if (progress === 50) loading.message = 'verificando senha...';
+
+  if (progress === 100) {
+    loading.stop();
+    clearInterval(intervalId);
+  }
+}, 100);
+*/
 
 export default function Login ({ navigation , route}) {
   
-  
-  const [userName, setUserName] = useState("");
+  //var loadingSpinner = require('loading-spinner');
 
+  const [userName, setUserName] = useState("");
+ // const ID = useState("");
+
+  const [cpf, setCPF] = useState("");  
+  const [senha, setSenha] = useState("");
+  
   pan = new Animated.ValueXY();
   panResponder = PanResponder.create({
     onMoveShouldSetPanResponder: () => true,
@@ -38,13 +60,15 @@ export default function Login ({ navigation , route}) {
         </Animated.View>
 
         <TextInput
-          value={userName}
-          onChangeText={(username) => setUserName(username)}
+         // value={userName}
+          onChangeText={(value) => setCPF(value)} 
           style={styles.input}
           placeholder="Usuário"
+
         />
         <TextInput
           style={styles.input}
+          onChangeText={(value) => setSenha(value)} 
           placeholder="Senha"
           secureTextEntry
         />
@@ -58,7 +82,32 @@ export default function Login ({ navigation , route}) {
 
           <TouchableOpacity
             style={styles.userBtn}
-            onPress={() => navigation.navigate('TelaCentral', {paramKey: userName,})}
+            onPress={() =>  {  //loading.start(); 
+              /*loadingSpinner.start(
+                [Integer, default: 100], // Interval (in ms) between each spinner sequence element
+                {
+                  clearChar:  [Boolean, default: false], // Clear the spinner when stop() is called
+                  clearLine:  [Boolean, default: false], // Clear the entire line when stop() is called
+                  doNotBlock: [Boolean, default: false], // Does not prevent the process from exiting
+                  hideCursor: [Boolean, default: false]  // Hide the cursor until stop() is called
+                }
+              ); 
+              */
+              var ID = LoginUsuario(cpf,senha)
+
+           if( ID != "Falha no Login") 
+            {
+           navigation.navigate('TelaCentral')
+          console.log("Login Sucesso");
+            }
+            else
+            {
+             navigation.navigate('Login')
+             console.log("Login falha");
+
+            }
+            }
+          }
           >
             <Text style={styles.btnTxt}>Login</Text>
           </TouchableOpacity>
