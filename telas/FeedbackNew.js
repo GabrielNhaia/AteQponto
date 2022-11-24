@@ -2,8 +2,11 @@ import { View, StyleSheet, TouchableOpacity, Text, TextInput } from 'react-nativ
 import React, { useState } from 'react';
 import { Picker } from '@react-native-picker/picker';
 import { RegistrarFeedback } from '../banco/Usuariodb';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function FeedbackNew({ navigation, route }) {
+
+  const pontos = ['UniSantaCruz', 'Pedro Gusso', 'option item 3', 'option item 4', 'option item 5'];
 
   const [dia, setDia] = useState("04");
   const [mes, setMes] = useState("11");
@@ -37,188 +40,199 @@ export default function FeedbackNew({ navigation, route }) {
       {/* Conteudo */}
       <View style={styles.contemTela}>
         <View style={styles.conteudo}>
-          <View style={styles.campoPonto}>
-            <Text style={styles.txt}>Ponto:</Text>
-            <Picker
-              style={styles.inputPonto}
-              selectedValue={pontoNome}
-              onValueChange={(itemValue) =>
-                setPontoNome(itemValue)
-              }>
-              <Picker.Item label="UniSantacruz" value="UniSantacruz" />
-              <Picker.Item label="Pedro Gusso" value="Pedro Gusso" />
-            </Picker>
-            {/* <TextInput
+          <ScrollView>
+            {/* PIcker ponto */}
+            <View style={styles.campoPontoNome}>
+              <Text style={styles.txt}>Ponto:</Text>
+              {/* <PickerIOS
+              data={pontos}
+              onValueChange={(d, i) => this.change(d, i)} /> */}
+              <Picker
+                numberOfLines="1"
+                style={styles.inputPontoNome}
+                selectedValue={pontoNome}
+                onValueChange={(itemValue) =>
+                  setPontoNome(itemValue)
+                }>
+                <Picker.Item label="UniSantacruz" value="UniSantacruz" />
+                <Picker.Item label="Pedro Gusso" value="Pedro Gusso" />
+              </Picker>
+              {/* <TextInput
               style={styles.inputPonto}
               placeholder="Ponto"
             /> */}
-          </View>
-          <View style={styles.campoPonto}>
-            <Text style={styles.txt}>Horario:</Text>
-            {/*PICKER DA HORA*/}
-            <Picker
-              style={styles.picker}
-              selectedValue={horas}
-              onValueChange={(itemValue) =>
-                sethoras(itemValue)
-              }>
-              <Picker.Item label="01" value="01" />
-              <Picker.Item label="02" value="02" />
-              <Picker.Item label="03" value="03" />
-              <Picker.Item label="04" value="04" />
-              <Picker.Item label="05" value="05" />
-              <Picker.Item label="06" value="06" />
-              <Picker.Item label="07" value="07" />
-              <Picker.Item label="08" value="08" />
-              <Picker.Item label="09" value="09" />
-              <Picker.Item label="10" value="10" />
-              <Picker.Item label="11" value="11" />
-              <Picker.Item label="12" value="12" />
-              <Picker.Item label="13" value="13" />
-              <Picker.Item label="14" value="14" />
-              <Picker.Item label="15" value="15" />
-              <Picker.Item label="16" value="16" />
-              <Picker.Item label="17" value="17" />
-              <Picker.Item label="18" value="18" />
-              <Picker.Item label="19" value="19" />
-              <Picker.Item label="20" value="20" />
-              <Picker.Item label="21" value="21" />
-              <Picker.Item label="22" value="22" />
-              <Picker.Item label="23" value="23" />
-            </Picker>
-            {/*PICKER DO MINUTOS*/}
-            <Picker
-              style={styles.picker}
-              selectedValue={minutos}
-              onValueChange={(itemValue) =>
-                setminutos(itemValue)
-              }>
-              <Picker.Item label="00" value="00" />
-              <Picker.Item label="10" value="10" />
-              <Picker.Item label="20" value="20" />
-              <Picker.Item label="30" value="30" />
-              <Picker.Item label="40" value="40" />
-              <Picker.Item label="50" value="50" />
-            </Picker>
-          </View>
-          <View style={styles.campoPonto}>
-            <Text style={styles.txt}>Data:</Text>
-            {/*PICKER DO DIA*/}
-            <Picker
-              style={styles.pickerData}
-              selectedValue={dia}
-              onValueChange={(itemValue) =>
-                setDia(itemValue)
-              }>
-              <Picker.Item label="01" value="01" />
-              <Picker.Item label="02" value="02" />
-              <Picker.Item label="03" value="03" />
-              <Picker.Item label="04" value="04" />
-              <Picker.Item label="05" value="05" />
-              <Picker.Item label="06" value="06" />
-              <Picker.Item label="07" value="07" />
-              <Picker.Item label="08" value="08" />
-              <Picker.Item label="09" value="09" />
-              <Picker.Item label="10" value="10" />
-              <Picker.Item label="11" value="11" />
-              <Picker.Item label="12" value="12" />
-              <Picker.Item label="13" value="13" />
-              <Picker.Item label="14" value="14" />
-              <Picker.Item label="15" value="15" />
-              <Picker.Item label="16" value="16" />
-              <Picker.Item label="17" value="17" />
-              <Picker.Item label="18" value="18" />
-              <Picker.Item label="19" value="19" />
-              <Picker.Item label="20" value="20" />
-              <Picker.Item label="21" value="21" />
-              <Picker.Item label="22" value="22" />
-              <Picker.Item label="23" value="23" />
-              <Picker.Item label="24" value="24" />
-              <Picker.Item label="25" value="25" />
-              <Picker.Item label="26" value="26" />
-              <Picker.Item label="27" value="27" />
-              <Picker.Item label="28" value="28" />
-              <Picker.Item label="29" value="29" />
-              <Picker.Item label="30" value="30" />
-            </Picker>
-            {/*PICKER DO MES*/}
-            <Picker
-              style={styles.pickerData}
-              selectedValue={mes}
-              onValueChange={(itemValue) =>
-                setMes(itemValue)
-              }>
-              <Picker.Item label="01" value="01" />
-              <Picker.Item label="02" value="02" />
-              <Picker.Item label="03" value="03" />
-              <Picker.Item label="04" value="04" />
-              <Picker.Item label="05" value="05" />
-              <Picker.Item label="06" value="06" />
-              <Picker.Item label="07" value="07" />
-              <Picker.Item label="08" value="08" />
-              <Picker.Item label="09" value="09" />
-              <Picker.Item label="10" value="10" />
-              <Picker.Item label="11" value="11" />
-              <Picker.Item label="12" value="12" />
-            </Picker>
-            {/*PICKER DO Ano*/}
-            <Picker
-              style={styles.picker}
-              selectedValue={ano}
-              onValueChange={(itemValue) =>
-                setAno(itemValue)
-              }>
-              <Picker.Item label="2019" value="2019" />
-              <Picker.Item label="2020" value="2020" />
-              <Picker.Item label="2021" value="2021" />
-              <Picker.Item label="2022" value="2022" />
-              <Picker.Item label="2023" value="2023" />
-            </Picker>
-          </View>
-          
-          {/* Campos */}
-          <View style={{left:10}}>
-            <Text style={styles.txt}>Perigo:</Text>
-          </View>
-          <View style={styles.campoPerigo}>
-            <TouchableOpacity
-              onPress={() => { setisblueFiltro('black'); setisgreenFiltro('green'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(1); }}
-              style={{ backgroundColor: 'blue', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-              <Text style={{ color: isblueFiltro, fontSize: 38 }}>✔</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => { setisgreenFiltro('black'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(2); }}
-              style={{ backgroundColor: 'green', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-              <Text style={{ color: isgreenFiltro, fontSize: 38 }}>✔</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('black'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(3); }}
-              style={{ backgroundColor: 'yellow', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-              <Text style={{ color: isyellowFiltro, fontSize: 38 }}>✔</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('black'); setisredFiltro('red'); setPerigo(4); }}
-              style={{ backgroundColor: 'orange', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-              <Text style={{ color: isorangeFiltro, fontSize: 38 }}>✔</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('black'); setPerigo(5); }}
-              style={{ backgroundColor: 'red', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
-              <Text style={{ color: isredFiltro, fontSize: 38 }}>✔</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.campoAcontecimento}>
-            <Text style={styles.txt}>Acontecimento:</Text>
-            <View style={styles.campo}>
-              <TextInput
-                style={styles.inputCampo}
-                placeholder="Feedback"
-                placeholderTextColor={"#a8a7a7"}
-                onChangeText={(value) => setComentario(value)}
-              />
             </View>
-          </View>
-          
+            {/* Picker do Horario */}
+            <View style={styles.campoPontoNome}>
+              <Text style={styles.txt}>Horario:</Text>
+              {/*PICKER DA HORA*/}
+              <Picker
+                style={styles.picker}                
+                numberOfLines="1"
+                selectedValue={horas}
+                onValueChange={(itemValue) =>
+                  sethoras(itemValue)
+                }>
+                <Picker.Item label="01" value="01" />
+                <Picker.Item label="02" value="02" />
+                <Picker.Item label="03" value="03" />
+                <Picker.Item label="04" value="04" />
+                <Picker.Item label="05" value="05" />
+                <Picker.Item label="06" value="06" />
+                <Picker.Item label="07" value="07" />
+                <Picker.Item label="08" value="08" />
+                <Picker.Item label="09" value="09" />
+                <Picker.Item label="10" value="10" />
+                <Picker.Item label="11" value="11" />
+                <Picker.Item label="12" value="12" />
+                <Picker.Item label="13" value="13" />
+                <Picker.Item label="14" value="14" />
+                <Picker.Item label="15" value="15" />
+                <Picker.Item label="16" value="16" />
+                <Picker.Item label="17" value="17" />
+                <Picker.Item label="18" value="18" />
+                <Picker.Item label="19" value="19" />
+                <Picker.Item label="20" value="20" />
+                <Picker.Item label="21" value="21" />
+                <Picker.Item label="22" value="22" />
+                <Picker.Item label="23" value="23" />
+              </Picker>
+              {/*PICKER DO MINUTOS*/}
+              <Picker
+                style={styles.picker}                
+                numberOfLines="1"
+                selectedValue={minutos}
+                onValueChange={(itemValue) =>
+                  setminutos(itemValue)
+                }>
+                <Picker.Item label="00" value="00" />
+                <Picker.Item label="10" value="10" />
+                <Picker.Item label="20" value="20" />
+                <Picker.Item label="30" value="30" />
+                <Picker.Item label="40" value="40" />
+                <Picker.Item label="50" value="50" />
+              </Picker>
+            </View>
+            {/* Picker do Dia */}
+            <View style={styles.campoPonto}>
+              <Text style={styles.txt}>Data:</Text>
+              {/*PICKER DO DIA*/}
+              <Picker
+                style={styles.pickerData}
+                selectedValue={dia}
+                onValueChange={(itemValue) =>
+                  setDia(itemValue)
+                }>
+                <Picker.Item label="01" value="01" />
+                <Picker.Item label="02" value="02" />
+                <Picker.Item label="03" value="03" />
+                <Picker.Item label="04" value="04" />
+                <Picker.Item label="05" value="05" />
+                <Picker.Item label="06" value="06" />
+                <Picker.Item label="07" value="07" />
+                <Picker.Item label="08" value="08" />
+                <Picker.Item label="09" value="09" />
+                <Picker.Item label="10" value="10" />
+                <Picker.Item label="11" value="11" />
+                <Picker.Item label="12" value="12" />
+                <Picker.Item label="13" value="13" />
+                <Picker.Item label="14" value="14" />
+                <Picker.Item label="15" value="15" />
+                <Picker.Item label="16" value="16" />
+                <Picker.Item label="17" value="17" />
+                <Picker.Item label="18" value="18" />
+                <Picker.Item label="19" value="19" />
+                <Picker.Item label="20" value="20" />
+                <Picker.Item label="21" value="21" />
+                <Picker.Item label="22" value="22" />
+                <Picker.Item label="23" value="23" />
+                <Picker.Item label="24" value="24" />
+                <Picker.Item label="25" value="25" />
+                <Picker.Item label="26" value="26" />
+                <Picker.Item label="27" value="27" />
+                <Picker.Item label="28" value="28" />
+                <Picker.Item label="29" value="29" />
+                <Picker.Item label="30" value="30" />
+              </Picker>
+              {/*PICKER DO MES*/}
+              <Picker
+                style={styles.pickerData}
+                selectedValue={mes}
+                onValueChange={(itemValue) =>
+                  setMes(itemValue)
+                }>
+                <Picker.Item label="01" value="01" />
+                <Picker.Item label="02" value="02" />
+                <Picker.Item label="03" value="03" />
+                <Picker.Item label="04" value="04" />
+                <Picker.Item label="05" value="05" />
+                <Picker.Item label="06" value="06" />
+                <Picker.Item label="07" value="07" />
+                <Picker.Item label="08" value="08" />
+                <Picker.Item label="09" value="09" />
+                <Picker.Item label="10" value="10" />
+                <Picker.Item label="11" value="11" />
+                <Picker.Item label="12" value="12" />
+              </Picker>
+              {/*PICKER DO Ano*/}
+              <Picker
+                style={styles.picker}
+                selectedValue={ano}
+                onValueChange={(itemValue) =>
+                  setAno(itemValue)
+                }>
+                <Picker.Item label="2019" value="2019" />
+                <Picker.Item label="2020" value="2020" />
+                <Picker.Item label="2021" value="2021" />
+                <Picker.Item label="2022" value="2022" />
+                <Picker.Item label="2023" value="2023" />
+              </Picker>
+            </View>
+
+            {/* Campos */}
+            <View style={{ left: 10 }}>
+              <Text style={styles.txt}>Perigo:</Text>
+            </View>
+            <View style={styles.campoPerigo}>
+              <TouchableOpacity
+                onPress={() => { setisblueFiltro('black'); setisgreenFiltro('green'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(1); }}
+                style={{ backgroundColor: 'blue', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ color: isblueFiltro, fontSize: 38 }}>✔</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => { setisgreenFiltro('black'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(2); }}
+                style={{ backgroundColor: 'green', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ color: isgreenFiltro, fontSize: 38 }}>✔</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('black'); setisorangeFiltro('orange'); setisredFiltro('red'); setPerigo(3); }}
+                style={{ backgroundColor: 'yellow', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ color: isyellowFiltro, fontSize: 38 }}>✔</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('black'); setisredFiltro('red'); setPerigo(4); }}
+                style={{ backgroundColor: 'orange', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ color: isorangeFiltro, fontSize: 38 }}>✔</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => { setisgreenFiltro('green'); setisblueFiltro('blue'); setisyellowFiltro('yellow'); setisorangeFiltro('orange'); setisredFiltro('black'); setPerigo(5); }}
+                style={{ backgroundColor: 'red', height: '50%', width: '15%', marginRight: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ color: isredFiltro, fontSize: 38 }}>✔</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.campoAcontecimento}>
+              <Text style={styles.txt}>Acontecimento:</Text>
+              <View style={styles.campo}>
+                <TextInput
+                  style={styles.inputCampo}
+                  placeholder="Feedback"
+                  placeholderTextColor={"#a8a7a7"}
+                  onChangeText={(value) => setComentario(value)}
+                />
+              </View>
+            </View>
+
+          </ScrollView>
         </View>
       </View>
       {/* Botões */}
@@ -259,18 +273,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     width: '95%',
     alignItems: 'center',
-  },
-  picker: {
-    width: "35%",
-    height: '60%',
-    color: "#fff",
-    backgroundColor: '#2d742d',
-  },
-  pickerData: {
-    width: "30%",
-    height: '60%',
-    color: "#fff",
-    backgroundColor: '#2d742d',
   },
   campo: {
     minHeight: '100%',
@@ -346,13 +348,39 @@ const styles = StyleSheet.create({
     borderRadius: 11,
     backgroundColor: '#fff',
     marginLeft: '1%',
+  },  
+  campoPontoNome: {
+    flex: 2,
+    flexDirection: 'row',
+    maxHeight: '20%',
+    margin: 10,
+  },
+  inputPontoNome: {
+    height: '80%',
+    width: '75%',
+    justifyContent:'center',
+    borderRadius: 11,
+    backgroundColor: '#fff',
+    marginLeft: '1%',
+  },
+  picker: {
+    width: "35%",
+    height: '90%',
+    backgroundColor: '#fff',    
+    borderRadius: 11,
+  },
+  pickerData: {
+    width: "30%",
+    height: '90%',
+    backgroundColor: '#fff',
+    borderRadius: 11,
   },
   campoPerigo: {
     flex: 2,
     flexDirection: 'row',
     maxHeight: '50%',
     width: '92%',
-    left:15,
+    left: 15,
     borderRadius: 10,
     backgroundColor: '#535454',
     justifyContent: 'center',
