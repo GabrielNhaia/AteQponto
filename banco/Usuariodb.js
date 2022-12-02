@@ -21,14 +21,13 @@ export async function CadastrarUsuario( nome, cpf, email, senha, noti)
     }));
 } 
 
-export async function RegistrarFeedback( comentario, data, nome, nota, pontoNome, cpf, perigo)
+export async function RegistrarFeedback( comentario, data, nome, pontoNome, cpf, perigo)
 {
    addDoc(Feedback,({   
       CPF: cpf,
       Comentario: comentario,
       Data: data,
       Nome: nome, 
-      Nota : nota, 
       PontoNome: pontoNome,
       Perigo: perigo
     }));
