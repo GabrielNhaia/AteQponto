@@ -320,7 +320,7 @@ export default function FeedbackNew({ navigation, route }) {
                 onPress={() => {
                   setSelectHorario(true)
                 }}>
-                <Text style={styles.btnTxt}>⏰{horas}:{minutos}⏰</Text>
+                <Text style={styles.btnTxt}>⏰ {horas}:{minutos} ⏰</Text>
               </TouchableOpacity>
             </View>
             {/* Picker do Dia */}
@@ -332,7 +332,7 @@ export default function FeedbackNew({ navigation, route }) {
                 onPress={() => {
                   setSelectData(true)
                 }}>
-                <Text style={styles.btnTxt}>⏰{dia}/{mes}/{ano}⏰</Text>
+                <Text style={styles.btnTxt}>⏰ {dia}/{mes}/{ano} ⏰</Text>
               </TouchableOpacity>
             </View>
 
