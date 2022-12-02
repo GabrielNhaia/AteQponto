@@ -1,5 +1,6 @@
 import {app, db, Usuario} from '../banco/firebaseConnection';
-import { collection, addDoc , firestore, getDoc,getDocs} from "firebase/firestore";
+// import { collection, addDoc , firestore, getDoc,getDocs} from "firebase/firestore";
+import { collection, addDoc , firestore, getDoc,getDocs, where, query, Fieldpath,documentId ,connectFirestoreEmulator} from "firebase/firestore";
 import 'firebase/firestore';
 import { LogBox } from 'react-native';
 
@@ -33,25 +34,46 @@ export async function RegistrarFeedback( comentario, data, nome, pontoNome, cpf,
     }));
 } 
 
-
-function LoginUsuario ( CPF,  senha)
+export async function LoginUsuario( cpf,  senha)
 {
-   
-    
-   db()
-   .ref('Usuario/')
-   .onValue((CPF) => {
-      const data = snapshot.val();
-      if(data.Senha == senha)
-      {
-         return data;
+   console.log("entrou");
+   var entrou = false;
+   const q = query(Usuarios, where("CPF", "==", cpf));
+   var ID = "0";
+   if( q != null)
+   {
+      console.log("procurou");
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((Usuario) => {
+         console.log("comparou");
+         console.log(Usuario.data().Senha);
+         if(Usuario.data().Senha === senha)
+         {
+            console.log("achou senha");
+
+            ID = Usuario.data().CPF
+            console.log("Id: " + ID );
+            entrou = true;
+            console.log(entrou);
+
+        }else{
+            console.log("Falha no Login");
+            entrou = false;
       }
-      else{
-         return "Erro no login";
-      }
-   });
-   return "Usuario não cadastrado";
+ 
+   })
+   }
+   else{
+      console.log("Falha no Login");
+      entrou = false;
+
+   }
+   return entrou;
+  
 }
+
+
+
 function CarregarUsuario ( ID)
 {
    db()

@@ -1,13 +1,17 @@
-import React, { Component, useState} from 'react';
+import React, { Component, useState } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Animated, PanResponder, Image } from 'react-native';
+import { LoginUsuario } from '../banco/Usuariodb';
 import { LogBox } from 'react-native';
 
 LogBox.ignoreLogs(['deprecated-react-native-prop-types'])
 
-export default function Login ({ navigation , route}) {
-  
-  
+export default function Login({ navigation, route }) {
+
+
   const [userName, setUserName] = useState("");
+
+  const [cpf, setCPF] = useState("");
+  const [senha, setSenha] = useState("");
 
   pan = new Animated.ValueXY();
   panResponder = PanResponder.create({
@@ -23,54 +27,69 @@ export default function Login ({ navigation , route}) {
     }
   });
 
-  
-    return (
 
-      <View style={styles.container}>
-        <StatusBar
-          backgroundColor="#2d742d"
-          barStyle="light-content"
-        />
-        <Animated.View
-          style={{
-            transform: [{ translateX: pan.x }, { translateY: pan.y }]
-          }}
-          {...panResponder.panHandlers}
+  return (
+
+    <View style={styles.container}>
+      <StatusBar
+        backgroundColor="#2d742d"
+        barStyle="light-content"
+      />
+      <Animated.View
+        style={{
+          transform: [{ translateX: pan.x }, { translateY: pan.y }]
+        }}
+        {...panResponder.panHandlers}
+      >
+        <Image style={styles.logo} source={require("../assets/bussao.png")} />
+      </Animated.View>
+
+      <TextInput
+        value={userName}
+        onChangeText={(username) => { setUserName(username), setCPF(username) }}
+        style={styles.input}
+        placeholder="Usuário"
+        placeholderTextColor={"#a8a7a7"}
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={(value) => setSenha(value)}
+        placeholder="Senha"
+        placeholderTextColor={"#a8a7a7"}
+        secureTextEntry
+      />
+      <View style={styles.btnContainer}>
+        <TouchableOpacity
+          style={styles.userBtn}
+          onPress={() => navigation.navigate('Signup')}
         >
-          <Image style={styles.logo} source={require("../assets/bussao.png")} />
-        </Animated.View>
+          <Text style={styles.btnTxt}>Registrar-se</Text>
+        </TouchableOpacity>
 
-        <TextInput
-          value={userName}
-          onChangeText={(username) => setUserName(username)}
-          style={styles.input}
-          placeholder="Usuário"
-          placeholderTextColor={"#a8a7a7"}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"          
-          placeholderTextColor={"#a8a7a7"}
-          secureTextEntry
-        />
-        <View style={styles.btnContainer}>
-          <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => navigation.navigate('Signup')}
-          >
-            <Text style={styles.btnTxt}>Registrar-se</Text>
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.userBtn}
+          onPress={async () => {
+            var entrou = false;
+            entrou = await LoginUsuario(cpf, senha)
+            console.log(entrou);
+            if (entrou) {
+              navigation.navigate('TelaCentral',
+              { paramKey: userName, }),
+              console.log("Login Sucesso");
+            }
+            else {
+              navigation.navigate('Login')
+              console.log("Login falha");
 
-          <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => navigation.navigate('TelaCentral', {paramKey: userName,})}
-          >
-            <Text style={styles.btnTxt}>Login</Text>
-          </TouchableOpacity>
-        </View>
+            }
+          }}
+        >
+          <Text style={styles.btnTxt}>Login</Text>
+        </TouchableOpacity>
       </View>
-    );
-  }
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
