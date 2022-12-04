@@ -1,3 +1,4 @@
+
 import {app, db, Usuario} from '../banco/firebaseConnection';
 import { collection, addDoc , firestore, getDoc,getDocs, where, query, Fieldpath,documentId ,connectFirestoreEmulator} from "firebase/firestore";
 import 'firebase/firestore';
@@ -101,6 +102,5 @@ function AlterarUsuario (  id,nome,email, senha, noti)
 function DeletarUsuario (id)
 {
    db().ref('/Usuario/'+{id}+'').remove();
-
 
 }
