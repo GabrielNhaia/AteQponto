@@ -411,7 +411,7 @@ export default function TelaCentral({ navigation, route }) {
                     setisred('red');
                     setPerigo(0);
                   }}>
-                  <Text style={styles.btnTxt}>Ver ocorrencias❗</Text>
+                  <Text style={styles.btnTxt} onPress={ () => navigation.navigate('BuscarFeedback.js')}>Ver ocorrencias❗</Text>
                 </TouchableOpacity>
               </View>
               {/* Botão de feedback */}
@@ -493,7 +493,7 @@ export default function TelaCentral({ navigation, route }) {
               longitude: -49.29910549458465
             }}
             title={"Rua João Bonat, 432"}
-            description={"Novo Mundo, Curitiba - State of Paraná, 81050-170"}
+            description={"Novo Mundo, Curitiba - State of Paraná, 81050-170"} 
           />
           <MapView.Marker
             coordinate={{
