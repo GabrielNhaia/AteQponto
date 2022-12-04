@@ -1,10 +1,11 @@
 
 import {app, db, Usuario} from '../banco/firebaseConnection';
-import { collection, addDoc , firestore, getDoc,getDocs} from "firebase/firestore";
-import { LogBox } from 'react-native';
+import { collection, addDoc , firestore, getDoc,getDocs, where, query, Fieldpath,documentId ,connectFirestoreEmulator} from "firebase/firestore";
 import 'firebase/firestore';
+import { LogBox } from 'react-native';
 
 LogBox.ignoreLogs(['Setting a timer for a long period of time'])
+
 const Usuarios = collection(db,'Usuario');
 
 const Feedback = collection(db,'Feedback');
@@ -21,37 +22,61 @@ export async function CadastrarUsuario( nome, cpf, email, senha, noti)
     }));
 } 
 
-export async function RegistrarFeedback( comentario, data, nome, nota, pontoNome, cpf)
+export async function RegistrarFeedback( comentario, data, nome, pontoNome, cpf, perigo)
 {
    addDoc(Feedback,({   
       CPF: cpf,
       Comentario: comentario,
       Data: data,
       Nome: nome, 
-      Nota : nota, 
       PontoNome: pontoNome,
+      Perigo: perigo
     }));
 } 
 
-
-function LoginUsuario ( CPF,  senha)
+export async function LoginUsuario( cpf,  senha, nome)
 {
-   
-   db()
-   .ref('Usuario/')
-   .onValue((CPF) => {
-      const data = snapshot.val();
-      if(data.Senha == senha)
-      {
-         return data;
+   console.log("entrou");
+   var entrou = false;
+   const q = query(Usuarios, where("CPF", "==", cpf));
+   var ID = "0";   
+   // var name = "0";
+   if( q != null)
+   {
+      console.log("procurou");
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((Usuario) => {
+         console.log("comparou");
+         console.log(Usuario.data().Senha);
+         if(Usuario.data().Senha === senha)
+         {
+            console.log("achou senha");
+            ID = Usuario.data().CPF;
+            nome = Usuario.data().Nome;            
+            console.log("Id: " + ID );
+            console.log("userName: " + nome );
+            entrou = true;
+            console.log(entrou);            
+            // console.log(name);
 
+        }else{
+            console.log("Falha no Login");
+            entrou = false;
       }
-      else{
-         return "Erro no login";
-      }
-   });
-   return "Usuario não cadastrado";
+ 
+   })
+   }
+   else{
+      console.log("Falha no Login");
+      entrou = false;
+
+   }
+   return entrou;
+  
 }
+
+
+
 function CarregarUsuario ( ID)
 {
    db()

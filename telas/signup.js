@@ -8,7 +8,7 @@ export default function Signup({navigation,route}) {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [CPF, setCPF] = useState("");  
+  const [CPF, setCPF] = useState(1);  
   const [senha, setSenha] = useState("");
   const [senha2, setSenha2] = useState("");
 
@@ -21,19 +21,22 @@ export default function Signup({navigation,route}) {
       <Text style={styles.titulo}>Registrar - se</Text>
       <TextInput      
         style={styles.input}        
-        placeholder="Email"           
+        placeholder="Email"          
+        placeholderTextColor={"#a8a7a7"}         
         keyboardType="email-address"         
         onChangeText={(value) => setEmail(value)} 
         />
       <TextInput
         style={styles.input}
-        placeholder="Nome completo"        
+        placeholder="Nome completo"          
+        placeholderTextColor={"#a8a7a7"}      
         onChangeText={(value) => setName(value)} 
         />
       <TextInput
         style={styles.input}
         name = "CPF"
         placeholder="CPF"
+        placeholderTextColor={"#a8a7a7"}
         minLength={11}
         maxLength={11}
         keyboardType="number-pad"
@@ -43,6 +46,7 @@ export default function Signup({navigation,route}) {
         style={styles.input}
         name = "Senha"
         placeholder="Senha"
+        placeholderTextColor={"#a8a7a7"}
         secureTextEntry={true}        
         onChangeText={(value) => setSenha(value)} 
       />
@@ -50,6 +54,7 @@ export default function Signup({navigation,route}) {
       <TextInput
         style={styles.input}
         placeholder="Confirme sua Senha"
+        placeholderTextColor={"#a8a7a7"}
         secureTextEntry={true}        
         onChangeText={(value) => setSenha2(value)} 
         />
@@ -80,7 +85,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
     margin: 10,
-    color: '#0c0f0d',
+    color: '#FFF',
   },
   input: {
     width: '90%',

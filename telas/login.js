@@ -1,10 +1,19 @@
-import React, { Component, useState} from 'react';
+import React, { Component, useState } from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Animated, PanResponder, Image } from 'react-native';
+import { LoginUsuario } from '../banco/Usuariodb';
+import { LogBox } from 'react-native';
 
-export default function Login ({ navigation , route}) {
-  
-  
+LogBox.ignoreLogs(['deprecated-react-native-prop-types'])
+
+export default function Login({ navigation, route }) {
+
+
   const [userName, setUserName] = useState("");
+  const [nome, setnome] = useState("");
+  // const nome = "false";
+
+  const [cpf, setCPF] = useState("");
+  const [senha, setSenha] = useState("");
 
   pan = new Animated.ValueXY();
   panResponder = PanResponder.create({
@@ -20,52 +29,77 @@ export default function Login ({ navigation , route}) {
     }
   });
 
-  
-    return (
 
-      <View style={styles.container}>
-        <StatusBar
-          backgroundColor="#2d742d"
-          barStyle="light-content"
-        />
-        <Animated.View
-          style={{
-            transform: [{ translateX: pan.x }, { translateY: pan.y }]
-          }}
-          {...panResponder.panHandlers}
+  return (
+
+    <View style={styles.container}>
+      <StatusBar
+        backgroundColor="#2d742d"
+        barStyle="light-content"
+      />
+      <Animated.View
+        style={{
+          transform: [{ translateX: pan.x }, { translateY: pan.y }]
+        }}
+        {...panResponder.panHandlers}
+      >
+        <Image style={styles.logo} source={require("../assets/bussao.png")} />
+      </Animated.View>
+
+      <TextInput
+        value={cpf}
+        onChangeText={(cpf) => setCPF(cpf)}
+        style={styles.input}
+        placeholder="CPF"
+        placeholderTextColor={"#a8a7a7"}
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={(value) => setSenha(value)}
+        placeholder="Senha"
+        placeholderTextColor={"#a8a7a7"}
+        secureTextEntry
+      />
+      <View style={styles.btnContainer}>
+        <TouchableOpacity
+          style={styles.userBtn}
+          onPress={() => navigation.navigate('Signup')}
         >
-          <Image style={styles.logo} source={require("../assets/bussao.png")} />
-        </Animated.View>
+          <Text style={styles.btnTxt}>Registrar-se</Text>
+        </TouchableOpacity>
 
-        <TextInput
-          value={userName}
-          onChangeText={(username) => setUserName(username)}
-          style={styles.input}
-          placeholder="Usuário"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          secureTextEntry
-        />
-        <View style={styles.btnContainer}>
-          <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => navigation.navigate('Signup')}
-          >
-            <Text style={styles.btnTxt}>Registrar-se</Text>
-          </TouchableOpacity>
+        <TouchableOpacity
+          
+          style={styles.userBtn}
+          onPress={async () => {
+            var entrou = false;            
+            // var username = "name";
+            entrou = await LoginUsuario(cpf, senha, nome)
+            // console.log(entrou);
+            // setUsername(username);
+            setnome(nome);
+            setUserName(nome);
+            if (entrou) {
+              navigation.navigate('TelaCentral',
+              { paramKey: userName, }),
+              // console.log({userName});
+              console.log({nome});
+              console.log("Login Sucesso");
+            }
+            else {
+              navigation.navigate('Login')
+              console.log("Login falha");
 
-          <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => navigation.navigate('TelaCentral', {paramKey: userName,})}
-          >
-            <Text style={styles.btnTxt}>Login</Text>
-          </TouchableOpacity>
-        </View>
+            }
+          }}
+          // onPressOut={ () => {setUserName(name);}}
+        >
+          <Text style={styles.btnTxt}>Login</Text>
+        </TouchableOpacity>
       </View>
-    );
-  }
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
