@@ -1,5 +1,4 @@
 import {app, db, Usuario} from '../banco/firebaseConnection';
-// import { collection, addDoc , firestore, getDoc,getDocs} from "firebase/firestore";
 import { collection, addDoc , firestore, getDoc,getDocs, where, query, Fieldpath,documentId ,connectFirestoreEmulator} from "firebase/firestore";
 import 'firebase/firestore';
 import { LogBox } from 'react-native';
@@ -34,12 +33,13 @@ export async function RegistrarFeedback( comentario, data, nome, pontoNome, cpf,
     }));
 } 
 
-export async function LoginUsuario( cpf,  senha)
+export async function LoginUsuario( cpf,  senha, nome)
 {
    console.log("entrou");
    var entrou = false;
    const q = query(Usuarios, where("CPF", "==", cpf));
-   var ID = "0";
+   var ID = "0";   
+   // var name = "0";
    if( q != null)
    {
       console.log("procurou");
@@ -50,11 +50,13 @@ export async function LoginUsuario( cpf,  senha)
          if(Usuario.data().Senha === senha)
          {
             console.log("achou senha");
-
-            ID = Usuario.data().CPF
+            ID = Usuario.data().CPF;
+            nome = Usuario.data().Nome;            
             console.log("Id: " + ID );
+            console.log("userName: " + nome );
             entrou = true;
-            console.log(entrou);
+            console.log(entrou);            
+            // console.log(name);
 
         }else{
             console.log("Falha no Login");

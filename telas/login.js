@@ -9,6 +9,8 @@ export default function Login({ navigation, route }) {
 
 
   const [userName, setUserName] = useState("");
+  const [nome, setnome] = useState("");
+  // const nome = "false";
 
   const [cpf, setCPF] = useState("");
   const [senha, setSenha] = useState("");
@@ -45,10 +47,10 @@ export default function Login({ navigation, route }) {
       </Animated.View>
 
       <TextInput
-        value={userName}
-        onChangeText={(username) => { setUserName(username), setCPF(username) }}
+        value={cpf}
+        onChangeText={(cpf) => setCPF(cpf)}
         style={styles.input}
-        placeholder="Usuário"
+        placeholder="CPF"
         placeholderTextColor={"#a8a7a7"}
       />
       <TextInput
@@ -67,14 +69,21 @@ export default function Login({ navigation, route }) {
         </TouchableOpacity>
 
         <TouchableOpacity
+          
           style={styles.userBtn}
           onPress={async () => {
-            var entrou = false;
-            entrou = await LoginUsuario(cpf, senha)
-            console.log(entrou);
+            var entrou = false;            
+            // var username = "name";
+            entrou = await LoginUsuario(cpf, senha, nome)
+            // console.log(entrou);
+            // setUsername(username);
+            setnome(nome);
+            setUserName(nome);
             if (entrou) {
               navigation.navigate('TelaCentral',
               { paramKey: userName, }),
+              // console.log({userName});
+              console.log({nome});
               console.log("Login Sucesso");
             }
             else {
@@ -83,6 +92,7 @@ export default function Login({ navigation, route }) {
 
             }
           }}
+          // onPressOut={ () => {setUserName(name);}}
         >
           <Text style={styles.btnTxt}>Login</Text>
         </TouchableOpacity>
