@@ -1,5 +1,6 @@
 import { View, StyleSheet, TouchableOpacity, Text, Animated, PanResponder, Image } from 'react-native';
 import Login from './Login';
+import TelaCentral from './TelaCentral';
 
 export default function Perfil({ navigation, route}) {
 
@@ -17,7 +18,8 @@ export default function Perfil({ navigation, route}) {
     }
   });
 
-  const userName = Login.userName;
+  const [userName, setuserName] = ("TelaCentral.userName");
+  console.log(TelaCentral.name)
 
   return (
     <View style={styles.container}>

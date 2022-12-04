@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Animated, PanResponder, Image } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity, Animated, PanResponder, Image, Modal } from 'react-native';
 import { LoginUsuario } from '../banco/Usuariodb';
 import { LogBox } from 'react-native';
 
@@ -9,11 +9,13 @@ export default function Login({ navigation, route }) {
 
 
   const [userName, setUserName] = useState("");
-  const [nome, setnome] = useState("");
+  const [nome, setnome] = useState("false");
   // const nome = "false";
 
   const [cpf, setCPF] = useState("");
   const [senha, setSenha] = useState("");
+
+  const [falhaLogin, setFalhaLogin] = useState(false);
 
   pan = new Animated.ValueXY();
   panResponder = PanResponder.create({
@@ -33,6 +35,35 @@ export default function Login({ navigation, route }) {
   return (
 
     <View style={styles.container}>
+
+      {/* Modais */}
+      {/* Select de Ponto */}
+      <Modal
+        animationType='slide'
+        transparent={true}
+        visible={falhaLogin}
+      >
+        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+
+          {/* Botão Feedback */}
+          <View style={styles.colButton}>            
+            <Text style={styles.titulo}> Falha no login </Text> 
+            
+            <Text style={styles.msg}> Veirifique seu usuario  {'\n'} e sua senha</Text>           
+          </View>
+          {/* Botão sair */}
+          <View style={styles.fimColButton}>
+            <TouchableOpacity
+              style={styles.userBtnOption}
+              onPress={() => {
+                setFalhaLogin(false)
+              }}  >
+              <Text style={styles.btnTxt}>OK↩</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
       <StatusBar
         backgroundColor="#2d742d"
         barStyle="light-content"
@@ -69,10 +100,10 @@ export default function Login({ navigation, route }) {
         </TouchableOpacity>
 
         <TouchableOpacity
-          
+
           style={styles.userBtn}
           onPress={async () => {
-            var entrou = false;            
+            var entrou = false;
             // var username = "name";
             entrou = await LoginUsuario(cpf, senha, nome)
             // console.log(entrou);
@@ -81,18 +112,19 @@ export default function Login({ navigation, route }) {
             setUserName(nome);
             if (entrou) {
               navigation.navigate('TelaCentral',
-              { paramKey: userName, }),
-              // console.log({userName});
-              console.log({nome});
+                { paramKey: userName, }),
+                // console.log({userName});
+                console.log({ nome });
               console.log("Login Sucesso");
             }
             else {
-              navigation.navigate('Login')
+              // navigation.navigate('Login')
+              setFalhaLogin(true);
               console.log("Login falha");
 
             }
           }}
-          // onPressOut={ () => {setUserName(name);}}
+        // onPressOut={ () => {setUserName(name);}}
         >
           <Text style={styles.btnTxt}>Login</Text>
         </TouchableOpacity>
@@ -109,10 +141,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#2d742d',
   },
   titulo: {
-    fontSize: 30,
+    fontSize: 40,
+    fontWeight: "bold",
     textAlign: 'center',
     margin: 10,
-    color: '#0c0f0d',
+    color: '#910404',
+  },
+  msg: {
+    fontSize: 30,
+    textAlign: 'center',
+    color: '#fff',
   },
   input: {
     width: '90%',
@@ -144,5 +182,40 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     color: '#fff',
-  }
+  },
+  colButton: {
+    flex: 1,
+    flexDirection: 'column',
+    maxHeight: 290,
+    width: "97%",
+    paddingLeft: "2%",
+    margin: 5,
+    marginLeft: 5,
+    marginTop: 158,
+    borderRadius: 10,
+    backgroundColor: '#318c46',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  fimColButton: {
+    flex: 1,
+    flexDirection: 'column',
+    maxHeight: 90,
+    width: "97%",
+    paddingLeft: "2%",
+    margin: 5,
+    marginLeft: 5,
+    // marginTop: 115,
+    borderRadius: 10,
+    backgroundColor: '#318c46',
+    justifyContent: 'center'
+  },
+  userBtnOption: {
+    backgroundColor: '#070a08',
+    borderRadius: 15,
+    width: '95%',
+    height:'70%',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
 });
