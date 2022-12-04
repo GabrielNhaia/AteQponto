@@ -72,30 +72,29 @@ export async function LoginUsuario( cpf,  senha)
 }
 
 
-function CarregarUsuario ( ID)
+export async function CarregarUsuario ( cpf)
 {
-   db()
-   .ref('Usuario/')
-   .onValue((ID) => {
-      const data = snapshot.val();
-      //updateStarCount(postElement, data);
-      return data;
-   });
+   const q = query(Usuarios, where("CPF", "==", cpf));
+   const querySnapshot =  getDoc(q);
+   return querySnapshot.data();
+
 }
-function AlterarUsuario (  id,nome,email, senha, noti)
+export async function AlterarUsuario (cpf,nome,email, senha, noti)
 { 
-   db()
-   .ref('/Usuario/'+id)
-   .update({
-     Nome: nome, 
-     Email : email, 
-     Senha: senha, 
-     Notificacao: noti
- })
+   const q = query(Usuarios, where("CPF", "==", cpf));
+   const querySnapshot =  getDoc(q);
+   updateDoc(querySnapshot,({   
+      Email : email, 
+      Notificacao: noti,
+      Nome: nome, 
+      Senha: senha, 
+    }));
+
 
 }
-function DeletarUsuario (id)
+export async function DeletarUsuario (cpf)
 {
-   db().ref('/Usuario/'+{id}+'').remove();
-
+   const q = query(Usuarios, where("CPF", "==", cpf));
+   const querySnapshot =  getDoc(q);
+   deleteDoc(querySnapshot);
 }
