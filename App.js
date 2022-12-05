@@ -10,6 +10,7 @@ import Perfil from './telas/Perfil';
 import Notificacao from './telas/Notificacao';
 import Feedback from './telas/Feedback';
 import FeedbackNew from './telas/FeedbackNew';
+import BuscarFeedback from './telas/BuscarFeedback';
 
 class App extends Component {
   render() {
@@ -73,7 +74,15 @@ class App extends Component {
                 headerTransparent:true,
                 headerShown:false,
               }}
-            />           
+            />          
+            <Stack.Screen
+              name='BuscarFeedback'
+              component={BuscarFeedback}
+              options={{
+                headerTransparent:true,
+                headerShown:false,
+              }}
+            />     
           </Stack.Navigator>
         </NavigationContainer>     
     );

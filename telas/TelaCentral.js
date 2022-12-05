@@ -348,6 +348,7 @@ export default function TelaCentral({ navigation, route }) {
                     setisorange('orange');
                     setisred('red');
                     setPerigo(0);
+                    navigation.navigate('BuscarFeedback');
                   }}>
                   <Text style={styles.btnTxt}>Ver ocorrencias❗</Text>
                 </TouchableOpacity>

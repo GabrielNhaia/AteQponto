@@ -104,3 +104,8 @@ function DeletarUsuario (id)
    db().ref('/Usuario/'+{id}+'').remove();
 
 }
+
+function BuscarFeedbacks (Comentario, PontoNome, Perigo)
+{
+   const busca = query(collection(Feedback, where ("PontoNome", "==", "Pedro Gusso2")));
+}
