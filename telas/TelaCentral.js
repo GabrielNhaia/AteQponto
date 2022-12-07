@@ -214,17 +214,17 @@ export default function TelaCentral({ navigation, route }) {
             <View style={styles.colFiltro}>
               <Text style={{ fontSize: 20, color: "#fff" }}>Filtrar Por periodo:</Text>
               {/*picker do periodo*/}
-                <Picker
-                  style={styles.pickerPeriodo}
-                  selectedValue={periodo}
-                  onValueChange={(itemValue) =>
-                    setperiodo(itemValue)
-                  }>
-                  <Picker.Item label="Semanal" value="Semanal" />
-                  <Picker.Item label="Mensal" value="Mensal" />
-                  <Picker.Item label="Semestral" value="Semestral" />
-                </Picker>
-              
+              <Picker
+                style={styles.pickerPeriodo}
+                selectedValue={periodo}
+                onValueChange={(itemValue) =>
+                  setperiodo(itemValue)
+                }>
+                <Picker.Item label="Semanal" value="Semanal" />
+                <Picker.Item label="Mensal" value="Mensal" />
+                <Picker.Item label="Semestral" value="Semestral" />
+              </Picker>
+
             </View>
             {/* Horario do ponto */}
             <View style={styles.colPonto}>
@@ -386,7 +386,7 @@ export default function TelaCentral({ navigation, route }) {
       <View style={styles.mapaView}>
         <MapView
           provider={PROVIDER_GOOGLE}
-          enableZoomControl={true}
+          // enableZoomControl={true}
           showsUserLocation={true}
           showsMyLocationButton={true}
           zoomEnabled={true}
@@ -415,6 +415,21 @@ export default function TelaCentral({ navigation, route }) {
           />
           <MapView.Marker
             coordinate={{
+              latitude: -25.498037,
+              longitude: -49.306742000,
+            }}
+            title={"R. Pedro Gusso - nº1254"}
+            description={"R. Pedro Gusso, 1254 - Novo Mundo, Curitiba - PR, 81050-200"}
+            onPress={() => {
+              setponto(true);
+              setPontoNome('R. Pedro Gusso - nº1254');
+              setPontoEndereco('R. Pedro Gusso, 1254 - Novo Mundo, Curitiba - PR, 81050-200');
+              setPerigoPonto(3);
+              setisblue('blue'); setisgreen('green'); setisyellow('black'); setisorange('orange'); setisred('red');
+            }}
+          />
+          <MapView.Marker
+            coordinate={{
               latitude: -25.4974606,
               longitude: -49.303585000,
             }}
@@ -430,62 +445,108 @@ export default function TelaCentral({ navigation, route }) {
           />
           <MapView.Marker
             coordinate={{
+              latitude: -25.497049,
+              longitude: -49.297823000,
+            }}
+            title={"R. Pedro Gusso - nº232"}
+            description={"R. Pedro Gusso, 232 - Novo Mundo, Curitiba - PR, 81050-200"}
+            onPress={() => {
+              setponto(true);
+              setPontoNome('R. Pedro Gusso - nº232');
+              setPontoEndereco('R. Pedro Gusso, 232 - Novo Mundo, Curitiba - PR, 81050-200');
+              setPerigoPonto(1);
+              setisblue('black'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('red');
+            }}
+          />
+          <MapView.Marker
+            coordinate={{
+              latitude: -25.497884,
+              longitude: -49.300871000,
+            }}
+            title={"R. Pedro Gusso - nº600"}
+            description={"R. Pedro Gusso, 878-1030 - Novo Mundo, Curitiba - PR, 81050-200"}
+            onPress={() => {
+              setponto(true);
+              setPontoNome('R. Pedro Gusso - nº600');
+              setPontoEndereco('R. Pedro Gusso, 600 - Novo Mundo, Curitiba - PR, 81050-200');
+              setPerigoPonto(3);
+              setisblue('blue'); setisgreen('green'); setisyellow('black'); setisorange('orange'); setisred('red');
+            }}
+          />
+          <MapView.Marker
+            coordinate={{
+              latitude: -25.4941677,
+              longitude: -49.3062597000,
+            }}
+            title={"R. João Bonat, nº1181 "}
+            description={"R. João Bonat, nº1181  - Novo Mundo, Curitiba - PR, 81050-280"}
+            onPress={() => {
+              setponto(true);
+              setPontoNome('R. João Bonat, nº1181');
+              setPontoEndereco('R. João Bonat, nº1181 - Novo Mundo, Curitiba - PR, 81050-280');
+              setPerigoPonto(1);
+              setisblue('black'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('red');
+            }}
+          />
+          <MapView.Marker
+            coordinate={{
+              latitude: -25.494187,
+              longitude: -49.3034964000,
+            }}
+            title={"R. João Bonat, nº919 "}
+            description={"R. João Bonat, nº919  - Novo Mundo, Curitiba - PR, 81050-280"}
+            onPress={() => {
+              setponto(true);
+              setPontoNome('R. João Bonat, nº919');
+              setPontoEndereco('R. João Bonat, nº919 - Novo Mundo, Curitiba - PR, 81050-280');
+              setPerigoPonto(4);
+              setisblue('blue'); setisgreen('green'); setisyellow('yellow'); setisorange('black'); setisred('red');
+            }}
+          />
+          <MapView.Marker
+            coordinate={{
+              latitude: -25.4943306,
+              longitude: -49.3019149,
+            }}
+            title={"R. João Bonat, nº632 "}
+            description={"R. João Bonat, nº632  - Novo Mundo, Curitiba - PR, 81050-280"}
+            onPress={() => {
+              setponto(true);
+              setPontoNome('R. João Bonat, nº632');
+              setPontoEndereco('R. João Bonat, nº632 - Novo Mundo, Curitiba - PR, 81050-280');
+              setPerigoPonto(5);
+              setisblue('blue'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('black');
+            }}
+          />
+          <MapView.Marker
+            coordinate={{
               latitude: -25.494362882244992,
-              longitude: -49.29910549458465
+              longitude: -49.29910549458465,
             }}
-            title={"Rua João Bonat, 432"}
-            description={"Novo Mundo, Curitiba - State of Paraná, 81050-170"}
+            title={"R. João Bonat, nº432 "}
+            description={"R. João Bonat, nº432  - Novo Mundo, Curitiba - PR, 81050-280"}
+            onPress={() => {
+              setponto(true);
+              setPontoNome('R. João Bonat, nº432');
+              setPontoEndereco('R. João Bonat, nº432 - Novo Mundo, Curitiba - PR, 81050-280 ');
+              setPerigoPonto(3);
+              setisblue('blue'); setisgreen('green'); setisyellow('black'); setisorange('orange'); setisred('red');
+            }}
           />
           <MapView.Marker
             coordinate={{
-              latitude: -25.492991453744153,
-              longitude: -49.29829236295225
+              latitude: -25.493915,
+              longitude: -49.295444,
             }}
-            title={"Rua Paulina Ader, 836"}
-            description={"Novo Mundo, Curitiba - State of Paraná, 81050-250"}
-          />
-
-          <MapView.Marker
-            coordinate={{
-              latitude: -25.490131141066176,
-              longitude: -49.28912598367627
+            title={"R. Antônio Gasparin, nº5452 "}
+            description={"R. Antônio Gasparin, nº5452  - Novo Mundo, Curitiba - PR, 81050-210 "}
+            onPress={() => {
+              setponto(true);
+              setPontoNome('R. Antônio Gasparin, nº5452');
+              setPontoEndereco('R. Antônio Gasparin, nº5452 - Novo Mundo, Curitiba - PR, 81050-210 ');
+              setPerigoPonto(1);
+              setisblue('black'); setisgreen('green'); setisyellow('yellow'); setisorange('orange'); setisred('red');
             }}
-            title={"Rua Maria Trevisan Tortato, 160"}
-            description={"Novo Mundo, Curitiba - State of Paraná, 81020-000"}
-          />
-
-
-          <MapView.Marker
-            coordinate={{
-              latitude: -25.432762860035012,
-              longitude: -49.37380626359049
-            }}
-            title={"Br 277 - Km 100 (Sent. Ctba)"}
-            description={"Riviera, Curitiba - State of Paraná, 81295-000"}
-          />
-          <MapView.Marker
-            coordinate={{
-              latitude: -25.4858110779203,
-              longitude: -49.29227254323616
-            }}
-            title={"Avenida Brasília, 4554"}
-            description={"Novo Mundo, Curitiba - State of Paraná, 80610-270"}
-          />
-          <MapView.Marker
-            coordinate={{
-              latitude: -25.488939507613317,
-              longitude: -49.29295691959209
-            }}
-            title={"Travessa Augusto Marach, 199"}
-            description={"Novo Mundo, Curitiba - State of Paraná, 81020-220"}
-          />
-          <MapView.Marker
-            coordinate={{
-              latitude: -25.489068851854775,
-              longitude: -49.29552031339611
-            }}
-            title={"Rua Pedro Zagonel, 136"}
-            description={"Novo Mundo, Curitiba - State of Paraná, 81050-001"}
           />
         </MapView>
       </View>
@@ -645,7 +706,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     maxHeight: 260,
     width: "97%",
-    paddingLeft: "2%",    
+    paddingLeft: "2%",
     marginBottom: '20%',
     margin: 5,
     marginLeft: 5,
@@ -663,7 +724,7 @@ const styles = StyleSheet.create({
     marginTop: "5%",
     backgroundColor: '#fff',
     borderRadius: 11,
-  },  
+  },
   pickerPontoFiltro: {
     width: "50%",
     height: 200,
