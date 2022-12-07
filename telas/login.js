@@ -9,7 +9,7 @@ export default function Login({ navigation, route }) {
 
 
   const [userName, setUserName] = useState("");
-  const [nome, setnome] = useState("false");
+  const [name, setname] = useState("false");
   // const nome = "false";
 
   const [cpf, setCPF] = useState("");
@@ -104,21 +104,23 @@ export default function Login({ navigation, route }) {
           style={styles.userBtn}
           onPress={async () => {
             var entrou = false;
-            // var username = "name";
+            var nome = "";
             entrou = await LoginUsuario(cpf, senha, nome)
             // console.log(entrou);
             // setUsername(username);
-            setnome(nome);
+            setname(nome);
             setUserName(nome);
             if (entrou) {
               navigation.navigate('TelaCentral',
-                { paramKey: userName, }),
+                { paramKey: nome, }),
                 // console.log({userName});
                 console.log({ nome });
               console.log("Login Sucesso");
             }
             else {
               // navigation.navigate('Login')
+              
+              console.log({ nome });
               setFalhaLogin(true);
               console.log("Login falha");
 

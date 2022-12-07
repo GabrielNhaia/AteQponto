@@ -3,6 +3,9 @@ import { Modal, StyleSheet, Text, View, TouchableOpacity, Image, } from 'react-n
 import CheckBox from 'react-native-check-box';
 import { Picker } from '@react-native-picker/picker';
 import MapView, { Marker, PROVIDER_GOOGLE, } from 'react-native-maps';
+import Login from './Login';
+import { LoginUsuario } from '../banco/Usuariodb';
+
 
 
 export default function TelaCentral({ navigation, route }) {
@@ -28,7 +31,7 @@ export default function TelaCentral({ navigation, route }) {
   const [minutos, setminutos] = useState("30");
   const [perigo, setPerigo] = useState(0);
   const [PerigoPonto, setPerigoPonto] = useState(0);
-  const [userName, setUserName] = useState("");
+  // const [userName, setUserName] = useState("");
 
 
   return (
@@ -39,7 +42,7 @@ export default function TelaCentral({ navigation, route }) {
       {/* Olá, usuario */}
       <View style={{ left: "35%", top: "-25%" }} >
         <View style={{ backgroundColor: 'white', borderRadius: 10, borderColor: '#318c46', borderWidth: 1 }}>
-          <Text style={{ fontSize: 15 }}>Ola, {route.params?.paramKey}</Text>
+          <Text style={{ fontSize: 15 }}>Ola, {LoginUsuario.nome}</Text>
         </View>
       </View>
       {/* Botão de perfil */}
