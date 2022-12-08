@@ -46,10 +46,10 @@ export default function Login({ navigation, route }) {
         <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
 
           {/* Botão Feedback */}
-          <View style={styles.colButton}>            
-            <Text style={styles.titulo}> Falha no login </Text> 
-            
-            <Text style={styles.msg}> Veirifique seu usuario  {'\n'} e sua senha</Text>           
+          <View style={styles.colButton}>
+            <Text style={styles.titulo}> Falha no login </Text>
+
+            <Text style={styles.msg}> Veirifique seu usuario  {'\n'} e sua senha</Text>
           </View>
           {/* Botão sair */}
           <View style={styles.fimColButton}>
@@ -104,23 +104,27 @@ export default function Login({ navigation, route }) {
           style={styles.userBtn}
           onPress={async () => {
             var entrou = false;
-            var nome = "";
-            entrou = await LoginUsuario(cpf, senha, nome)
+            var nome = "teste";
+            entrou = await LoginUsuario(cpf, senha)
             // console.log(entrou);
             // setUsername(username);
-            setname(nome);
-            setUserName(nome);
+            // setname(nome);
+            // setUserName(nome);
             if (entrou) {
+              setUserName(nome);
               navigation.navigate('TelaCentral',
-                { paramKey: nome, }),
-                // console.log({userName});
-                console.log({ nome });
+                { paramKey: nome, nome: nome }),
+                console.log({ userName }),
+              console.log( nome ),
+              console.log(entrou);
               console.log("Login Sucesso");
             }
             else {
               // navigation.navigate('Login')
-              
-              console.log({ nome });
+
+              console.log({ userName });
+              console.log( nome );
+              console.log(entrou);
               setFalhaLogin(true);
               console.log("Login falha");
 
@@ -216,7 +220,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#070a08',
     borderRadius: 15,
     width: '95%',
-    height:'70%',
+    height: '70%',
     alignItems: 'center',
     justifyContent: 'center'
   },

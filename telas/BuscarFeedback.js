@@ -1,8 +1,13 @@
 import {View, StyleSheet,TouchableOpacity,Text} from 'react-native';
 import {BuscarFeedbacks} from '../banco/Usuariodb';
+import React, { Component, useState } from 'react';
+import TelaCentral from './TelaCentral';
+
 
 export default function BuscarFeedback({navigation, route}) {
-    console.log(BuscarFeedbacks);
+  
+  const [NomePonto, setNomePonto] = useState('UniSantaCruz');
+  var exibirBusca = BuscarFeedbacks(NomePonto);
 
     return (
         <View style={styles.container}>
@@ -13,6 +18,20 @@ export default function BuscarFeedback({navigation, route}) {
               }>
               <Text style={styles.btnTxt}>Sair🚪</Text>
             </TouchableOpacity>
+            <Text style={styles.btnTxt2}>variavel {route.params?.pontoNome} , {TelaCentral.pontoNome} </Text>
+                  <TouchableOpacity
+                      style={styles.userBtn}
+                      onPress={() => {console.log({exibirBusca}),
+                      setNomePonto(route.params?.pontoNome);
+                      var Feedbacks  =  BuscarFeedbacks(NomePonto);
+                      Feedbacks.forEach((Feedback)=> {console.log(Feedback);} );  
+                      // console.log({Feedbacks})  
+                      // console.log({perigoso})                
+                    }                      
+                    }
+                  >
+                    <Text style={{color:"#fff"}}>ok {NomePonto} {route.params?.pontoNome}</Text>
+                  </TouchableOpacity> 
           </View>
         </View>
     );
@@ -41,5 +60,11 @@ const styles = StyleSheet.create({
       fontSize: 14,
       textAlign: 'center',
       color: '#fff',
+    },
+    btnTxt2: {
+      fontSize: 24,
+      textAlign: 'center',
+      color: '#070a08',
+      margin:25,
     },
 });

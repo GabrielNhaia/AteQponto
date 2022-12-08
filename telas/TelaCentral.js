@@ -14,7 +14,7 @@ export default function TelaCentral({ navigation, route }) {
   const [isVisible, setisVisible] = useState(false);
   const [ver, setver] = useState(false);
   const [ponto, setponto] = useState(false);
-  const [pontoNome, setPontoNome] = useState('Uni Santa Cruz');
+  const [pontoNome, setPontoNome] = useState('UniSantaCruz');
   const [pontoEndereco, setPontoEndereco] = useState('Uni Santa Cruz');
   const [isblue, setisblue] = useState('blue');
   const [isgreen, setisgreen] = useState('green');
@@ -42,7 +42,7 @@ export default function TelaCentral({ navigation, route }) {
       {/* Olá, usuario */}
       <View style={{ left: "35%", top: "-25%" }} >
         <View style={{ backgroundColor: 'white', borderRadius: 10, borderColor: '#318c46', borderWidth: 1 }}>
-          <Text style={{ fontSize: 15 }}>Ola, {LoginUsuario.nome}</Text>
+          <Text style={{ fontSize: 15 }}>Ola,  {route.params?.nome}</Text>
         </View>
       </View>
       {/* Botão de perfil */}
@@ -350,8 +350,9 @@ export default function TelaCentral({ navigation, route }) {
                     setisyellow('yellow');
                     setisorange('orange');
                     setisred('red');
+                    setponto(false)
                     setPerigo(0);
-                    navigation.navigate('BuscarFeedback');
+                    navigation.navigate('BuscarFeedback' , {Paramkey: pontoNome, pontoNome: pontoNome,});
                   }}>
                   <Text style={styles.btnTxt}>Ver ocorrencias❗</Text>
                 </TouchableOpacity>
@@ -363,7 +364,7 @@ export default function TelaCentral({ navigation, route }) {
                   onPress={() => {
                     setver(false);
                     setponto(false);
-                    navigation.navigate('FeedbackNew');
+                    navigation.navigate('FeedbackNew', );
                   }}>
                   <Text style={styles.btnTxt}>Feedback😀</Text>
                 </TouchableOpacity>
@@ -408,7 +409,7 @@ export default function TelaCentral({ navigation, route }) {
             description={"Novo Mundo, Curitiba - State of Paraná, 81050-290"}
             onPress={() => {
               setponto(true);
-              setPontoNome('Universidade Santa Cruz');
+              setPontoNome('UniSantaCruz');
               setPontoEndereco('Rua Primo Lourenço Tosin, 1082 - Novo Mundo, Curitiba - PR, 81050-290');
               setPerigoPonto(4);
               setisblue('blue'); setisgreen('green'); setisyellow('yellow'); setisorange('black'); setisred('red');
