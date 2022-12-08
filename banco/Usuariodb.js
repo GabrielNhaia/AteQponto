@@ -4,7 +4,6 @@ import { collection, addDoc , firestore, getDoc,getDocs, where, query, Fieldpath
 import 'firebase/firestore';
 import { LogBox } from 'react-native';
 
-
 LogBox.ignoreLogs(['Setting a timer for a long period of time'])
 
 const Usuarios = collection(db,'Usuario');
@@ -40,9 +39,8 @@ export async function LoginUsuario( cpf,  senha, nome)
    console.log("entrou");
    var entrou = false;
    const q = query(Usuarios, where("CPF", "==", cpf));
-   var ID = "0";     
-   // nome = Usuario.data().Nome;  
-   // var nome = "";
+   var ID = "0";   
+   // var name = "0";
    if( q != null)
    {
       console.log("procurou");
@@ -107,3 +105,7 @@ function DeletarUsuario (id)
 
 }
 
+function BuscarFeedbacks (Comentario, PontoNome, Perigo)
+{
+   const busca = query(collection(Feedback, where ("PontoNome", "==", "Pedro Gusso2")));
+}
