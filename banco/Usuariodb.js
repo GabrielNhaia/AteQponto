@@ -107,17 +107,20 @@ export async function BuscarFeedbacks(NomePonto) {
    var Feedbacks = [];
    
 
-   console.log(NomePonto)
-   const q = query(Feedback, where("Feedback", "==", NomePonto));
+   //console.log(NomePonto)
+   const q = query(Feedback, where("PontoNome", "==", NomePonto));
    const querySnapshot = await getDocs(q);
-   querySnapshot.forEach((Feedback) => {
+   //console.log("Dentro da pagina de bancos");
+   querySnapshot.forEach((feedback) => {
       {
-         var F = {};
-         F['CPF'] = Feedback.data().CPF;
-         F['Comentario'] = Feedback.data().Comentario;
-         F['Data'] = Feedback.data().Data;
-         F['Nome'] = Feedback.data().Nome;
-         F['Perigo'] = Feedback.data().Perigo;
+         var F = new Object();
+         F['CPF'] = feedback.data().CPF;
+         F['Comentario'] = feedback.data().Comentario;
+         F['Data'] = feedback.data().Data;
+         F['Nome'] = feedback.data().Nome;
+         F['Perigo'] = feedback.data().Perigo;
+        // console.log(feedback.data().Perigo);
+        // console.log(F);
          Feedbacks.push(F);
       }
    })
@@ -126,6 +129,9 @@ export async function BuscarFeedbacks(NomePonto) {
    //    perigoso = Feedback.data().Perigo;
    // }
    // })
+   //console.log("saindo da pagina de bancos");
+   //console.log(Feedbacks);
+
    return Feedbacks
    // if(Feedback.data().PontoNome === NomePonto){
 
