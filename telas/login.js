@@ -72,17 +72,13 @@ export default function Login({ navigation, route }) {
           
           style={styles.userBtn}
           onPress={async () => {
-            var entrou = false;            
-            // var username = "name";
+            var entrou = false;
             entrou = await LoginUsuario(cpf, senha, nome)
-            // console.log(entrou);
-            // setUsername(username);
             setnome(nome);
             setUserName(nome);
             if (entrou) {
               navigation.navigate('TelaCentral',
               { paramKey: userName, }),
-              // console.log({userName});
               console.log({nome});
               console.log("Login Sucesso");
             }
@@ -92,7 +88,6 @@ export default function Login({ navigation, route }) {
 
             }
           }}
-          // onPressOut={ () => {setUserName(name);}}
         >
           <Text style={styles.btnTxt}>Login</Text>
         </TouchableOpacity>

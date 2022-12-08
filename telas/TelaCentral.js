@@ -30,7 +30,6 @@ export default function TelaCentral({ navigation, route }) {
   const [PerigoPonto, setPerigoPonto] = useState(0);
   const [userName, setUserName] = useState("");
 
-
   return (
 
 
@@ -39,7 +38,7 @@ export default function TelaCentral({ navigation, route }) {
       {/* Olá, usuario */}
       <View style={{ left: "35%", top: "-25%" }} >
         <View style={{ backgroundColor: 'white', borderRadius: 10, borderColor: '#318c46', borderWidth: 1 }}>
-          <Text style={{ fontSize: 15 }}>Ola, {route.params?.paramKey}</Text>
+          <Text style={{ fontSize: 15 }}>Ola, {userName}</Text>
         </View>
       </View>
       {/* Botão de perfil */}
@@ -131,53 +130,6 @@ export default function TelaCentral({ navigation, route }) {
             {/* Filtrar perigo */}
             <View style={styles.colPerigo}>
               <Text style={{ fontSize: 20, color: "#fff", position: 'absolute', bottom: '75%', right: '65%' }}>Filtrar perigo:</Text>
-              {/* <View style={{ flex: 1, flexDirection: 'row', paddingTop: '7%' }}>
-                <CheckBox
-                  style={{ maxWidth: 40, left: 20, top: "2%" }}
-                  onClick={() => {
-                    setisChecked(!isChecked)
-                  }}
-                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
-                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
-                  isChecked={isChecked}
-                />
-                <CheckBox
-                  style={{ maxWidth: 40, paddingLeft: 60, top: "2%" }}
-                  onClick={() => {
-                    setisChecked(!isChecked)
-                  }}
-                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
-                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
-                  isChecked={isChecked}
-                />
-                <CheckBox
-                  style={{ maxWidth: 40, paddingLeft: 60, top: "2%" }}
-                  onClick={() => {
-                    setisChecked(!isChecked)
-                  }}
-                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
-                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
-                  isChecked={isChecked}
-                />
-                <CheckBox
-                  style={{ maxWidth: 40, paddingLeft: 60, top: "2%" }}
-                  onClick={() => {
-                    setisChecked(!isChecked)
-                  }}
-                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
-                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
-                  isChecked={isChecked}
-                />
-                <CheckBox
-                  style={{ maxWidth: 40, paddingLeft: 60, top: "2%" }}
-                  onClick={() => {
-                    setisChecked(!isChecked)
-                  }}
-                  checkedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao.png")} />}
-                  unCheckedImage={<Image style={{ height: 48, width: 22, borderRadius: 10, bottom: 5 }} source={require("../assets/pinhao_black.png")} />}
-                  isChecked={isChecked}
-                />
-              </View> */}
               {/* Campos */}
               <View style={styles.campoPerigo}>
                 <TouchableOpacity
@@ -341,14 +293,14 @@ export default function TelaCentral({ navigation, route }) {
                   style={styles.btnOcorrencia}
                   onPress={() => {
                     setver(false);
-                    // setponto(false);
                     setisblue('blue');
                     setisgreen('green');
                     setisyellow('yellow');
                     setisorange('orange');
                     setisred('red');
                     setPerigo(0);
-                    navigation.navigate('BuscarFeedback');
+                    navigation.navigate('BuscarFeedback', {Paramkey:pontoNome, });
+
                   }}>
                   <Text style={styles.btnTxt}>Ver ocorrencias❗</Text>
                 </TouchableOpacity>

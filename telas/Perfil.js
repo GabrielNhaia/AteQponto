@@ -28,7 +28,7 @@ export default function Perfil({ navigation, route}) {
 
       <View style={styles.contemTela}>
         <View style={{ paddingBottom: 25, }}>
-          {/* Imagem do perfil */}
+          {/*Imagem do perfil*/}
           <Animated.View
             style={{
               transform: [{ translateX: pan.x }, { translateY: pan.y }]
@@ -60,15 +60,6 @@ export default function Perfil({ navigation, route}) {
             <Text style={styles.btnTxt}>🌱Alterar Dados🎲</Text>
           </TouchableOpacity>
         </View>
-        {/* Botão retornar */}
-        {/* <View style={{ width: "100%", Height: '10%', alignItems: 'center', }}>
-          <TouchableOpacity
-            style={styles.userBtnOption}
-            onPress={() => navigation.navigate('TelaCentral')
-            }>
-            <Text style={styles.btnTxt}>Retornar🚪</Text>
-          </TouchableOpacity>
-        </View> */}
       </View>
     </View>
   );

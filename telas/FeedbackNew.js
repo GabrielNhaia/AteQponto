@@ -264,11 +264,6 @@ export default function FeedbackNew({ navigation, route }) {
                 onValueChange={(itemValue) =>
                   setComentario(itemValue)
                 }>
-                {/* <Picker.Item label="Seguro" value="Seguro" />
-                <Picker.Item label="Aceitavel" value="Aceitavel" />
-                <Picker.Item label="Suspeito" value="Suspeito" />
-                <Picker.Item label="Perigoso" value="Perigoso" />
-                <Picker.Item label="Muito Perigoso" value="MuitoPerigoso" /> */}
                 <Picker.Item label="Briga" value="Briga" />
                 <Picker.Item label="Assalto" value="Assalto" />
                 <Picker.Item label="Roubo" value="Roubo" />                
@@ -380,12 +375,6 @@ export default function FeedbackNew({ navigation, route }) {
                   }}>
                   <Text style={styles.btnTxt}>{comentario}</Text>
                 </TouchableOpacity>
-                {/* <TextInput
-                  style={styles.inputCampo}
-                  placeholder="Feedback"
-                  placeholderTextColor={"#a8a7a7"}
-                  onChangeText={(value) => setComentario(value)}
-                /> */}
               </View>
             </View>
 
@@ -406,15 +395,6 @@ export default function FeedbackNew({ navigation, route }) {
             <Text style={styles.btnTxt}>Enviar Feedback 📨</Text>
           </TouchableOpacity>
         </View>
-        {/* Botão retornar */}
-        {/* <View style={{ width: "100%", Height: '10%', alignItems: 'center', }}>
-          <TouchableOpacity
-            style={styles.userBtnOption}
-            onPress={() => navigation.navigate('TelaCentral', {route})
-            }>
-            <Text style={styles.btnTxt}>Retornar🚪</Text>
-          </TouchableOpacity>
-        </View> */}
       </View>
     </View>
   );

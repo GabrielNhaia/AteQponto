@@ -1,8 +1,13 @@
 import {View, StyleSheet,TouchableOpacity,Text} from 'react-native';
 import {BuscarFeedbacks} from '../banco/Usuariodb';
+//import TelaCentral from './TelaCentral';
+import React, {useState} from 'react';
+
+var exibirBusca = BuscarFeedbacks();
+
+// const [NomePonto, setNomePonto] = useState('UniSantaCruz');
 
 export default function BuscarFeedback({navigation, route}) {
-    console.log(BuscarFeedbacks);
 
     return (
         <View style={styles.container}>
@@ -13,6 +18,13 @@ export default function BuscarFeedback({navigation, route}) {
               }>
               <Text style={styles.btnTxt}>Sair🚪</Text>
             </TouchableOpacity>
+                  <TouchableOpacity
+                      style={styles.userBtn}
+                      //onPress={() => console.log({exibirBusca})}
+                      // setNomePonto(route.params?.paramKey)}
+                  >
+                    <Text>ok</Text>
+                  </TouchableOpacity>                
           </View>
         </View>
     );
@@ -30,12 +42,14 @@ const styles = StyleSheet.create({
       borderRadius: 15,
       width: '95%',
       alignItems: 'center',
+      margin: 20,
     },
     userBtn: {
       backgroundColor: '#070a08',
       padding: 15,
       borderRadius: 15,
       width: '35%',
+      margin: 20,
     },
     btnTxt: {
       fontSize: 14,

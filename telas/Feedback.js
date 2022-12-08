@@ -98,26 +98,9 @@ export default function Feedback({ navigation }) {
                 <Text style={styles.btnTxt}>Data</Text>
               </TouchableOpacity>
             </View>
-
-            {/*PICKER DATA*/}
-            {/* <DatePicker
-              modal
-              open={open}
-              date={date}
-              onConfirm={(date) => {
-                setOpen(false)
-                setDate(date)
-              }}
-              onCancel={() => {
-                setOpen(false)
-              }}
-            /> */}
           </View>
           <View style={styles.terreno}>
             <Text style={styles.ponto}>Acontecimento:</Text>
-            {/* <IOSPicker
-              data={dados}
-            onValueChange={(d, i) => this.change(d, i)} /> */}
             <View style={styles.campo}>
 
               <TextInput

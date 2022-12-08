@@ -50,15 +50,6 @@ export default function Signup({navigation,route}) {
         secureTextEntry={true}        
         onChangeText={(value) => setSenha(value)} 
       />
-      {/*
-      <TextInput
-        style={styles.input}
-        placeholder="Confirme sua Senha"
-        placeholderTextColor={"#a8a7a7"}
-        secureTextEntry={true}        
-        onChangeText={(value) => setSenha2(value)} 
-        />
-    */} 
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={styles.userBtn} 
