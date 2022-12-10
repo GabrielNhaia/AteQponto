@@ -101,7 +101,6 @@ function DeletarUsuario(id) {
    db().ref('/Usuario/' + { id } + '').remove();
 
 }
-
 export async function BuscarFeedbacks(NomePonto) {
 
    var Feedbacks = [];
@@ -124,6 +123,7 @@ export async function BuscarFeedbacks(NomePonto) {
          Feedbacks.push(F);
       }
    })
+<<<<<<< Updated upstream
    // querySnapshot.forEach(() => {{
    //    console.log( Feedback.data().Perigo )
    //    perigoso = Feedback.data().Perigo;
@@ -136,8 +136,9 @@ export async function BuscarFeedbacks(NomePonto) {
    // if(Feedback.data().PontoNome === NomePonto){
 
    // } else{
+=======
+>>>>>>> Stashed changes
 
-   // }
-
-   // })
+   return Feedbacks
+   
 }

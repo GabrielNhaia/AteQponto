@@ -42,7 +42,7 @@ export default function TelaCentral({ navigation, route }) {
       {/* Olá, usuario */}
       <View style={{ left: "35%", top: "-25%" }} >
         <View style={{ backgroundColor: 'white', borderRadius: 10, borderColor: '#318c46', borderWidth: 1 }}>
-          <Text style={{ fontSize: 15 }}>Ola,  {route.params?.nome}</Text>
+          {/* <Text style={{ fontSize: 15 }}>Ola,  {route.params?.nome}</Text> */}
         </View>
       </View>
       {/* Botão de perfil */}

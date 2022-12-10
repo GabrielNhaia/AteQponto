@@ -16,7 +16,7 @@ export default function FeedbackNew({ navigation, route }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pontoNome, setPontoNome] = useState("UniSantaCruz");
-  const [comentario, setComentario] = useState("acontecimento");
+  const [comentario, setComentario] = useState("Acontecimento");
 
   const [isblue, setisblue] = useState('blue');
   const [isgreen, setisgreen] = useState('green');
@@ -274,7 +274,7 @@ export default function FeedbackNew({ navigation, route }) {
                 <Picker.Item label="Roubo" value="Roubo" />                
                 <Picker.Item label="Furto" value="Furto" />
                 <Picker.Item label="Sequestro" value="Sequestro" />
-                <Picker.Item label="homicídio" value="Homicidio" />
+                <Picker.Item label="Homicídio" value="Homicidio" />
                 <Picker.Item label="Abuso" value="Abuso" />
               </Picker>
             </View>

@@ -2,7 +2,11 @@ import {View, StyleSheet,TouchableOpacity,Text} from 'react-native';
 import {BuscarFeedbacks} from '../banco/Usuariodb';
 import React, { Component, useState } from 'react';
 import TelaCentral from './TelaCentral';
+<<<<<<< Updated upstream
 import RenderHtml from 'react-native-render-html';
+=======
+// import RenderHtml from 'react-native-render-html';
+>>>>>>> Stashed changes
 
 
 export default function BuscarFeedback({navigation, route}) {
@@ -17,7 +21,10 @@ export default function BuscarFeedback({navigation, route}) {
        Feedbacks.push(BuscarFeedbacks(NomePonto));
        setTimeout( resolve(), 5000);
         console.log("final da busca");
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
      }).then(() => {
        console.log("resultado");
        Feedbacks.forEach((Feedback)  => {
@@ -68,6 +75,10 @@ export default function BuscarFeedback({navigation, route}) {
                           i++;
                         console.log(Feedback + "N:"+i);
                         console.log("Perigo: "+ Feedback["Perigo"]);
+<<<<<<< Updated upstream
+=======
+                        console.log("ate aqui");
+>>>>>>> Stashed changes
                        // const para = React.createElement("p", [], "Hello world");
                         //const element = React.getElementById("Teste");
                         //para.textContent 
